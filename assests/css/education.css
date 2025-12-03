@@ -1,0 +1,1118 @@
+:root {
+  /* --primary-color: #f6703d;
+  --secondary-color: #f1f1f1;
+  --grey-color: grey; */
+  --white-color: #ffffff;
+  /* --box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(140, 143, 145, 0.32) 0px 2px 16px 0px;
+  --primary-lite: blanchedalmond; */
+  --paragraph-color: #666;
+  --gradient-primary: linear-gradient(135deg, #f6703d 0%, #ff8c61 100%);
+  --gradient-overlay: linear-gradient(
+    135deg,
+    rgba(246, 112, 61, 0.9) 0%,
+    rgba(26, 26, 26, 0.8) 100%
+  );
+}
+
+
+
+
+/* ========== HERO SECTION ========== */
+.hero-section {
+    background: 
+        linear-gradient(90deg, var(--bg-dark) 10%, transparent 100%),
+        url('../images/industries/e1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    min-height: 70vh;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animated background overlay */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, var(--bg-dark) 0%, transparent 100%);
+    animation: overlayPulse 8s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    color: #ffffff;
+}
+
+.hero-content .tagline {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.2s forwards;
+}
+
+.hero-content .heading-primary {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.4s forwards;
+}
+
+.hero-content .body-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.6s forwards;
+}
+
+.hero-content .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 16px 40px;
+    background: #f5713d;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.8s forwards, buttonPulse 2s ease-in-out 2s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button shine effect */
+.hero-content .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.hero-content .cta-button:hover::before {
+    left: 100%;
+}
+
+.hero-content .cta-button:hover {
+    color: #ffffff;
+    background: #e65a2a;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(245, 113, 61, 0.4);
+}
+/* Floating particles effect */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(245, 113, 61, 0.5);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    left: 30%;
+    top: 60%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+    left: 50%;
+    top: 30%;
+    animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+    left: 70%;
+    top: 70%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(5) {
+    left: 85%;
+    top: 40%;
+    animation-delay: 3s;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(245, 113, 61, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(245, 113, 61, 0.5);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh;
+        padding: 3rem 0;
+    }
+    .hero-container {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+    }
+
+    .hero-content .heading-primary {
+        font-size: var(--title-size-md);
+    }
+
+    .hero-content .body-text {
+        font-size: 1rem;
+    }
+    .hero-content .cta-button {
+      padding: 8px 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-radius: 8px;
+    }
+}
+@media (max-width: 480px) {
+  .hero-content .heading-primary {
+        font-size: var(--title-size-sm);
+    }
+}
+
+
+
+
+/* Common Section Styles */
+
+.section-title {
+  font-size: var(--title-size);
+  font-weight: var(--title-weight);
+  color: var(--primary-color);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.section-description {
+  font-size: var(--para-size);
+  color: var(--paragraph-color);
+  line-height: 1.8;
+}
+
+/* Overview Section */
+.education-overview {
+  padding: 50px 0;
+  background: var(--white-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.overview-image-wrapper {
+  position: relative;
+  animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.overview-image {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-badge i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  animation: rotateIcon 3s ease-in-out infinite;
+}
+
+@keyframes rotateIcon {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+.image-badge strong {
+  display: block;
+  color: var(--black-color);
+  font-size: 1rem;
+}
+
+.image-badge span {
+  display: block;
+  color: var(--paragraph-color);
+  font-size: 0.85rem;
+}
+
+.overview-stats-mini {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--secondary-color);
+}
+
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--secondary-color);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mini-stat:hover {
+  background: var(--gradient-primary);
+  color: var(--white-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(246, 112, 61, 0.3);
+}
+
+.mini-stat i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.mini-stat:hover i {
+  color: var(--white-color);
+}
+
+.mini-stat span {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Feature Cards Grid */
+.feature-card {
+  background: var(--white-color);
+  padding: 2.5rem;
+  border-radius: 20px;
+  height: 100%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--primary-color);
+}
+
+
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(246, 112, 61, 0.15);
+}
+
+.feature-card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--secondary-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-card-icon {
+  background: var(--gradient-primary);
+  transform: scale(1.1);
+}
+
+.feature-card-icon i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: all 0.4s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.feature-card:hover .feature-card-icon i {
+  color: var(--white-color);
+  transform: rotateY(360deg);
+}
+
+.icon-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.feature-card:hover .icon-bg {
+  opacity: 1;
+}
+
+.feature-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--black-color);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover h4 {
+  color: var(--primary-color);
+}
+
+.feature-card p {
+  color: var(--paragraph-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.feature-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--paragraph-color);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-benefits li {
+  transform: translateX(5px);
+}
+
+.feature-benefits i {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Solutions Section */
+.education-solutions {
+  padding: 50px 0;
+  background: var(--secondary-color);
+}
+
+.solution-card {
+  background: var(--white-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(246, 112, 61, 0.2);
+}
+
+.solution-image {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+}
+
+.solution-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.solution-card:hover .solution-image img {
+  transform: scale(1.1);
+}
+
+.solution-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.solution-card:hover .solution-overlay {
+  opacity: 1;
+}
+
+.solution-overlay i {
+  font-size: 3rem;
+  color: var(--white-color);
+  animation: zoomIn 0.5s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.solution-content {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--black-color);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.solution-card:hover .solution-content h3 {
+  color: var(--primary-color);
+}
+
+.solution-content p {
+  color: var(--paragraph-color);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.solution-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.solution-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--paragraph-color);
+  font-size: 0.95rem;
+}
+
+.solution-features i {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/* Benefits Section */
+.education-benefits {
+  padding: 50px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.benefits-shape {
+  position: absolute;
+  background: rgba(246, 112, 61, 0.05);
+  border-radius: 50%;
+  animation: float-shape 20s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -50px;
+  left: -50px;
+  animation-delay: 5s;
+}
+
+.shape-3 {
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 10s;
+}
+
+@keyframes float-shape {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+.education-benefits .container {
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-card {
+  background: var(--white-color);
+  padding: 2.5rem;
+  border-radius: 20px;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.benefit-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(246, 112, 61, 0.1);
+  transition: all 0.4s ease;
+  z-index: 0;
+}
+
+.benefit-card:hover .benefit-number {
+  color: rgba(246, 112, 61, 0.2);
+  transform: scale(1.2);
+}
+
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s ease;
+  z-index: 0;
+  opacity: 0.95;
+}
+
+.benefit-card:hover::before {
+  transform: scaleY(1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(246, 112, 61, 0.25);
+  border-color: var(--primary-color);
+}
+
+.benefit-icon {
+  width: 90px;
+  height: 90px;
+  background: var(--secondary-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1.5rem 0;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.icon-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: var(--primary-color);
+  opacity: 0;
+  animation: pulse-icon 2s ease-out infinite;
+}
+
+@keyframes pulse-icon {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.benefit-card:hover .benefit-icon {
+  background: var(--white-color);
+  transform: scale(1.1) rotate(360deg);
+}
+
+.benefit-icon i {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  transition: all 0.4s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.benefit-card:hover .benefit-icon i {
+  color: var(--primary-color);
+}
+
+.benefit-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--black-color);
+  margin-bottom: 1rem;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.benefit-card:hover h3 {
+  color: var(--white-color);
+}
+
+.benefit-card p {
+  color: var(--paragraph-color);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.8;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.benefit-card:hover p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.benefit-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.benefit-tags .tag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: var(--secondary-color);
+  color: var(--paragraph-color);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-tags .tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white-color);
+  transform: translateY(-2px);
+}
+
+.benefit-hover-overlay {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--white-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.benefit-card:hover .benefit-hover-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.benefit-hover-overlay i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/* Testimonial Section */
+.testimonial-wrapper {
+  background: var(--white-color);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--gradient-primary);
+}
+
+.quote-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  color: var(--black-color);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black-color);
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author span {
+  font-size: 0.95rem;
+  color: var(--paragraph-color);
+}
+
+.testimonial-rating {
+  text-align: center;
+  padding: 2rem;
+  background: var(--secondary-color);
+  border-radius: 15px;
+}
+
+.stars {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.stars i {
+  font-size: 1.5rem;
+  color: #ffc107;
+  animation: star-twinkle 2s ease-in-out infinite;
+}
+
+.stars i:nth-child(1) {
+  animation-delay: 0s;
+}
+.stars i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stars i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.stars i:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.stars i:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes star-twinkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.rating-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--black-color);
+  margin-bottom: 0.25rem;
+}
+
+.rating-subtext {
+  font-size: 0.9rem;
+  color: var(--paragraph-color);
+  margin: 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 991px) {
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .floating-card {
+    display: none;
+  }
+
+  
+  .education-overview,
+  .education-solutions,
+  .education-benefits {
+    padding: 60px 0;
+  }
+
+  .feature-card {
+    padding: 2rem;
+  }
+
+  .overview-stats-mini {
+    justify-content: center;
+  }
+
+  .pulse-circle {
+    display: none;
+  }
+
+  .testimonial-wrapper {
+    padding: 2rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .btn-primary-custom,
+  .btn-outline-custom {
+    width: 100%;
+    text-align: center;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-card-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .feature-card-icon i {
+    font-size: 1.8rem;
+  }
+
+  .feature-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .solution-image {
+    height: 220px;
+  }
+
+  .overview-stats-mini {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mini-stat {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .image-badge {
+    bottom: 15px;
+    left: 15px;
+    padding: 1rem;
+  }
+
+  .image-badge i {
+    font-size: 1.5rem;
+  }
+
+  .benefit-card {
+    padding: 2rem;
+  }
+
+  .benefit-number {
+    font-size: 2rem;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .benefit-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .benefit-icon i {
+    font-size: 1.8rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .benefit-tags {
+    justify-content: center;
+  }
+
+  .testimonial-wrapper {
+    padding: 1.5rem;
+  }
+
+  .quote-icon {
+    font-size: 2rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .testimonial-rating {
+    margin-top: 2rem;
+    padding: 1.5rem;
+  }
+
+  .stars i {
+    font-size: 1.2rem;
+  }
+
+  .rating-text {
+    font-size: 1.2rem;
+  }
+}

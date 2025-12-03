@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("header.css");
+@import url("footer.css");
+
+
+:root {
+  --primary-color: #f5713d;
+  --primary-lite: #ffe5d0;
+  --secondary-color: #f1f1f1;
+
+  --bg-gray:rgba(255, 255, 255, 0.1);
+  --hover-gray-bg:rgba(245, 113, 61, 0.1);
+  --border-gray: rgba(255, 255, 255, 0.2);
+  --text-gray: #6b7280;
+  --text-muted: #9ca3af;
+  
+  --text-dark: #222;
+  --text-light: #fff;
+  --background-color: #f1f1f1;
+
+  --bg-dark: #1a1a2e;
+  --bg-light: #f9f9f9;
+  
+
+  --grey-color: #aaa;
+  --black-color: #000;
+
+  --box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px, rgba(140, 143, 145, 0.32) 0px 2px 16px;
+  --hover-shadow: 0 8px 25px rgba(246, 112, 61, 0.25);
+
+  --hover-color: #e77b22;
+
+  --paragraph-color: #666;
+  --para-size: 1rem;
+  --title-size: 2.5rem;
+  --title-weight: 700;
+
+  --title-size-md: 1.8rem;
+  --title-size-sm: 1.2rem;
+
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom smooth scroll with momentum */
+* {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    padding-top: 60px; /* match header height */
+}
+@media (max-width: 600px) {
+  body {
+    padding-top: 50px;
+  }
+}

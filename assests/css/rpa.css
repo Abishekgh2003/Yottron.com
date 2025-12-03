@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --primary-color: #f6703d;
+  --secondary-color: #f1f1f1;
+  --grey-color: grey;
+  --black-color: black;
+  --box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(140, 143, 145, 0.32) 0px 2px 16px 0px;
+  --primary-lite: blanchedalmond;
+}
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.rpa-intro {
+  position: relative;
+
+  .image-section img {
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    object-fit: cover;
+  }
+
+  .rpa-overlaytext {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    color: var(--secondary-color);
+    text-align: left;
+    padding: 2rem;
+    max-width: 800px;
+  }
+  .rpa-overlaytext a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .rpa-overlaytext a:hover {
+    background-color: var(--black-color);
+  }
+}
+@media (max-width: 768px) {
+  .rpa-intro {
+    position: relative;
+    .image-section img {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      object-fit: inherit;
+    }
+  }
+}
+/*our approach section*/
+.rpa-ourapproach {
+  background-color: var(--secondary-color);
+  padding: 3rem;
+  text-align: center;
+}
+.rpa-ourapproach h3 {
+    font-weight: bold;
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+.rpa-ourapproach .content {
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666666;
+  text-align: center;
+}
+.rpa-ourapproach .content p {
+  margin-bottom: 20px;
+}
+.rpa-getstarted-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 18px;
+  padding: 15px 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.rpa-getstarted-button:hover {
+  background-color: var(--black-color);
+  color: var(--secondary-color);
+}
+
+/*RPA Key Features and Benefits section Style Start*/
+.features-and-benefits-section {
+  .content-features-and-benefits {
+    padding: 40px;
+    font-size: 16px;
+  }
+  .content-features-and-benefits h3 {
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  .content-features-and-benefits .shadow-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+  }
+  .content-features-and-benefits .shadow-box:hover {
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: 25px;
+    background-color: var(--primary-lite);
+  }
+  .content-features-and-benefits .shadow-box ul {
+    text-align: left;
+    list-style: none;
+  }
+  .content-features-and-benefits .shadow-box ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .content-features-and-benefits .shadow-box ul i {
+    color: var(--primary-color);
+  }
+  .content-features-and-benefits .shadow-box ul li:hover {
+    color: var(--primary-color);
+  }
+
+  .features-and-benefits-section .content-features-and-benefits .shadow-box {
+    box-sizing: border-box;
+    margin: 0 5px;
+  }
+}
+
+/*RPA Key Features and Benefits section Style End*/
+
+/*why-yottron-rpa  section Style start */
+.why-yottron-rpa {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    line-height: 2rem;
+  }
+  
+  .why-yottron-content {
+    text-align: center;
+  }
+  .why-yottron-content h3{
+    font-weight: bold;
+  }
+  .reasons-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .reason i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+  
+  .reason h4 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .reason p {
+    font-size: 16px;
+    color: #666;
+  }
+/*why-yottron-rpa  section Style end */
+
+/*faq  section Style start */
+.faq {
+  padding: 2rem;
+  h2 {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 36px;
+    text-align: center;
+  }
+  .faq-item h3 {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+  }
+  .faq-item i {
+    color: var(--primary-color);
+    font-size: 24px;
+    padding:10px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+  }
+  .faq-item i:hover{
+    background-color: var(--black-color);
+    border-radius: 50%;
+  }
+  .faq-item {
+    color: #666;
+    padding: 0% 30%;
+  }
+  .faq-item .answer{
+    display: none;
+    transition: 0.3s ease;
+  }
+  .faq-item .answer p{
+    padding: 0px 44px;
+    text-align: left;
+  }
+  .faq-item.active h3 i.open {
+    transform: rotate(180deg); 
+  }
+
+ 
+}
+/*faq  section Style end */
+@media (max-width: 768px) {
+    .reasons-list {
+      flex-direction: column;
+    }
+    
+    .reason {
+      margin-bottom: 20px; /* Adjust spacing between reasons */
+    }
+
+    .faq-item {
+        color: #666;
+        padding:0% !important;
+    }
+    .faq-item .answer p {
+        padding: 0 !important;
+        text-align: left;
+    }
+    .faq {
+        h2 {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 25px;
+            text-align: center;
+        }
+    }
+}
+  
+  

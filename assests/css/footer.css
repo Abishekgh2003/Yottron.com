@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+.footer-modern {
+  background-color: var(--black-color);
+  color: var(--secondary-color);
+  padding: 60px 0 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth floating animation for footer bot */
+@keyframes floatBot {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.footer-bot {
+  width: 150px;
+  height: 150px;
+  animation: floatBot 3s ease-in-out infinite;
+  transition: transform 0.4s ease;
+}
+
+
+.footer-desc {
+  color: var(--secondary-color);
+  font-size: var(--para-size);
+  line-height: 1.7;
+  margin-top: 10px;
+  padding: 0 15px;
+}
+
+.footer-social a {
+  display: inline-block;
+  background: var(--primary-color);
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  color: var(--secondary-color);
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+.footer-social a:hover {
+  background: var(--hover-color);
+  color: var(--text-dark);
+}
+
+/* Headings */
+.footer-modern h5 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+}
+.footer-modern h5::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: var(--primary-color);
+  display: block;
+  margin-top: 6px;
+  transition: width 0.3s;
+}
+.footer-modern h5:hover::after {
+  width: 50px;
+}
+
+/* Links */
+.footer-links ul li {
+  line-height: 1.7;
+}
+.footer-links a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: var(--para-size);
+  
+}
+.footer-links a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* Contact */
+.contact-list li {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+/* .footer-contact{
+  padding-left: 80px;
+} */
+.contact-list i {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  border-top: 1px solid var(--primary-color);
+  margin-top: 30px;
+  padding-top: 15px;
+}
+.footer-bottom span {
+  color: var(--primary-color);
+}
+
+.footer-aboutus a:hover i.fab.fa-linkedin-in {
+  color: var(--hover-color);
+}
+
+@media (max-width: 991px) {
+  .footer-modern {
+    padding: 40px 0 20px;
+  }
+
+  .footer-bot {
+    width: 220px;
+    height: 220px;
+  }
+
+  .footer-contact {
+    padding-left: 40px;
+  }
+
+  .footer-desc {
+    font-size: 14px;
+  }
+}
+
+/* Mobile View (max-width: 767px) */
+@media (max-width: 767px) {
+  .footer-modern {
+    padding: 30px 0 20px;
+    text-align: center;
+  }
+  .footer-bot {
+    display: none;
+    }
+
+  /* Left Section */
+  .footer-left {
+    margin-bottom: 30px;
+  }
+
+  .footer-bot {
+    width: 200px;
+    height: 200px;
+  }
+
+  .footer-desc {
+    font-size: 14px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  /* Middle Section - Links */
+  .footer-links {
+    margin-bottom: 30px;
+  }
+
+
+  .footer-links div {
+    text-align: center;
+  }
+
+  .footer-links h5 {
+    text-align: center;
+  }
+
+  .footer-links h5::after {
+    margin: 6px auto 0;
+  }
+
+  .footer-links ul {
+    padding-left: 0;
+  }
+
+  /* Right Section - Contact */
+  .footer-contact {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .footer-contact h5 {
+    text-align: center;
+  }
+
+  .footer-contact h5::after {
+    margin: 6px auto 0;
+  }
+
+  .contact-list {
+    padding-left: 0;
+    text-align: left;
+    display: inline-block;
+  }
+
+  .contact-list li {
+    font-size: 14px;
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    margin-top: 20px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+  .footer-modern {
+    padding: 25px 0 15px;
+  }
+
+  .footer-bot {
+    width: 180px;
+    height: 180px;
+  }
+
+  .footer-desc {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+
+  .footer-social a {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px;
+  }
+
+
+  .footer-links div {
+    text-align: start;
+    padding-left: 10px;
+  }
+
+  .footer-links h5,
+  .footer-contact h5 {
+    text-align: start;
+    font-size: 16px;
+  }
+
+  .footer-links h5::after,
+  .footer-contact h5::after {
+    margin: 6px 0 0;
+  }
+
+  .footer-links a,
+  .contact-list li {
+    font-size: 13px;
+  }
+
+  .contact-list li {
+    word-break: break-word;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}

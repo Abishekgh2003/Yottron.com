@@ -1,0 +1,793 @@
+/* ========== HERO SECTION ========== */
+.hero-section {
+    background: 
+        linear-gradient(90deg, var(--bg-dark) 10%, transparent 100%),
+        url('../images/solutionsimages/ML&AI.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    min-height: 70vh;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animated background overlay */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, var(--bg-dark) 0%, transparent 100%);
+    animation: overlayPulse 8s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    color: #ffffff;
+}
+
+.hero-content .heading-primary {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.4s forwards;
+}
+
+.hero-content .body-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.6s forwards;
+}
+
+.hero-content .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 16px 40px;
+    background: #f5713d;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.8s forwards, buttonPulse 2s ease-in-out 2s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button shine effect */
+.hero-content .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.hero-content .cta-button:hover::before {
+    left: 100%;
+}
+
+.hero-content .cta-button:hover {
+    color: #ffffff;
+    background: #e65a2a;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(245, 113, 61, 0.4);
+}
+/* Floating particles effect */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(245, 113, 61, 0.5);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    left: 30%;
+    top: 60%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+    left: 50%;
+    top: 30%;
+    animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+    left: 70%;
+    top: 70%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(5) {
+    left: 85%;
+    top: 40%;
+    animation-delay: 3s;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(245, 113, 61, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(245, 113, 61, 0.5);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh;
+        padding: 3rem 0;
+    }
+    .hero-container {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+    }
+
+    .hero-content .heading-primary {
+        font-size: var(--title-size-md);
+    }
+
+    .hero-content .body-text {
+        font-size: 1rem;
+    }
+    .hero-content .cta-button {
+      padding: 8px 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-radius: 8px;
+    }
+}
+@media (max-width: 480px) {
+  .hero-content .heading-primary {
+        font-size: var(--title-size-sm);
+    }
+}
+
+
+
+/* Retail and ecom intro section style start */
+.retail-intro-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.retail-intro-container img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.retail-intro-textoverlay {
+    padding: 3rem;
+    position: absolute;
+    max-width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-light);
+}
+
+.overlay-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 24px;
+    font-weight: var(--title-weight);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-content p {
+    font-size: 1.3em;
+    margin-bottom: 32px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-content a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 14px 32px;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    border: 0;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 113, 61, 0.4);
+}
+
+.overlay-content a:hover {
+    background-color: var(--black-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Retail and ecom intro section style ends */
+
+
+/* Retail and ecom overview section style starts */
+.retail-ecom-overview-container {
+    padding: 3rem 0;
+    background: var(--bg-light);
+}
+
+.retail-ecom-overview-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: top cover;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.retail-ecom-overview-container p {
+    font-size: var(--para-size);
+    color: var(--paragraph-color);
+    text-align: left;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.retail-ecom-overview-container h3 {
+    font-size: var(--title-size);
+    color: var(--primary-color);
+    font-weight: var(--title-weight);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Feature Cards Section */
+.feature-cards-section {
+    padding: 3rem 0;
+    background: var(--bg-light);
+}
+
+.feature-cards-section h3 {
+    text-align: center;
+    font-size: var(--title-size);
+    color: var(--primary-color);
+    font-weight: var(--title-weight);
+    margin-bottom: 3rem;
+}
+
+.feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: var(--secondary-color);
+    padding: 2.2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease !important;
+    border: 1px solid var(--primary-lite);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: var(--text-light);
+}
+
+.feature-card h4 {
+    font-size: 1.3em;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--paragraph-color);
+    line-height: 1.6;
+}
+
+/* Retail and ecom expertise section style starts */
+.retail-and-ecom-expertise {
+    padding: 3rem 0;
+    background: var(--bg-light);
+}
+
+.retail-and-ecom-expertise h3 {
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: var(--title-weight);
+    font-size: var(--title-size);
+    margin-bottom: 1rem;
+}
+
+.retail-and-expertise-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.retail-ecom-expertise {
+    transition: all 0.3s ease !important;
+    text-align: center;
+    padding: 2.5rem;
+    cursor: pointer;
+    background: var(--text-light);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.retail-ecom-expertise:hover {
+    background: var(--primary-lite);
+    transform: translateY(-8px);
+}
+
+.retail-ecom-expertise i {
+    color: var(--primary-color);
+    font-size: 3em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.retail-ecom-expertise strong {
+    display: block;
+    font-size: 1.3em;
+    color: var(--text-dark);
+    margin: 1rem 0;
+}
+
+.retail-ecom-expertise p {
+    color: var(--paragraph-color);
+    line-height: 1.6;
+}
+
+
+/* User experience and customer success style start */
+.user-experience-and-customersuccess {
+    padding: 3rem 0;
+    background: var(--bg-light);
+}
+
+.user-experience-and-customersuccess h3 {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: var(--title-weight);
+    font-size: var(--title-size);
+    margin-bottom: 3rem;
+}
+
+.user-experience-and-customersuccess ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-experience-and-customersuccess li {
+    padding: 1.5rem 1rem;
+    font-size: 1.1em;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-experience-and-customersuccess li:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: 600;
+    border-left-color: var(--primary-color);
+    padding-left: 1.5rem;
+    background: var(--primary-lite);
+}
+
+.user-experience-and-customersuccess i {
+    color: var(--primary-color);
+    font-size: 1.3em;
+}
+
+.user-experience-and-customersuccess img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Why yottron for retail and ecom section style starts */
+.why-yottron-retail-ecom {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #2a2a3e 100%);
+    padding: 3rem 0;
+    color: var(--bg-light);
+}
+
+.why-yottron-retail-ecom h3 {
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-light);
+    font-weight: var(--title-weight);
+    font-size: var(--title-size);
+    margin-bottom: 3rem;
+}
+
+.why-yottron-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-yottron-item {
+    background: var(--bg-gray);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-gray);
+    transition: all 0.3s ease !important;
+}
+
+.why-yottron-item:hover {
+    background: var(--hover-gray-bg);
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.why-yottron-item i {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.why-yottron-item:hover i {
+    transform: scale(1.1);
+}
+
+.why-yottron-item h4 {
+    font-weight: 600;
+    font-size: 1.3em;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.why-yottron-item p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Technology Stack Section */
+.technology-stack-section {
+    padding: 3rem 0;
+    background: var(--bg-light);
+}
+
+.technology-stack-section h3 {
+    text-align: center;
+    font-size: var(--title-size);
+    color: var(--primary-color);
+    font-weight: var(--title-weight);
+    margin-bottom: 1rem;
+}
+
+.technology-stack-section .section-subtitle {
+    text-align: center;
+    color: var(--paragraph-color);
+    font-size: 1.2em;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tech-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tech-category {
+    background: var(--text-light);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+.tech-category:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow);
+}
+
+.tech-category h4 {
+    color: var(--text-dark);
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tech-category h4 i {
+    color: var(--primary-color);
+    font-size: 1.3em;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tech-tag {
+    background: var(--primary-lite);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.tech-tag:hover {
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+}
+
+/* Success Stories Section */
+.success-stories-section {
+    padding: 3rem 0;
+    background: var(--bg-light);
+}
+
+.success-stories-section h3 {
+    text-align: center;
+    font-size: var(--title-size);
+    color: var(--primary-color);
+    font-weight: var(--title-weight);
+    margin-bottom: 1rem;
+}
+
+.success-stories-section .section-subtitle {
+    text-align: center;
+    color: var(--paragraph-color);
+    font-size: 1.2em;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.story-card {
+    background: var(--text-light);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.story-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+    padding: 2rem;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.story-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.story-company {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.story-industry {
+    font-size: 0.95em;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+.story-content {
+    padding: 2rem;
+}
+
+.story-challenge {
+    margin-bottom: 1.5rem;
+}
+
+.story-label {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.story-text {
+    color: var(--paragraph-color);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.story-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--secondary-color);
+}
+
+.result-metric {
+    text-align: center;
+}
+
+.metric-value {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.metric-label {
+    color: var(--text-gray);
+    font-size: 0.85em;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .overlay-content h1 {
+        font-size: 2.5em;
+    }
+    
+    .overlay-content p {
+        font-size: 1.1em;
+    }
+    
+    .retail-ecom-overview-container h3,
+    .retail-and-ecom-expertise h3,
+    .user-experience-and-customersuccess h3,
+    .why-yottron-retail-ecom h3 {
+        font-size: var(--title-size-md);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .overlay-content h1 {
+        font-size: 2em;
+    }
+    
+    
+    .retail-and-expertise-container {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+@media (max-width: 575.98px) {
+    .retail-intro-textoverlay {
+        padding: 1.5rem;
+    }
+    
+    .overlay-content h1 {
+        font-size: 1.8em;
+    }
+    
+    .overlay-content p {
+        font-size: 1em;
+    }
+}

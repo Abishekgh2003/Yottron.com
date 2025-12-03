@@ -1,0 +1,622 @@
+/* ========== HERO SECTION ========== */
+.hero-section {
+    background: 
+        linear-gradient(90deg, var(--bg-dark) 10%, transparent 100%),
+        url('../images/industries/ag1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    min-height: 70vh;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animated background overlay */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, var(--bg-dark) 0%, transparent 100%);
+    animation: overlayPulse 8s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    color: #ffffff;
+}
+
+.hero-content .heading-primary {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.4s forwards;
+}
+
+.hero-content .body-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.6s forwards;
+}
+
+.hero-content .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 16px 40px;
+    background: #f5713d;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.8s forwards, buttonPulse 2s ease-in-out 2s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button shine effect */
+.hero-content .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.hero-content .cta-button:hover::before {
+    left: 100%;
+}
+
+.hero-content .cta-button:hover {
+    color: #ffffff;
+    background: #e65a2a;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(245, 113, 61, 0.4);
+}
+/* Floating particles effect */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(245, 113, 61, 0.5);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    left: 30%;
+    top: 60%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+    left: 50%;
+    top: 30%;
+    animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+    left: 70%;
+    top: 70%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(5) {
+    left: 85%;
+    top: 40%;
+    animation-delay: 3s;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(245, 113, 61, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(245, 113, 61, 0.5);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh;
+        padding: 3rem 0;
+    }
+    .hero-container {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+    }
+
+    .hero-content .heading-primary {
+        font-size: var(--title-size-md);
+    }
+
+    .hero-content .body-text {
+        font-size: 1rem;
+    }
+    .hero-content .cta-button {
+      padding: 8px 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-radius: 8px;
+    }
+}
+@media (max-width: 480px) {
+  .hero-content .heading-primary {
+        font-size: var(--title-size-sm);
+    }
+}
+
+
+
+/* Smart Agriculture Overview */
+        .smart-agriculture-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+        }
+
+        .smart-agriculture-section h2 {
+            color: var(--primary-color);
+            font-size: var(--title-size);
+            font-weight: var(--title-weight);
+            margin-bottom: 20px;
+        }
+
+        .smart-agriculture-section p {
+            color: var(--text-dark);
+            font-size: var(--para-size);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .smart-agriculture-section .agri-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--hover-shadow);
+            position: relative;
+        }
+
+        .smart-agriculture-section .agri-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Technology Solutions */
+        .technology-solutions-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+        }
+        .technology-solutions-section h2 {
+            color: var(--primary-color);
+            font-size: var(--title-size);
+            font-weight: var(--title-weight);
+            margin-bottom: 10px;
+        }
+        .technology-solutions-section p {
+            color: var(--text-dark);
+            font-size: var(--para-size);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-item {
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            border: 1px solid var(--primary-lite);
+            padding: 25px;
+        }
+
+        .tech-item .tech-image {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .tech-item:hover .tech-image {
+            transform: rotateY(360deg);
+            box-shadow: 0 10px 30px rgba(245, 113, 61, 0.4);
+        }
+
+
+        .tech-item .tech-image i {
+            font-size: 2rem;
+            color: var(--text-light);
+        }
+
+        
+
+        .tech-item h5 {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tech-item p {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Data-Driven Insights (Dark Theme) */
+        .data-insights-section {
+            background: var(--bg-dark);
+            padding: 50px 0;
+            color: var(--text-light);
+        }
+
+        .data-insights-section h2 {
+            color: var(--primary-color);
+            font-size: var(--title-size);
+            font-weight: var(--title-weight);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .data-insights-section .subtitle {
+            color: var(--text-gray);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: var(--para-size);
+        }
+
+        .insight-box {
+            background: var(--bg-gray);
+            border: 1px solid var(--border-gray);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .insight-box:hover {
+            background: var(--hover-gray-bg);
+            border-color: var(--primary-color);
+        }
+
+        .insight-box h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .insight-box h4 i {
+            font-size: 2rem;
+        }
+
+        .insight-box p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+
+        /* Sustainability & Innovation */
+        .sustainability-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+        }
+
+        .sustainability-section h2 {
+            color: var(--primary-color);
+            font-size: var(--title-size);
+            font-weight: var(--title-weight);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .innovation-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 15px 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .innovation-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .innovation-item .item-image {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .innovation-item .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .innovation-item .item-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(245, 113, 61, 0.3), rgba(231, 123, 34, 0.3));
+            z-index: 1;
+        }
+
+        .innovation-item .item-content {
+            flex: 1;
+        }
+
+        .innovation-item .item-content h4 {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .innovation-item .item-content h4 i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .innovation-item .item-content p {
+            color: var(--text-dark);
+            font-size: var(--para-size);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .innovation-item .item-content ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .innovation-item .item-content ul li {
+            color: var(--paragraph-color);
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .innovation-item .item-content ul li:before {
+            content: "●";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        @media (min-width: 999px) and (max-width: 1400px) {
+            .smart-agriculture-section p:nth-of-type(2){
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .smart-agriculture-section {
+                padding: 20px 0;
+            }
+            .smart-agriculture-section h2 {
+            font-size: var(--title-size-md);
+            }
+            .smart-agriculture-section p {
+            text-align: justify;
+            }
+            .smart-agriculture-section .agri-image {
+                height: 350px;
+            }
+
+
+            .technology-solutions-section {
+                padding: 20px 0;
+            }
+            .technology-solutions-section h2 {
+                font-size: var(--title-size-md);
+            }
+            .tech-grid {
+                gap: 20px;
+            }
+
+
+            .data-insights-section {
+                padding: 20px 0;
+            }
+            .data-insights-section h2 {
+                font-size: var(--title-size-md);
+                margin-bottom: 20px;
+            }
+            .data-insights-section .subtitle {
+                margin-bottom: 15px;
+            }
+
+
+            .sustainability-section {
+                padding: 20px 0;
+            }
+
+            .sustainability-section h2 {
+                font-size: var(--title-size-md);
+                margin-bottom: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .smart-agriculture-section h2 {
+                font-size: var(--title-size-sm);
+                
+            }
+            .smart-agriculture-section p {
+                line-height: 1.5;
+            }
+            .smart-agriculture-section .agri-image {
+                height: 250px;
+            }
+
+
+            .technology-solutions-section h2 {
+                font-size: var(--title-size-sm);
+            }
+            .technology-solutions-section p {
+                line-height: 1.5;
+            }
+            .tech-item {
+                padding: 15px;
+            }
+            .tech-item .tech-image {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 10px;
+            }
+            .tech-item .tech-image i {
+                font-size: 1rem;
+            }
+
+
+            .data-insights-section h2 {
+                font-size: var(--title-size-sm);
+                margin-bottom: 10px;
+            }
+            .data-insights-section .subtitle {
+                margin-bottom: 15px;
+                line-height: 1.5;
+            }
+            .insight-box {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            .insight-box h4 {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            .insight-box h4 i {
+                font-size: 1.5rem;
+            }
+            .insight-box p {
+                line-height: 1.5;
+                text-align: justify;
+            }
+
+
+            .sustainability-section h2 {
+                font-size: var(--title-size-sm);
+            }
+
+            .innovation-item {
+                flex-direction: column !important;
+                gap: 15px;
+                margin-bottom: 15px;
+                padding: 15px;
+            }
+            .innovation-item .item-content h4 {
+            margin-bottom: 15px;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .innovation-item .item-content p {
+            line-height: 1.5;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .innovation-item .item-content ul {
+            list-style: none;
+            padding: 0;
+            gap: 5px;
+        }
+
+        .innovation-item .item-content ul li {
+            padding: 0;
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+        }
