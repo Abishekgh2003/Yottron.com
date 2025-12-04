@@ -1,32 +1,43 @@
 
+<div class="getintouch-wrapper">
 
-<div class="container contactus-form"  data-aos="fade-up"
-data-aos-duration="2000" >
-  <h3>Let's Connect</h3>
-  <p>Feel free to reach out to us with any inquiries or to explore how we can tailor our services to
-      meet your specific needs.</p>
-      <form action="https://api.web3forms.com/submit" method="POST">
+    <div class="getintouch-box">
 
-      <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-          <input type="hidden" name="apikey" value="f503a9ed-fbda-40e2-b05e-31547428431f">
+        <!-- Left Image -->
+        <div class="getintouch-box-image">
+           <img src="../assests/images/getintouchbg.jpg" alt="Machine Learning"/>
+        </div>
 
-      </div>
-      <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email" required>
-      </div>
-      <div class="mb-3">
-          <label for="phonenumber" class="form-label">Phone Number</label>
-          <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" required>
-      </div>
-      <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" name="message" rows="3"></textarea>
-      </div>
-      <div class="mb-3">
-          <button class="contactus-btn" type="submit">Send us</button>
-      </div>
-  </form>
+        <!-- Right Form -->
+        <div class="getintouch-box-form">
+            <h3>Let's Connect</h3>
+            <p>Feel free to reach out with any inquiries or to explore how we can tailor our services for your needs.</p>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="apikey" value="f503a9ed-fbda-40e2-b05e-31547428431f">
+
+                <div class="mb-2">
+                    <label>Name</label>
+                    <input type="text" name="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="mb-2">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="mb-2">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phonenumber" required placeholder="Enter your phone number">
+                </div>
+
+                <div class="mb-2">
+                    <label>Message</label>
+                    <textarea name="message" rows="2" placeholder="Type your message"></textarea>
+                </div>
+
+                <button class="getintouch-btn" type="submit">Send us</button>
+            </form>
+        </div>
+    </div>
 </div>

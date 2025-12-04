@@ -23,11 +23,100 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Initialize header functionality AFTER content is loaded
             initializeHeader();
+            setActiveNavLink();
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
         });
 });
+
+function setActiveNavLink() {
+    // Get current page path
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    
+    // Remove active class from all nav links and menu items
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+    document.querySelectorAll('.mega-menu-item, .industry-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    document.querySelectorAll('.category-toggle').forEach(toggle => {
+        toggle.classList.remove('active');
+    });
+    
+    // Check if current page is a Solutions page
+    let foundActive = false;
+    document.querySelectorAll('.mega-menu-item').forEach(item => {
+        const itemHref = item.getAttribute('href');
+        if (itemHref) {
+            // Extract page name from href (handles both ../page and /page formats)
+            const pageName = itemHref.split('/').pop();
+            
+            // Check if current page matches this menu item
+            if (currentPage === pageName || currentPath.includes('/' + pageName)) {
+                item.classList.add('active');
+                
+                // Find and activate the parent category toggle (h3)
+                const categoryToggle = item.closest('.mega-menu-category').querySelector('.category-toggle');
+                if (categoryToggle) {
+                    categoryToggle.classList.add('active');
+                }
+                
+                // Also activate the Solutions nav link
+                const solutionsLink = document.querySelector('.nav-item.dropdown:first-child .nav-link');
+                if (solutionsLink) {
+                    solutionsLink.classList.add('active');
+                }
+                foundActive = true;
+            }
+        }
+    });
+    
+    // If not found in solutions, check Industries pages
+    if (!foundActive) {
+        document.querySelectorAll('.industry-item').forEach(item => {
+            const itemHref = item.getAttribute('href');
+            if (itemHref) {
+                // Extract page name from href
+                const pageName = itemHref.split('/').pop();
+                
+                // Check if current page matches this menu item
+                if (currentPage === pageName || currentPath.includes('/' + pageName)) {
+                    item.classList.add('active');
+                    // Also activate the Industries nav link
+                    const industriesLink = document.querySelector('.nav-item.dropdown:nth-child(2) .nav-link');
+                    if (industriesLink) {
+                        industriesLink.classList.add('active');
+                    }
+                    foundActive = true;
+                }
+            }
+        });
+    }
+    
+    // Check for About page
+    if (!foundActive && (currentPage === 'about' || currentPath.includes('/about'))) {
+        const aboutLink = document.querySelector('a.nav-link[href*="about"]');
+        if (aboutLink) {
+            aboutLink.classList.add('active');
+        }
+        foundActive = true;
+    }
+    
+    // Check for Contact page
+    if (!foundActive && (currentPage === 'contactus' || currentPage === 'contact' || currentPath.includes('/contactus'))) {
+        const contactLink = document.querySelector('a.nav-link[href*="contactus"]');
+        if (contactLink) {
+            contactLink.classList.add('active');
+        }
+        foundActive = true;
+    }
+    
+    // Home page - do nothing, leave all inactive
+    // No default active state
+}
 
 function initializeHeader() {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -66,21 +155,37 @@ function initializeHeader() {
                 e.stopPropagation();
                 
                 const categoryItems = this.nextElementSibling;
+                const toggleIcon = this.querySelector('.toggle-icon');
                 const isOpen = categoryItems.classList.contains('show');
+                
+                // Don't remove the 'active' class if it's from page selection
+                // Only toggle the 'show' state for opening/closing
                 
                 // Close all other categories in the same mega menu
                 const megaMenu = this.closest('.mega-menu');
                 megaMenu.querySelectorAll('.category-items').forEach(items => {
-                    items.classList.remove('show');
+                    if (items !== categoryItems) {
+                        items.classList.remove('show');
+                    }
                 });
-                megaMenu.querySelectorAll('.category-toggle').forEach(t => {
-                    t.classList.remove('active');
+                // Reset all toggle icons in this mega menu
+                megaMenu.querySelectorAll('.toggle-icon').forEach(icon => {
+                    if (icon !== toggleIcon) {
+                        icon.classList.remove('rotated');
+                    }
                 });
                 
                 // Toggle current category
                 if (!isOpen) {
                     categoryItems.classList.add('show');
-                    this.classList.add('active');
+                    if (toggleIcon) {
+                        toggleIcon.classList.add('rotated');
+                    }
+                } else {
+                    categoryItems.classList.remove('show');
+                    if (toggleIcon) {
+                        toggleIcon.classList.remove('rotated');
+                    }
                 }
             }
         });
@@ -105,13 +210,19 @@ function initializeHeader() {
                 document.querySelectorAll('.category-items').forEach(items => {
                     items.classList.remove('show');
                 });
-                document.querySelectorAll('.category-toggle').forEach(toggle => {
-                    toggle.classList.remove('active');
+                // Reset all toggle icons rotation
+                document.querySelectorAll('.toggle-icon').forEach(icon => {
+                    icon.classList.remove('rotated');
                 });
+                // Enable body scroll when menu closes
+                document.body.style.overflow = '';
+                // Don't remove 'active' class from category-toggle as it indicates page selection
             });
 
             navbarCollapse.addEventListener('shown.bs.collapse', function() {
                 navbarToggler.classList.add('active');
+                // Disable body scroll when menu opens
+                document.body.style.overflow = 'hidden';
             });
         }
     }
@@ -136,9 +247,11 @@ function initializeHeader() {
             document.querySelectorAll('.category-items').forEach(items => {
                 items.classList.remove('show');
             });
-            document.querySelectorAll('.category-toggle').forEach(toggle => {
-                toggle.classList.remove('active');
+            // Reset all toggle icons rotation
+            document.querySelectorAll('.toggle-icon').forEach(icon => {
+                icon.classList.remove('rotated');
             });
+            // Don't remove 'active' class from category-toggle as it indicates page selection
         }
     });
 }

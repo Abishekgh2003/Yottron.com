@@ -23,8 +23,11 @@
     font-weight: 400;
     padding: 16px 10px !important;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
     border-top: 3px solid transparent;
+    display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 .nav-link:hover {
@@ -36,10 +39,11 @@
     color: var(--primary-color) !important;
     /* border-top: 3px solid var(--primary-color); */
 }
+.nav-icon {
+    font-size: 1rem;
+}
 .dropdown-toggle::after {
-    /* margin-left: 10; */
-    font-size: 20px;
-    transition: transform 0.3s ease;
+    display: none;
 }
 
 .mega-menu {
@@ -52,7 +56,6 @@
     border-top: 3px solid var(--primary-color);
     box-shadow: var(--hover-shadow);
     padding: 30px 0;
-    /* margin-top: 1px; */
     border-radius: 0;
     display: none;
 }
@@ -98,13 +101,13 @@
 .toggle-icon {
     font-size: 20px;
     font-weight: 400;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease !important;
     display: none; /* Hidden on desktop */
 }
 
 .category-items {
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease !important;
 }
 
 .mega-menu-item {
@@ -113,7 +116,7 @@
     text-decoration: none;
     padding: 10px 0;
     font-size: var(--para-size);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
     border-left: 3px solid transparent;
     padding-left: 15px;
 }
@@ -143,7 +146,7 @@
     text-decoration: none;
     padding: 10px 0px;
     font-size: var(--para-size);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
     border-left: 3px solid transparent;
     padding-left: 15px;
 }
@@ -168,6 +171,17 @@
     box-shadow: var(--box-shadow);
     background: #ddd;
 }
+.nav-link .nav-text {
+    display: block;
+    line-height: 1.2;
+}
+
+.nav-link .nav-icon {
+    display: block;
+    margin-top: 2px;
+}
+
+
 
 /* Navbar Toggler Animation */
 .navbar-toggler {
@@ -185,7 +199,7 @@
 .navbar-toggler-icon {
     background-image: none;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
     display: block;
     width: 25px;
     height: 2px;
@@ -200,7 +214,7 @@
     height: 2px;
     background-color: var(--text-dark);
     left: 0;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
 }
 
 .navbar-toggler-icon::before {
@@ -233,7 +247,8 @@
         border-top: none;
         border-left: 3px solid transparent;
         padding: 10px 10px !important;
-        /* display: flex; */
+        display: flex;
+        justify-content: space-between;
     }
 
     .nav-link:hover {
@@ -257,9 +272,9 @@
         display: block !important;
     }
 
-    .dropdown.show .dropdown-toggle::after {
+    /* .dropdown.show .dropdown-toggle::after {
         transform: rotate(180deg);
-    }
+    } */
 
     .mega-menu-image {
         display: none;
@@ -280,17 +295,7 @@
 
     .dropdown-toggle {
     position: relative; /* required for absolute positioning */
-}
-.dropdown-toggle::after {
-    content: "";
-    position: absolute;
-    right: 5%;           /* → move to right edge of screen/parent */
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 0;
-    font-size: 20px;
-    transition: transform 0.3s ease;
-}
+    }
 }
 
 @media (max-width: 768px) {
@@ -348,5 +353,67 @@
     /* Rotate icon when expanded */
     .category-toggle.active .toggle-icon {
         transform: rotate(45deg);
+    }
+}
+/* Active state for mega-menu-item */
+.mega-menu-item.active {
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+/* Active state for industry-item */
+.industry-item.active {
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+/* Active state for category-toggle (h3 titles) - only changes color */
+.category-toggle.active {
+    color: var(--primary-color);
+}
+
+/* Rotate icon when expanded - separate from active state */
+.toggle-icon.rotated {
+    transform: rotate(45deg);
+}
+
+/* Change toggle icon color when parent category is active (page-based) */
+.category-toggle.active .toggle-icon {
+    color: var(--primary-color);
+}
+
+/* Default color for category-toggle on mobile */
+@media (max-width: 991px) {
+    .category-toggle {
+        color: var(--text-dark);
+    }
+    
+    .category-toggle.active {
+        color: var(--primary-color);
+    }
+    
+    .toggle-icon {
+        color: var(--text-dark);
+    }
+    
+    .category-toggle.active .toggle-icon {
+        color: var(--primary-color);
+    }
+}
+
+/* Optional: Add a background highlight for better visibility */
+.mega-menu-item.active,
+.industry-item.active {
+    background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+@media (max-width: 768px) {
+    .mega-menu-item.active,
+    .industry-item.active {
+        font-weight: 600;
     }
 }

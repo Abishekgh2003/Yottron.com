@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yottron - About Us</title>
-   <link rel="stylesheet" href="../assests/vendors/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assests/vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../assests/vendors/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="../assests/css/aboutus.css">
+    
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" sizes="48x48px" href="../assests/images/ys-favicon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assests/css/main.css">
+    <link rel="stylesheet" href="../assests/css/aboutus.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
 </head>
 <body>
      <section class="nav-container" id="sticky-header"></section>
@@ -35,17 +41,23 @@
     <section class="about-section">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-tag">ABOUT</span>
-                <h2 class="section-title">Our Journey Towards Excellence and Innovation</h2>
+                <span class="section-tag">WHO WE ARE</span>
+                <h2 class="section-title">Pioneering Digital Transformation Through Innovation</h2>
+                <p class="section-subtitle">
+                    A trusted global partner in software development, empowering businesses to thrive in the digital era through cutting-edge solutions and unwavering commitment to excellence.
+                </p>
             </div>
             
             <div class="about-grid">
                 <div class="about-text fade-in">
                     <p>
-                        Yottron is a leading <span class="highlight">software development outsourcing company</span> with a rich history of delivering innovative solutions. We are driven by our core values of quality, collaboration, and customer satisfaction.
+                        Yottron is a <span class="highlight">leading software development and consulting firm</span> specializing in end-to-end digital solutions. With a proven track record of delivering transformative technology solutions, we partner with organizations worldwide to turn their vision into reality.
                     </p>
                     <p>
-                        We have a separate division responsible for building software products from A to Z, adding value on each of the elements in this process. We help transform the businesses of our customers via superior consulting and <span class="highlight">software product development</span> services, making them competitive in the digital age.
+                        Our dedicated <span class="highlight">product development division</span> encompasses the entire software development lifecycle—from initial concept and strategic planning through design, development, deployment, and ongoing support. We bring deep technical expertise and industry insights to every project, ensuring scalable, secure, and future-ready solutions.
+                    </p>
+                    <p>
+                        Through our <span class="highlight">comprehensive consulting services</span>, we help organizations navigate complex digital challenges, optimize operations, and accelerate their competitive advantage in rapidly evolving markets. Our approach combines technical excellence with business acumen to deliver measurable outcomes.
                     </p>
                 </div>
                 <div class="about-image-wrapper fade-in">
@@ -88,22 +100,26 @@
                 </div>
              <div class="content-wrapper mission-wrapper">
                 <div class="about-grid">
-                <div class="about-text fade-in">
-                    <div class="cards-container">
+                    <div class="about-text fade-in">
+                        <div class="cards-container">
+                            </div>
+                        
+                        <div class="navigation-wrapper">
+                            <div class="navigation-controls">
+                                <button class="nav-btn prev-btn" id="prevBtn">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button class="nav-btn next-btn" id="nextBtn">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="dots-container" id="dotsContainer"></div>
                         </div>
-                    
-                    <div class="navigation-wrapper">
-                        <div class="navigation-controls">
-                            <button class="nav-btn prev-btn" id="prevBtn">‹</button>
-                            <button class="nav-btn next-btn" id="nextBtn">›</button>
-                        </div>
-                        <div class="dots-container" id="dotsContainer"></div>
+                    </div>
+                    <div class="about-image-wrapper fade-in">
+                        <img src="../assests/images/aboutus/a3.jpg" alt="A group of people working on a business plan." class="responsive-image">
                     </div>
                 </div>
-                <div class="about-image-wrapper fade-in">
-                    <img src="../assests/images/aboutus/a3.jpg" alt="A group of people working on a business plan." class="responsive-image">
-                </div>
-            </div>
                 </div>
             </div>
         </div>
@@ -156,7 +172,10 @@
                     <div class="service-card-header">
                         <div class="service-icon"><img src="../assests/images/aboutus/as1.png" alt="Expertise"></div>
                         <h3 class="service-card-title">Established Expertise</h3>
-                        <div class="accordion-toggle">▼</div>
+                        <div class="accordion-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+
                     </div>
                     <div class="service-card-content">
                         <p>While some software developers have expertise in certain kinds of projects or certain technologies, what sets Yottron apart is that the framework we've built—not to mention our world-class team—enables us to build a staggering variety of projects. Whether a client approaches us with a vision similar to something we've already built or completely new, time and again, our finely tuned processes have enabled us to help customers achieve their loftiest software goals. We have the right processes, the right people, and the right attitude—and more than 150 success stories to back it up.</p>
@@ -166,7 +185,9 @@
                     <div class="service-card-header">
                         <div class="service-icon"><img src="../assests/images/aboutus/as2.png" alt="Pricing"></div>
                         <h3 class="service-card-title">Pricing Predictability</h3>
-                        <div class="accordion-toggle">▼</div>
+                        <div class="accordion-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
                     </div>
                     <div class="service-card-content">
                         <p>Everything Yottron does is process-driven, and that starts with creating price estimates for our clients. We work closely with prospects to understand their goals in detail, creating a scope of work in alignment with that vision. And, because we maintain detailed data on everything we do — time and resources required, probable risks or obstacles, and much more — we can use that data, all drawn from our extensive experience in custom software product development, to develop transparent and accurate cost estimates for the agreed-upon scope of work.</p>
@@ -176,7 +197,9 @@
                     <div class="service-card-header">
                         <div class="service-icon"><img src="../assests/images/aboutus/as3.png" alt="Quality"></div>
                         <h3 class="service-card-title">Commitment to Quality</h3>
-                        <div class="accordion-toggle">▼</div>
+                        <div class="accordion-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
                     </div>
                     <div class="service-card-content">
                         <p>At Yottron, we are dedicated to constant process improvement. Over the years, we've used what we've learned from every successful project (and every obstacle we've overcome) to build and refine a set of processes that enable us to communicate with clients, allocate resources, mitigate risks, and ultimately develop custom software products in a way that puts quality at the forefront in every step of the process. With these processes in place, we approach every project with a success mindset, committed to delivering the value and business outcomes our customers are looking for.</p>
@@ -186,7 +209,9 @@
                     <div class="service-card-header">
                         <div class="service-icon"><img src="../assests/images/aboutus/as4.png" alt="Experience"></div>
                         <h3 class="service-card-title">Broad Industry Experience</h3>
-                        <div class="accordion-toggle">▼</div>
+                        <div class="accordion-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
                     </div>
                     <div class="service-card-content">
                         <p>We've built custom software products for businesses in many different industries, including healthcare, energy, finance, construction, automotive, and more. We believe we can be most helpful to our clients if we consider ourselves true business partners as well as developers. That's why we include business experts on every project team, so we can fully understand our clients' industry-specific challenges and opportunities in order to drive better outcomes with every engagement.</p>
@@ -199,11 +224,34 @@
     <!-- Team Section -->
     <section class="team-section">
         <div class="container">
+            <div class="section-header fade-in">
+            <h2 class="section-title">World-Class Talent, Exceptional Results</h2>
+            <p class="section-subtitle">Partnering with industry-leading experts who transform your vision into reality</p>
+        </div>
             <div class="team-grid">
-                <div class="team-content fade-in">
-                    <span class="section-tag">OUR TEAM</span>
-                    <h3>Meet Our Expert Team</h3>
-                    <p>Every custom software product development project starts with a custom team, built with the engagement's specific needs in mind. We hire more engineers with computer science degrees than our competitors, and we are proud that our pool of more than 250 software experts are the best in the industry.</p>
+                <div class="section-header fade-in">
+                    <div class="values-content">
+                        <h4>Our Team Philosophy</h4>
+                        <p>We believe that exceptional software is built by exceptional people. Our rigorous hiring process ensures we bring together professionals who are not only technically proficient but also passionate about innovation, collaboration, and continuous learning. Every team member is committed to delivering excellence and exceeding client expectations.</p>
+                        <div class="values-list">
+                            <div class="value-item">
+                                <span class="value-check">●</span>
+                                <span>Continuous learning and professional development</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-check">●</span>
+                                <span>Agile methodologies and best practices</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-check">●</span>
+                                <span>Transparent communication and collaboration</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-check">●</span>
+                                <span>Client-focused problem solving</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="team-image-wrapper fade-in">
                     <img src="../assests/images/aboutus/a3.jpg" 
@@ -213,11 +261,10 @@
         </div>
     </section>
   <section class="footer-section"></section>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+    <script src="../assests/vendors/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assests/js/commons.js"></script>
-    <!-- <script src="../assests/js/script.js"></script> -->
     <script src="../assests/js/aboutus.js"></script>
-    <script></script>
 
 </body>
 </html>

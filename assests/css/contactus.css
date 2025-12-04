@@ -72,7 +72,7 @@
 
 /* Form Container */
 .form-container {
-    background: linear-gradient(to left, var(--bg-dark) 20%, transparent 100%);
+    background: linear-gradient(to right, var(--bg-dark) 0%, var(--bg-dark) 15%);
     /* background-color: rgb(40, 46, 50); */
     padding: 2rem;
     border-radius: 16px;
@@ -444,15 +444,24 @@ ease;
 
 @media (max-width: 575.98px) {
     .hero-section {
-        padding: 80px 0 40px;
+        padding: 20px 0;
+        h6 {
+            font-size: 0.6rem;
+        }
+        h1 {
+            font-size: var(--title-size-sm) !important;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1rem !important;
+            margin-bottom: 10px !important;
+        }
+        .hero-content {
+            margin: 0;
+        }
     }
-
-    .hero-section h1 {
-        font-size: var(--title-size);
-    }
-
-    .form-label {
-        font-size: 0.9rem;
+    .hero-overlay-dark {
+        background: linear-gradient(to right, var(--bg-dark) 50%, var(--bg-dark) 60%, transparent 100%);
     }
 
     .form-control,

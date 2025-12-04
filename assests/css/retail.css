@@ -214,66 +214,6 @@
 
 
 
-/* Retail and ecom intro section style start */
-.retail-intro-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.retail-intro-container img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    filter: brightness(0.7);
-}
-
-.retail-intro-textoverlay {
-    padding: 3rem;
-    position: absolute;
-    max-width: 900px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: var(--text-light);
-}
-
-.overlay-content h1 {
-    font-size: 3.5em;
-    margin-bottom: 24px;
-    font-weight: var(--title-weight);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.overlay-content p {
-    font-size: 1.3em;
-    margin-bottom: 32px;
-    line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.overlay-content a {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 14px 32px;
-    color: var(--text-light);
-    background-color: var(--primary-color);
-    border: 0;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(245, 113, 61, 0.4);
-}
-
-.overlay-content a:hover {
-    background-color: var(--black-color);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: var(--hover-shadow);
-}
-
-/* Retail and ecom intro section style ends */
-
 
 /* Retail and ecom overview section style starts */
 .retail-ecom-overview-container {
@@ -360,7 +300,7 @@
 
 .feature-card p {
     color: var(--paragraph-color);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Retail and ecom expertise section style starts */
@@ -389,14 +329,9 @@
     text-align: center;
     padding: 2.5rem;
     cursor: pointer;
-    background: var(--text-light);
+    background: var(--primary-lite);
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.retail-ecom-expertise:hover {
-    background: var(--primary-lite);
-    transform: translateY(-8px);
 }
 
 .retail-ecom-expertise i {
@@ -505,7 +440,6 @@
 .why-yottron-item:hover {
     background: var(--hover-gray-bg);
     border-color: var(--primary-color);
-    transform: translateY(-5px);
 }
 
 .why-yottron-item i {
@@ -513,11 +447,6 @@
     font-size: 2.5em;
     margin-bottom: 1rem;
     display: block;
-    transition: transform 0.3s ease;
-}
-
-.why-yottron-item:hover i {
-    transform: scale(1.1);
 }
 
 .why-yottron-item h4 {
@@ -569,13 +498,7 @@
     padding: 2.5rem 2rem;
     border-radius: 16px;
     box-shadow: var(--box-shadow);
-    transition: all 0.3s ease;
-    border-top: 4px solid var(--primary-color);
-}
-
-.tech-category:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--hover-shadow);
+    border-top: 2px solid var(--primary-color);
 }
 
 .tech-category h4 {
@@ -655,12 +578,6 @@
     border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
-    transition: all 0.3s ease;
-}
-
-.story-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--hover-shadow);
 }
 
 .story-header {
@@ -771,11 +688,9 @@
         font-size: 2em;
     }
     
-    
     .retail-and-expertise-container {
         grid-template-columns: 1fr;
     }
-    
 }
 
 @media (max-width: 575.98px) {
@@ -789,5 +704,300 @@
     
     .overlay-content p {
         font-size: 1em;
+    }
+}
+
+/* Mobile Responsive - 431px and below */
+@media (max-width: 431px) {
+
+    /* Overview Section Mobile */
+    .retail-ecom-overview-container {
+        padding: 20px 0;
+    }
+
+    .retail-ecom-overview-container img {
+        height: 250px;
+        border-radius: 12px;
+    }
+
+    .retail-ecom-overview-container h3 {
+        font-size: var(--title-size-sm);
+        margin: 10px 0;
+        padding-bottom: 0;
+        line-height: 1.2;
+    }
+
+    .retail-ecom-overview-container p {
+        font-size: 1rem;
+        line-height: 1.5 !important;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+
+    /* Feature Cards Section Mobile */
+    .feature-cards-section {
+        padding: 20px 0;
+    }
+
+    .feature-cards-section h3 {
+        font-size: var(--title-size-sm);
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .feature-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .feature-card h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Expertise Section Mobile */
+    .retail-and-ecom-expertise {
+        padding: 20px 0;
+    }
+
+    .retail-and-ecom-expertise h3 {
+        font-size: var(--title-size-sm);
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .retail-and-expertise-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .retail-ecom-expertise {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .retail-ecom-expertise i {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .retail-ecom-expertise strong {
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+
+    .retail-ecom-expertise p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* User Experience Section Mobile */
+    .user-experience-and-customersuccess {
+        padding: 20px 0;
+    }
+
+    .user-experience-and-customersuccess h3 {
+        font-size: var(--title-size-sm);
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .user-experience-and-customersuccess li {
+        padding: 12px 10px;
+        font-size: 0.95em;
+        gap: 10px;
+    }
+
+    .user-experience-and-customersuccess li:hover {
+        padding-left: 15px;
+    }
+
+    .user-experience-and-customersuccess i {
+        font-size: 1.1em;
+    }
+
+    .user-experience-and-customersuccess img {
+        border-radius: 12px;
+    }
+
+    /* Why Yottron Section Mobile */
+    .why-yottron-retail-ecom {
+        padding: 20px 0;
+    }
+
+    .why-yottron-retail-ecom h3 {
+        font-size: var(--title-size-sm);
+        padding: 0.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .why-yottron-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .why-yottron-item {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .why-yottron-item i {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .why-yottron-item h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .why-yottron-item p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Technology Stack Section Mobile */
+    .technology-stack-section {
+        padding: 20px 0;
+    }
+
+    .technology-stack-section h3 {
+        font-size: var(--title-size-sm);
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .technology-stack-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .tech-categories {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .tech-category {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .tech-category h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        gap: 8px;
+    }
+
+    .tech-category h4 i {
+        font-size: 1.1em;
+    }
+
+    .tech-list {
+        gap: 8px;
+    }
+
+    .tech-tag {
+        padding: 6px 12px;
+        font-size: 0.8em;
+        border-radius: 15px;
+    }
+
+    /* Success Stories Section Mobile */
+    .success-stories-section {
+        padding: 20px 0;
+    }
+
+    .success-stories-section h3 {
+        font-size: var(--title-size-sm);
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .success-stories-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .stories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .story-card {
+        border-radius: 12px;
+    }
+
+    .story-header {
+        padding: 20px 15px;
+    }
+
+    .story-company {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+    }
+
+    .story-industry {
+        font-size: 0.85em;
+    }
+
+    .story-content {
+        padding: 20px 15px;
+    }
+
+    .story-challenge {
+        margin-bottom: 15px;
+    }
+
+    .story-label {
+        font-size: 0.8em;
+        margin-bottom: 8px;
+    }
+
+    .story-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .story-results {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+
+    .metric-value {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    .metric-label {
+        font-size: 0.8em;
+    }
+
+    /* General Mobile Adjustments */
+    p {
+        line-height: 1.5 !important;
     }
 }
