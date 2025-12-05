@@ -1,142 +1,77 @@
-// CarouselOne-container start
-
+// CarouselOne - Optimized
 let currentSlide = 0;
 const totalSlides = 4;
 const wrapper = document.getElementById('CarouselOneWrapper');
 const carouselContainer = document.querySelector('.CarouselOne-container');
 const indicators = document.querySelectorAll('.indicator');
 const slides = document.querySelectorAll('.Sculpting');
-let autoSlideInterval = null;
-let isTransitioning = false;
-let isReversing = false;
-let isHovering = false; // Track hover state
+let autoSlideInterval, isTransitioning = false, isReversing = false, isHovering = false;
 
-// Initialize first slide as active
 slides[0].classList.add('active');
 
 function updateCarouselOne(animate = true) {
-    if (animate) {
-        wrapper.classList.add('transitioning');
-    } else {
-        wrapper.classList.remove('transitioning');
-    }
-    
+    wrapper.classList.toggle('transitioning', animate);
     wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
     
-    // Update indicators
-    indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentSlide);
-        if (index === currentSlide) {
-            indicator.classList.add('clicked');
-            setTimeout(() => indicator.classList.remove('clicked'), 600);
+    indicators.forEach((ind, i) => {
+        ind.classList.toggle('active', i === currentSlide);
+        if (i === currentSlide) {
+            ind.classList.add('clicked');
+            setTimeout(() => ind.classList.remove('clicked'), 600);
         }
     });
     
-    // Remove active class from all slides
-    slides.forEach(slide => slide.classList.remove('active'));
-    
-    // Add active class to current slide
-    setTimeout(() => {
-        slides[currentSlide].classList.add('active');
-    }, 100);
+    slides.forEach(s => s.classList.remove('active'));
+    setTimeout(() => slides[currentSlide].classList.add('active'), 100);
 }
 
 function autoAdvanceSlide() {
     if (isTransitioning) return;
-    
     isTransitioning = true;
     
     if (!isReversing) {
-        if (currentSlide < totalSlides - 1) {
-            currentSlide++;
-        } else {
-            isReversing = true;
-            currentSlide--;
-        }
+        currentSlide < totalSlides - 1 ? currentSlide++ : (isReversing = true, currentSlide--);
     } else {
-        if (currentSlide > 0) {
-            currentSlide--;
-        } else {
-            isReversing = false;
-            currentSlide++;
-        }
+        currentSlide > 0 ? currentSlide-- : (isReversing = false, currentSlide++);
     }
     
     updateCarouselOne(true);
-    
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 1200);
+    setTimeout(() => isTransitioning = false, 1200);
 }
 
 function nextSlide() {
     if (isTransitioning) return;
-    
     isTransitioning = true;
-    
-    if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        isReversing = false;
-    } else {
-        currentSlide = 0;
-        isReversing = false;
-    }
-    
+    currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
+    isReversing = false;
     updateCarouselOne(true);
-    
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 1200);
-    
+    setTimeout(() => isTransitioning = false, 1200);
     resetAutoSlide();
 }
 
 function prevSlide() {
     if (isTransitioning) return;
-    
     isTransitioning = true;
-    
-    if (currentSlide > 0) {
-        currentSlide--;
-    } else {
-        currentSlide = totalSlides - 1;
-    }
-    
+    currentSlide = currentSlide > 0 ? currentSlide - 1 : totalSlides - 1;
     isReversing = true;
     updateCarouselOne(true);
-    
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 1200);
-    
+    setTimeout(() => isTransitioning = false, 1200);
     resetAutoSlide();
 }
 
 function goToSlide(index) {
     if (isTransitioning || index === currentSlide) return;
-    
     isTransitioning = true;
     currentSlide = index;
     isReversing = false;
-    
     updateCarouselOne(true);
-    
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 1200);
-    
+    setTimeout(() => isTransitioning = false, 1200);
     resetAutoSlide();
 }
 
 function startAutoSlide() {
-    // Clear any existing interval first to prevent multiple intervals
-    if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
-    }
-    // Only start if not hovering
-    if (!isHovering) {
-        autoSlideInterval = setInterval(autoAdvanceSlide, 5000);
-    }
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+    if (!isHovering) autoSlideInterval = setInterval(autoAdvanceSlide, 5000);
 }
 
 function stopAutoSlide() {
@@ -151,10 +86,8 @@ function resetAutoSlide() {
     startAutoSlide();
 }
 
-// Start auto-sliding on page load
 startAutoSlide();
 
-// Pause on hover - FIXED
 carouselContainer.addEventListener('mouseenter', () => {
     isHovering = true;
     stopAutoSlide();
@@ -165,87 +98,82 @@ carouselContainer.addEventListener('mouseleave', () => {
     startAutoSlide();
 });
 
-// Keyboard navigation
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-        prevSlide();
-    } else if (e.key === 'ArrowRight') {
-        nextSlide();
-    }
+    if (e.key === 'ArrowLeft') prevSlide();
+    else if (e.key === 'ArrowRight') nextSlide();
 });
 
-// Touch/swipe support - OPTIMIZED
-let touchStartX = 0;
-let touchEndX = 0;
-
+let touchStartX = 0, touchEndX = 0;
 carouselContainer.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
 }, { passive: true });
 
 carouselContainer.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
-    const touchDistance = Math.abs(touchStartX - touchEndX);
-    
-    if (touchDistance > 50) {
-        if (touchStartX - touchEndX > 50) {
-            nextSlide();
-        } else if (touchEndX - touchStartX > 50) {
-            prevSlide();
-        }
-    }
+    const dist = Math.abs(touchStartX - touchEndX);
+    if (dist > 50) touchStartX - touchEndX > 50 ? nextSlide() : prevSlide();
 }, { passive: true });
 
-// OPTIMIZED PARALLAX with RequestAnimationFrame + Throttling
-let parallaxFrame;
-let lastParallaxTime = 0;
-const PARALLAX_THROTTLE = 16; // ~60fps
-
+let parallaxFrame, lastParallaxTime = 0;
 carouselContainer.addEventListener('mousemove', (e) => {
     const now = Date.now();
-    
-    // Throttle to max 60fps
-    if (now - lastParallaxTime < PARALLAX_THROTTLE) return;
-    
-    if (parallaxFrame) {
-        cancelAnimationFrame(parallaxFrame);
-    }
+    if (now - lastParallaxTime < 16) return;
+    if (parallaxFrame) cancelAnimationFrame(parallaxFrame);
     
     parallaxFrame = requestAnimationFrame(() => {
         const activeSlide = slides[currentSlide];
         if (!activeSlide) return;
-        
         const rect = carouselContainer.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        
         const title = activeSlide.querySelector('.Sculpting-title');
-        
-        if (title) {
-            // Use transform3d for GPU acceleration
-            title.style.transform = `translate3d(${x * 20}px, ${y * 20}px, 0)`;
-        }
-        
+        if (title) title.style.transform = `translate3d(${x * 20}px, ${y * 20}px, 0)`;
         lastParallaxTime = now;
     });
 });
 
-// Reset parallax when mouse leaves
 carouselContainer.addEventListener('mouseleave', () => {
-    if (parallaxFrame) {
-        cancelAnimationFrame(parallaxFrame);
-    }
-    
+    if (parallaxFrame) cancelAnimationFrame(parallaxFrame);
     const activeSlide = slides[currentSlide];
-    if (!activeSlide) return;
-    
-    const title = activeSlide.querySelector('.Sculpting-title');
-    
-    if (title) {
-        title.style.transform = '';
+    if (activeSlide) {
+        const title = activeSlide.querySelector('.Sculpting-title');
+        if (title) title.style.transform = '';
     }
 });
 
-// CarouselOne-container end
+// Services Drag Scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.services-cards-container');
+    if (!slider) return;
+    let isDown = false, startX, scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+        slider.style.cursor = 'grabbing';
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+        slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+        slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        slider.scrollLeft = scrollLeft - (x - startX) * 2;
+    });
+});
 
 
 // services section start
