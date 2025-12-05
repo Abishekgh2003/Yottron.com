@@ -252,55 +252,179 @@
 /* ============================================
    COMMITMENT SECTION
    ============================================ */
-.commitment-section {
-  padding: 50px 0;
-  background: var(--text-light);
-}
+        .commitment-section {
+            padding: 50px 0;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
 
-.commitment-card {
-  background: var(--text-light);
-  border-radius: 20px;
-  padding: 30px;
-  border: 1px solid var(--primary-lite);
-  transition: var(--transition);
-  height: 100%;
-}
+        .section-header {
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
 
-.commitment-card:hover {
-  box-shadow: var(--box-shadow);
-  border-color: var(--primary-color);
-}
+        .section-title {
+            font-size: var(--title-size);
+            font-weight: var(--title-weight);
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
 
-.commitment-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--black-color);
-}
+        .section-subtitle {
+            font-size: var(--para-size);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-.commitment-card p {
-  color: var(--text-dark);
-  margin-bottom: 20px;
-  line-height: 1.7;
-}
+        /* Commitment Cards */
+        .commitment-card {
+            border-radius: 20px;
+            padding: 0;
+            border: none;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
+        }
 
-.card-features {
-  list-style: none;
-  padding: 0;
-}
+        .card-image-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
 
-.card-features li {
-  padding: 5px 0;
-  color: var(--text-dark);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.card-features li i {
-  color: var(--primary-color);
-  font-size: 14px;
-}
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white-color);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .commitment-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--black-color);
+        }
+
+        .commitment-card p {
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card-features li {
+            padding: 10px 0;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .card-features li:last-child {
+            border-bottom: none;
+        }
+
+        .card-features li i {
+            color: var(--primary-color);
+            font-size: 16px;
+            min-width: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .section-title {
+                font-size: var(--title-size-md);
+            }
+
+            .commitment-section {
+                padding: 20px 0;
+            }
+
+            .card-content {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .commitment-card {
+                margin-bottom: 30px;
+            }
+
+            .card-image-wrapper {
+                height: 200px;
+            }
+        }
+        @media (max-width: 767px) {
+          .commitment-section {
+            padding: 20px 0;
+          }
+          .commitment-section .section-header {
+            margin-bottom: 10px;
+          }
+          .commitment-section .section-title {
+            font-size: var(--title-size-sm);
+            margin-bottom: 10px;
+          }
+          .commitment-section .commitment-card {
+            padding: 15px;
+            margin-bottom: 0;
+            .card-content {
+              padding: 10px;
+            }
+            h3 {
+              font-size: 1rem;
+            }
+            p {
+              margin-bottom: 10px;
+            }
+            li {
+              padding: 5px 0;
+            }
+
+          }
+          
+        }
+
+
 
 /* ============================================
    SOLUTIONS SECTION
@@ -365,24 +489,18 @@
 .service-card {
   background: var(--bg-light);
   border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 30px;
+  padding: 15px;
+  margin-bottom: 25px;
   display: flex;
-  gap: 30px;
-  transition: var(--transition);
-  border: 2px solid transparent;
-}
-
-.service-card:hover {
-  background: var(--text-light);
-  box-shadow: var(--box-shadow);
-  border-color: var(--primary-color);
+  gap: 10px;
+  border: 1px solid var(--primary-lite);
 }
 
 .service-number {
   font-size: 4rem;
   font-weight: 800;
   color: var(--primary-color);
+  margin: auto 20px;
   opacity: 0.8;
   line-height: 1;
   flex-shrink: 0;
@@ -391,13 +509,13 @@
 .service-content h3 {
   font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: var(--black-color);
 }
 
 .service-content p {
   color: var(--text-dark);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   line-height: 1.8;
 }
 
@@ -410,7 +528,7 @@
 }
 
 .service-features li {
-  padding: 10px 0;
+  padding: 5px 0;
   color: var(--text-dark);
   position: relative;
   padding-left: 25px;
@@ -450,16 +568,15 @@
 
 .tech-category {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-gray);
   border-radius: 15px;
   padding: 30px;
   transition: var(--transition);
 }
 
 .tech-category:hover {
-  background: rgba(255, 255, 255, 0.08);
+  /* background: rgba(255, 255, 255, 0.08); */
   border-color: var(--primary-color);
-  transform: translateY(-5px);
 }
 
 .tech-category h4 {
@@ -563,8 +680,8 @@
 
 .why-choose-image img {
   border-radius: 20px;
-  box-shadow: var(--box-shadow);
   width: 100%;
+  height: 500px;
 }
 
 /* ============================================
@@ -587,7 +704,7 @@
   background: var(--bg-light);
   border-radius: 15px;
   transition: var(--transition);
-  border: 2px solid var(--primary-lite);
+  border: 1px solid var(--primary-color);
 }
 
 .step-number {
@@ -612,7 +729,7 @@
 }
 
 .step-content p {
-  color: var(--grey-color);
+  color: var(--text-dark);
   line-height: 1.7;
   margin: 0;
 }
@@ -659,7 +776,6 @@
     font-size: 1rem;
   }
   
-  .commitment-section,
   .solutions-section,
   .services-section,
   .technology-section,
@@ -674,7 +790,7 @@
   }
   
   .service-number {
-    font-size: 3rem;
+    display: none;
   }
   
   .service-content h3 {
@@ -684,28 +800,72 @@
   .service-features {
     grid-template-columns: 1fr;
   }
-  
-  .solutions-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .tech-categories {
-    grid-template-columns: 1fr;
-  }
-  
-  .process-timeline {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 576px) {
   .section-title {
-    font-size: 1.8rem;
+    font-size: var(--title-size-sm);
   }
   
   .commitment-card,
   .service-card {
     padding: 25px;
+  }
+  .solutions-grid {
+    gap: 10px;
+  }
+  .section-header {
+    margin-bottom: 10px;
+  }
+  .service-card {
+    padding: 15px;
+    margin-bottom: 10px;
+    h3 {
+       font-size: var(--title-size-sm);
+    }
+  }
+  .tech-categories {
+    margin-top: 10px;
+    gap: 10px;
+    .tech-category {
+      padding: 20px;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    .tech-tags {
+      gap: 10px;
+      span {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .why-choose-content {
+    margin-bottom: 10px;
+    .why-features {
+      gap: 10px;
+    }
+  }
+  .why-choose-section {
+    img {
+      height: 300px;
+    }
+  }
+  .process-timeline {
+    gap: 10px;
+    .process-step {
+      padding: 15px;
+    }
+    .step-number {
+      font-size: 1rem;
+      height: 40px;
+      width: 40px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 1rem;
+    }
   }
   
   .card-icon {

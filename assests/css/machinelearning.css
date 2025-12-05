@@ -2,7 +2,7 @@
 .hero-section {
     background: 
         linear-gradient(90deg, var(--bg-dark) 10%, transparent 100%),
-        url('../images/solutionsimages/AIML.1.jpg');
+        url('../images/machinelearning/ai1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; 

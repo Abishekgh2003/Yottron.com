@@ -2,7 +2,7 @@
 .hero-section {
     background: 
         linear-gradient(90deg, var(--bg-dark) 10%, transparent 100%),
-        url('../images/Home/bg2.jpg');
+        url('../images/datawarhousing/D2.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; 

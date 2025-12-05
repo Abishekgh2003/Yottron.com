@@ -2,7 +2,7 @@
 .hero-section {
     background: 
         linear-gradient(90deg, var(--bg-dark) 10%, transparent 100%),
-        url('../images/software/testing.jpg');
+        url('../images/software/sd1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; 
@@ -512,8 +512,8 @@
 
 .highlignt-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 330px;
+  object-fit: top cover;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
 }

@@ -299,7 +299,7 @@
 
         /* Section 2: Solutions Showcase - Light */
         .solutions-section {
-            background: var(--bg-light);
+            background: var(--primary-lite);
             padding: 50px 0;
         }
 
