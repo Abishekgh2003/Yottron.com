@@ -1,179 +1,262 @@
-// CarouselOne - Optimized
-let currentSlide = 0;
-const totalSlides = 4;
-const wrapper = document.getElementById('CarouselOneWrapper');
-const carouselContainer = document.querySelector('.CarouselOne-container');
-const indicators = document.querySelectorAll('.indicator');
-const slides = document.querySelectorAll('.Sculpting');
-let autoSlideInterval, isTransitioning = false, isReversing = false, isHovering = false;
+// CarouselOne-container start
 
-slides[0].classList.add('active');
+    let currentSlide = 0;
+    const totalSlides = 4;
+    const wrapper = document.getElementById('CarouselOneWrapper');
+    const carouselContainer = document.querySelector('.CarouselOne-container');
+    const indicators = document.querySelectorAll('.indicator');
+    const slides = document.querySelectorAll('.Sculpting');
+    let autoSlideInterval;
+    let isTransitioning = false;
+    let slideDirection = 'next'; // 'next' = right to left (1->4), 'prev' = left to right (4->1)
+    let isReversing = false; // Track if we're in reverse mode (4->1)
 
-function updateCarouselOne(animate = true) {
-    wrapper.classList.toggle('transitioning', animate);
-    wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-    
-    indicators.forEach((ind, i) => {
-        ind.classList.toggle('active', i === currentSlide);
-        if (i === currentSlide) {
-            ind.classList.add('clicked');
-            setTimeout(() => ind.classList.remove('clicked'), 600);
+    // Initialize first slide as active
+    slides[0].classList.add('active');
+
+    function updateCarouselOne(animate = true) {
+        if (animate) {
+            wrapper.classList.add('transitioning');
+            // Add direction class for animations
+            wrapper.classList.add(slideDirection === 'next' ? 'slide-left' : 'slide-right');
+        } else {
+            wrapper.classList.remove('transitioning');
+            wrapper.classList.remove('slide-left', 'slide-right');
+        }
+        
+        wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+            if (index === currentSlide) {
+                indicator.classList.add('clicked');
+                setTimeout(() => indicator.classList.remove('clicked'), 600);
+            }
+        });
+        
+        // Remove active class from all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Add active class to current slide
+        setTimeout(() => {
+            slides[currentSlide].classList.add('active');
+        }, 100);
+        
+        // Remove direction classes after animation
+        if (animate) {
+            setTimeout(() => {
+                wrapper.classList.remove('slide-left', 'slide-right');
+            }, 800);
+        }
+    }
+
+    function autoAdvanceSlide() {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        
+        if (!isReversing) {
+            // Moving forward (1->2->3->4)
+            slideDirection = 'next';
+            
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+            } else {
+                // Reached slide 4, switch to reverse mode
+                isReversing = true;
+                currentSlide--;
+            }
+        } else {
+            // Moving backward (4->3->2->1)
+            slideDirection = 'prev';
+            
+            if (currentSlide > 0) {
+                currentSlide--;
+            } else {
+                // Reached slide 1, switch to forward mode
+                isReversing = false;
+                currentSlide++;
+            }
+        }
+        
+        updateCarouselOne(true);
+        
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 1200);
+    }
+
+    function nextSlide() {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        slideDirection = 'next';
+        
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            isReversing = false;
+        } else {
+            currentSlide = 0;
+            isReversing = false;
+        }
+        
+        updateCarouselOne(true);
+        
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 1200);
+        
+        resetAutoSlide();
+    }
+
+    function prevSlide() {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        slideDirection = 'prev';
+        
+        if (currentSlide > 0) {
+            currentSlide--;
+        } else {
+            currentSlide = totalSlides - 1;
+        }
+        
+        isReversing = true;
+        updateCarouselOne(true);
+        
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 1200);
+        
+        resetAutoSlide();
+    }
+
+    function goToSlide(index) {
+        if (isTransitioning || index === currentSlide) return;
+        
+        isTransitioning = true;
+        slideDirection = index > currentSlide ? 'next' : 'prev';
+        currentSlide = index;
+        
+        // Determine if we should be in reverse mode based on manual selection
+        isReversing = false;
+        
+        updateCarouselOne(true);
+        
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 1200);
+        
+        resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(autoAdvanceSlide, 5000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    // Start auto-sliding on page load
+    startAutoSlide();
+
+    // Pause on hover
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        startAutoSlide();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            flashNav('prev');
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            flashNav('next');
         }
     });
-    
-    slides.forEach(s => s.classList.remove('active'));
-    setTimeout(() => slides[currentSlide].classList.add('active'), 100);
-}
 
-function autoAdvanceSlide() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    
-    if (!isReversing) {
-        currentSlide < totalSlides - 1 ? currentSlide++ : (isReversing = true, currentSlide--);
-    } else {
-        currentSlide > 0 ? currentSlide-- : (isReversing = false, currentSlide++);
+    function flashNav(direction) {
+        const nav = document.querySelector(`.CarouselOne-nav.${direction}`);
+        if (nav) {
+            nav.style.transform = 'translateY(-50%) scale(1.2)';
+            setTimeout(() => {
+                nav.style.transform = '';
+            }, 200);
+        }
     }
-    
-    updateCarouselOne(true);
-    setTimeout(() => isTransitioning = false, 1200);
-}
 
-function nextSlide() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
-    isReversing = false;
-    updateCarouselOne(true);
-    setTimeout(() => isTransitioning = false, 1200);
-    resetAutoSlide();
-}
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartTime = 0;
 
-function prevSlide() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentSlide = currentSlide > 0 ? currentSlide - 1 : totalSlides - 1;
-    isReversing = true;
-    updateCarouselOne(true);
-    setTimeout(() => isTransitioning = false, 1200);
-    resetAutoSlide();
-}
+    carouselContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartTime = Date.now();
+    });
 
-function goToSlide(index) {
-    if (isTransitioning || index === currentSlide) return;
-    isTransitioning = true;
-    currentSlide = index;
-    isReversing = false;
-    updateCarouselOne(true);
-    setTimeout(() => isTransitioning = false, 1200);
-    resetAutoSlide();
-}
+    carouselContainer.addEventListener('touchmove', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+    });
 
-function startAutoSlide() {
-    if (autoSlideInterval) clearInterval(autoSlideInterval);
-    if (!isHovering) autoSlideInterval = setInterval(autoAdvanceSlide, 5000);
-}
+    carouselContainer.addEventListener('touchend', (e) => {
+        const touchDuration = Date.now() - touchStartTime;
+        const touchDistance = Math.abs(touchStartX - touchEndX);
+        
+        if (touchDistance > 50) {
+            if (touchStartX - touchEndX > 50) {
+                nextSlide();
+            } else if (touchEndX - touchStartX > 50) {
+                prevSlide();
+            }
+        }
+    });
 
-function stopAutoSlide() {
-    if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = null;
-    }
-}
-
-function resetAutoSlide() {
-    stopAutoSlide();
-    startAutoSlide();
-}
-
-startAutoSlide();
-
-carouselContainer.addEventListener('mouseenter', () => {
-    isHovering = true;
-    stopAutoSlide();
-});
-
-carouselContainer.addEventListener('mouseleave', () => {
-    isHovering = false;
-    startAutoSlide();
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') prevSlide();
-    else if (e.key === 'ArrowRight') nextSlide();
-});
-
-let touchStartX = 0, touchEndX = 0;
-carouselContainer.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
-
-carouselContainer.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    const dist = Math.abs(touchStartX - touchEndX);
-    if (dist > 50) touchStartX - touchEndX > 50 ? nextSlide() : prevSlide();
-}, { passive: true });
-
-let parallaxFrame, lastParallaxTime = 0;
-carouselContainer.addEventListener('mousemove', (e) => {
-    const now = Date.now();
-    if (now - lastParallaxTime < 16) return;
-    if (parallaxFrame) cancelAnimationFrame(parallaxFrame);
-    
-    parallaxFrame = requestAnimationFrame(() => {
+    // Parallax effect on mouse move
+    carouselContainer.addEventListener('mousemove', (e) => {
         const activeSlide = slides[currentSlide];
         if (!activeSlide) return;
+        
         const rect = carouselContainer.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
+        
         const title = activeSlide.querySelector('.Sculpting-title');
-        if (title) title.style.transform = `translate3d(${x * 20}px, ${y * 20}px, 0)`;
-        lastParallaxTime = now;
+        // const description = activeSlide.querySelector('.Sculpting-description');
+        
+        if (title) {
+            title.style.transform = `translateX(${x * 20}px) translateY(${y * 20}px)`;
+        }
+        // if (description) {
+        //     description.style.transform = `translateX(${x * 15}px) translateY(${y * 15}px)`;
+        // }
     });
-});
 
-carouselContainer.addEventListener('mouseleave', () => {
-    if (parallaxFrame) cancelAnimationFrame(parallaxFrame);
-    const activeSlide = slides[currentSlide];
-    if (activeSlide) {
+    // Reset parallax when mouse leaves
+    carouselContainer.addEventListener('mouseleave', () => {
+        const activeSlide = slides[currentSlide];
+        if (!activeSlide) return;
+        
         const title = activeSlide.querySelector('.Sculpting-title');
-        if (title) title.style.transform = '';
-    }
-});
-
-// Services Drag Scroll
-document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.services-cards-container');
-    if (!slider) return;
-    let isDown = false, startX, scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.classList.add('active');
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-        slider.style.cursor = 'grabbing';
+        const description = activeSlide.querySelector('.Sculpting-description');
+        
+        if (title) {
+            title.style.transform = '';
+        }
+        if (description) {
+            description.style.transform = '';
+        }
     });
 
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.classList.remove('active');
-        slider.style.cursor = 'grab';
-    });
-
-    slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.classList.remove('active');
-        slider.style.cursor = 'grab';
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        slider.scrollLeft = scrollLeft - (x - startX) * 2;
-    });
-});
+// CarouselOne-container end
 
 
 // services section start
