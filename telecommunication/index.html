@@ -8,6 +8,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <!--Favicon-->
     <link
       rel="icon"
@@ -27,10 +31,10 @@
     <link rel="stylesheet" href="../assests/css/main.css" />
     <link rel="stylesheet" href="../assests/css/telecom.css" />
     <!-- FontAwesome -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="../assests/vendors/fontawesome/css/all.min.css"
-    />
+    /> -->
     <link
       rel="stylesheet"
       href="../assests/vendors/fontawesome/css/fontawesome.min.css"
@@ -261,7 +265,6 @@
             </p>
             <div class="feature-list">
               <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
                 <div class="feature-content">
                   <h4>Real-Time Channel Synchronization</h4>
                   <p>
@@ -271,7 +274,6 @@
                 </div>
               </div>
               <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-database"></i></div>
                 <div class="feature-content">
                   <h4>Unified Customer Data Platform</h4>
                   <p>
@@ -281,9 +283,6 @@
                 </div>
               </div>
               <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-chart-line"></i>
-                </div>
                 <div class="feature-content">
                   <h4>Advanced Analytics & Insights</h4>
                   <p>
@@ -293,9 +292,6 @@
                 </div>
               </div>
               <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-user-check"></i>
-                </div>
                 <div class="feature-content">
                   <h4>Personalized Engagement</h4>
                   <p>
@@ -316,7 +312,6 @@
 
             <div class="feature-list">
               <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-robot"></i></div>
                 <div class="feature-content">
                   <h4>AI-Driven Workflow Automation</h4>
                   <p>
@@ -327,9 +322,6 @@
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-network-wired"></i>
-                </div>
                 <div class="feature-content">
                   <h4>End-to-End Process Orchestration</h4>
                   <p>
@@ -340,18 +332,15 @@
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-brain"></i></div>
                 <div class="feature-content">
-                  <h4>Predictive Decision Intelligence</h4>
+                  <h4>Decision Intelligence</h4>
                   <p>
-                    Leverage machine learning to identify patterns, forecast
-                    outcomes, and make smarter business decisions
+                    Leverage machine learning to identify patterns, and make smarter business decisions
                   </p>
                 </div>
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-handshake"></i></div>
                 <div class="feature-content">
                   <h4>Human-Digital Collaboration</h4>
                   <p>
@@ -483,159 +472,93 @@
     </section>
 
     <!-- AI & Machine Learning Section -->
-    <section class="ai-ml-section" id="ai-analytics">
-      <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-          <h2 class="section-title">
-            AI-Powered Telecommunication Intelligence
-          </h2>
-          <p class="section-subtitle">
-            Leverage machine learning to transform data into actionable insights
-            and automated solutions
-          </p>
+    <section class="ai-ml-section" id="ai-analytics" data-aos="fade-in">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">
+                    AI-Powered Telecommunication Intelligence
+                </h2>
+                <p class="section-subtitle">
+                    Leverage machine learning to transform data into actionable insights
+                    and automated solutions
+                </p>
+            </div>
+            
+            <div class="owl-carousel owl-theme ai-carousel">
+                
+                <div class="ai-feature-card">
+                    <div class="ai-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600" alt="Predictive Maintenance">
+                        <div class="ai-overlay">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                    </div>
+                    <div class="ai-content">
+                        <h3>Network Reliability</h3>
+                        <p>
+                            Our AI algorithms continuously monitor network infrastructure,
+                            analyzing millions of data points to predict equipment failures
+                            before they occur. This proactive approach reduces downtime by
+                            up to 70% and extends asset lifespan significantly.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="Customer Analytics">
+                        <div class="ai-overlay">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="ai-content">
+                        <h3>Customer Behavior Analytics</h3>
+                        <p>
+                            Deep learning models analyze customer interaction patterns across
+                            all touchpoints to create comprehensive profiles. These
+                            insights enable hyper-personalized services  that increase customer lifetime value.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Resource Optimization">
+                        <div class="ai-overlay">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <div class="ai-content">
+                        <h3>Intelligent Resource Optimization</h3>
+                        <p>
+                            Dynamic resource allocation powered by real-time analytics ensures
+                            optimal network capacity and cost efficiency. Our algorithms
+                            automatically adjust bandwidth allocation and traffic routing based
+                            on usage patterns, resulting in 45% better utilization.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="Fraud Detection">
+                        <div class="ai-overlay">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="ai-content">
+                        <h3>Fraud Detection & Prevention</h3>
+                        <p>
+                            Multi-layered machine learning models identify and prevent
+                            fraudulent activities in real-time by analyzing transaction
+                            patterns and network anomalies. With 99.7% accuracy and sub-second
+                            detection times, it provides robust security for users.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="row g-4">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="ai-feature-card">
-              <div class="ai-image">
-                <img
-                  src="../assests/images/industries/predctive.png"
-                  alt="Predictive Maintenance"
-                />
-                <div class="ai-overlay">
-                  <i class="fas fa-tools"></i>
-                </div>
-              </div>
-              <div class="ai-content">
-                <h3>Predictive Maintenance & Network Reliability</h3>
-                <p>
-                  Our AI algorithms continuously monitor network infrastructure,
-                  analyzing millions of data points to predict equipment
-                  failures before they occur. This proactive approach reduces
-                  downtime by up to 70%, extends asset lifespan by 40%, and
-                  significantly lowers maintenance costs. The system learns from
-                  historical patterns to improve accuracy over time, ensuring
-                  your network operates at peak performance 24/7.
-                </p>
-                <div class="ai-metrics">
-                  <div class="metric">
-                    <strong>70%</strong> Downtime Reduction
-                  </div>
-                  <div class="metric">
-                    <strong>40%</strong> Extended Asset Life
-                  </div>
-                  <div class="metric">
-                    <strong>99.99%</strong> Accuracy Rate
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="ai-feature-card">
-              <div class="ai-image">
-                <img
-                  src="../assests/images/industries/ML.jpg"
-                  alt="Customer Analytics"
-                />
-                <div class="ai-overlay">
-                  <i class="fas fa-user-chart"></i>
-                </div>
-              </div>
-              <div class="ai-content">
-                <h3>Customer Behavior Analytics & Insights</h3>
-                <p>
-                  Deep learning models analyze customer interaction patterns
-                  across all touchpoints to create comprehensive behavioral
-                  profiles. These insights enable hyper-personalized services,
-                  predictive churn prevention, and targeted marketing campaigns.
-                  By understanding customer preferences and predicting their
-                  needs, businesses can increase customer lifetime value by 35%
-                  and reduce churn rates by 25%.
-                </p>
-                <div class="ai-metrics">
-                  <div class="metric"><strong>35%</strong> Increased CLV</div>
-                  <div class="metric"><strong>25%</strong> Churn Reduction</div>
-                  <div class="metric">
-                    <strong>50%</strong> Better Targeting
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="ai-feature-card">
-              <div class="ai-image">
-                <img
-                  src="../assests/images/industries/automated-resource.jpg"
-                  alt="Resource Optimization"
-                />
-                <div class="ai-overlay">
-                  <i class="fas fa-chart-pie"></i>
-                </div>
-              </div>
-              <div class="ai-content">
-                <h3>Intelligent Resource Optimization</h3>
-                <p>
-                  Dynamic resource allocation powered by real-time analytics and
-                  predictive modeling ensures optimal network capacity and cost
-                  efficiency. Our algorithms automatically adjust bandwidth
-                  allocation, load balancing, and traffic routing based on usage
-                  patterns and forecasted demand. This results in 45%
-                  improvement in resource utilization and 30% reduction in
-                  operational costs while maintaining superior quality of
-                  service.
-                </p>
-                <div class="ai-metrics">
-                  <div class="metric">
-                    <strong>45%</strong> Better Utilization
-                  </div>
-                  <div class="metric"><strong>30%</strong> Cost Savings</div>
-                  <div class="metric">
-                    <strong>Real-time</strong> Adaptation
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="ai-feature-card">
-              <div class="ai-image">
-                <img
-                  src="../assests/images/industries/fraud-detection.jpg"
-                  alt="Fraud Detection"
-                />
-                <div class="ai-overlay">
-                  <i class="fas fa-shield-virus"></i>
-                </div>
-              </div>
-              <div class="ai-content">
-                <h3>Advanced Fraud Detection & Prevention</h3>
-                <p>
-                  Multi-layered machine learning models identify and prevent
-                  fraudulent activities in real-time by analyzing transaction
-                  patterns, user behavior, and network anomalies. Our adaptive
-                  system continuously evolves to counter emerging fraud tactics,
-                  protecting billions in revenue annually. With 99.7% accuracy
-                  and sub-second detection times, it provides robust security
-                  without impacting legitimate user experiences.
-                </p>
-                <div class="ai-metrics">
-                  <div class="metric">
-                    <strong>99.7%</strong> Detection Rate
-                  </div>
-                  <div class="metric">
-                    <strong>&lt;1s</strong> Response Time
-                  </div>
-                  <div class="metric">
-                    <strong>$10M+</strong> Saved Annually
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Benefits Section -->
@@ -771,8 +694,10 @@
     <script src="../assests/vendors/jquery/jquery-3.7.1.min.js"></script>
     <script src="../assests/vendors/slickcarousel/slick/slick.js"></script>
     <script src="../assests/vendors/slickcarousel/slick/slick.min.js"></script>
-    
 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <!-- Custom -->
     <script src="../assests/js/commons.js"></script>
     
@@ -783,5 +708,51 @@
         once: true,
         offset: 100,
       });
+      $(document).ready(function(){
+            // Initialize Owl Carousel first
+            const carousel = $('.ai-carousel').owlCarousel({
+                loop: true,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                smartSpeed: 800,
+                navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 15
+                    },
+                    768: {
+                        items: 2,
+                        margin: 20
+                    },
+                    1024: {
+                        items: 3,
+                        margin: 20
+                    }
+                },
+                onInitialized: function() {
+                    // Initialize AOS after carousel is ready
+                    setTimeout(function() {
+                        AOS.init({
+                            once: true,
+                            duration: 800,
+                            easing: 'ease-out',
+                            disable: false,
+                            startEvent: 'DOMContentLoaded',
+                            offset: 50,
+                            delay: 0
+                        });
+                    }, 100);
+                }
+            });
+            
+            // Refresh AOS when carousel changes slides
+            carousel.on('changed.owl.carousel', function(event) {
+                AOS.refresh();
+            });
+        });
     </script>
 </html>

@@ -299,7 +299,7 @@
 
         /* Section 2: Solutions Showcase - Light */
         .solutions-section {
-            background: var(--primary-lite);
+            background: var(--bg-light);
             padding: 50px 0;
         }
 
@@ -322,11 +322,11 @@
         }
 
         .solution-card {
-            background: white;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--box-shadow);
-            margin: 15px 0;
+            border: 1px solid var(--primary-color);
+            /* margin: 15px 0; */
             display: flex;
             flex-direction: column;
             max-height: 350px;
@@ -344,6 +344,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-bottom: 1px solid var(--primary-color);
         }
 
         .solution-content {
