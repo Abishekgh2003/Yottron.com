@@ -1790,9 +1790,13 @@
                 }
             }
             .stats-section {
-                padding: 10px;
+                padding: 30px 20px 0px 20px;
                 border-radius: 15px 15px 0 0;
                 margin-top: 20px;
+                gap: 15px;
+                .col-6 {
+                    padding: 15px;
+                }
             }
 
             .stats-section::before {
@@ -1806,15 +1810,14 @@
 
 
             .stat-number {
-                font-size: 2rem;
+                font-size: 1.6rem;
                 font-weight: 700;
                 color: white;
                 margin-bottom: 10px;
             }
 
             .stat-label {
-                font-size: 1.1rem;
-                font-weight: 500;
+                font-size: 1rem;
             }
         }
 
@@ -2014,8 +2017,8 @@
         .slider {
             
             background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
-            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-            height: 150px;
+            /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+            height: 140px;
             border-radius: 0 0 20px 20px;
             /* border-left: 2px solid var(--primary-color);
             border-right: 2px solid var(--primary-color); */
@@ -2026,9 +2029,9 @@
             /* max-width: 960px; */
         }
 
-        .slider::before,
+        /* .slider::before,
         .slider::after {
-            /* background: linear-gradient(to right, var(--bg-light) 0%, transparent 100%); */
+            background: linear-gradient(to right, var(--bg-light) 0%, transparent 100%);
             content: "";
 
             height: 100px;
@@ -2046,7 +2049,7 @@
         .slider::before {
             left: 0;
             top: 0;
-        }
+        } */
 
         .slide-track {
             animation: scroll 40s linear infinite;
@@ -2064,8 +2067,9 @@
         }
 
         .slide img {
-            max-height: 90px;
-            max-width: 230px;
+            border-radius: 10rem;
+            max-height: 70px;
+            max-width: 200px;
             object-fit: contain;
         }
 

@@ -7,28 +7,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!--Favicon-->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../assests/images/ys-favicon.png"
-    />
-    <link
-      rel="stylesheet"
-      href="../assests/vendors/slickcarousel/slick/slick-theme.css"
-    />
+    <link rel="icon" type="image/x-icon" href="../assests/images/ys-favicon.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assests/css/main.css" />
     <link rel="stylesheet" href="../assests/css/education.css" />
-    <!-- FontAwesome -->
-    <link
-      rel="stylesheet"
-      href="../assests/vendors/fontawesome/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../assests/vendors/fontawesome/css/fontawesome.min.css"
-    />
-    <link rel="stylesheet" href="../node_modules/aos/dist/aos.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   </head>
 
   <body>
@@ -256,163 +246,126 @@
     </section>
 
     <!-- Solutions Section -->
-    <section class="education-solutions">
-      <div class="container">
-        <div
-          class="text-center mb-5"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <h2 class="section-title">Comprehensive Education Solutions</h2>
-          <p class="section-description mx-auto" style="max-width: 700px">
-            Discover our suite of innovative educational technology solutions
-            designed to transform teaching and learning experiences.
-          </p>
+    <section class="education-solutions" data-aos="fade-in">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="section-title">Comprehensive Education Solutions</h2>
+                <p class="section-description mx-auto" style="max-width: 700px">
+                    Discover our suite of innovative educational technology solutions
+                    designed to transform teaching and learning experiences.
+                </p>
+            </div>
+
+            <div class="owl-carousel owl-theme education-carousel">
+                
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="../assests/images/industries/es1.jpg" alt="Interactive Learning">
+                        <div class="solution-overlay">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                    </div>
+                    <div class="solution-content">
+                        <h3>Interactive Learning Platforms</h3>
+                        <p>
+                            Engage students with interactive digital platforms that
+                            enhance comprehension and retention through gamification and
+                            immersive VR/AR experiences, making learning more engaging and
+                            effective.
+                        </p>
+                        <ul class="solution-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i> Gamification elements
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> VR/AR integration</li>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Real-time feedback
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="../assests/images/industries/es2.jpg" alt="Virtual Classrooms">
+                        <div class="solution-overlay">
+                            <i class="fas fa-video"></i>
+                        </div>
+                    </div>
+                    <div class="solution-content">
+                        <h3>Virtual Classrooms</h3>
+                        <p>
+                            Facilitate remote learning with virtual classrooms, offering
+                            real-time collaboration tools like live chat, virtual
+                            whiteboards, and breakout rooms, creating a seamless online
+                            education experience.
+                        </p>
+                        <ul class="solution-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i> HD video conferencing
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Interactive whiteboards
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> Breakout rooms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="../assests/images/industries/es3.jpg" alt="Personalized Learning">
+                        <div class="solution-overlay">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </div>
+                    <div class="solution-content">
+                        <h3>Personalized Learning Paths</h3>
+                        <p>
+                            Customize learning experiences using AI algorithms to adapt to
+                            each student's strengths and weaknesses, setting learning
+                            goals and tracking progress for individualized education.
+                        </p>
+                        <ul class="solution-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i> AI-driven adaptation
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> Progress tracking</li>
+                            <li><i class="fas fa-check-circle"></i> Custom goals</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="../assests/images/industries/es4.jpg" alt="E-Learning Platforms">
+                        <div class="solution-overlay">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="solution-content">
+                        <h3>E-Learning Platforms</h3>
+                        <p>
+                            Empower learners with comprehensive e-learning platforms that
+                            deliver educational content and assessments online, with
+                            accessibility features for various devices and screen readers.
+                        </p>
+                        <ul class="solution-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i> Multi-device support
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Accessibility features
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Content management
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        <div class="row g-4">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
-            <div class="solution-card">
-              <div class="solution-image">
-                <img
-                  src="../assests/images/industries/es1.jpg"
-                  alt="Interactive Learning"
-                />
-                <div class="solution-overlay">
-                  <i class="fas fa-gamepad"></i>
-                </div>
-              </div>
-              <div class="solution-content">
-                <h3>Interactive Learning Platforms</h3>
-                <p>
-                  Engage students with interactive digital platforms that
-                  enhance comprehension and retention through gamification and
-                  immersive VR/AR experiences, making learning more engaging and
-                  effective.
-                </p>
-                <ul class="solution-features">
-                  <li>
-                    <i class="fas fa-check-circle"></i> Gamification elements
-                  </li>
-                  <li><i class="fas fa-check-circle"></i> VR/AR integration</li>
-                  <li>
-                    <i class="fas fa-check-circle"></i> Real-time feedback
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-6"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-          >
-            <div class="solution-card">
-              <div class="solution-image">
-                <img
-                  src="../assests/images/industries/es2.jpg"
-                  alt="Virtual Classrooms"
-                />
-                <div class="solution-overlay">
-                  <i class="fas fa-video"></i>
-                </div>
-              </div>
-              <div class="solution-content">
-                <h3>Virtual Classrooms</h3>
-                <p>
-                  Facilitate remote learning with virtual classrooms, offering
-                  real-time collaboration tools like live chat, virtual
-                  whiteboards, and breakout rooms, creating a seamless online
-                  education experience.
-                </p>
-                <ul class="solution-features">
-                  <li>
-                    <i class="fas fa-check-circle"></i> HD video conferencing
-                  </li>
-                  <li>
-                    <i class="fas fa-check-circle"></i> Interactive whiteboards
-                  </li>
-                  <li><i class="fas fa-check-circle"></i> Breakout rooms</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-6"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
-            <div class="solution-card">
-              <div class="solution-image">
-                <img
-                  src="../assests/images/education/es3.jpg"
-                  alt="Personalized Learning"
-                />
-                <div class="solution-overlay">
-                  <i class="fas fa-user-graduate"></i>
-                </div>
-              </div>
-              <div class="solution-content">
-                <h3>Personalized Learning Paths</h3>
-                <p>
-                  Customize learning experiences using AI algorithms to adapt to
-                  each student's strengths and weaknesses, setting learning
-                  goals and tracking progress for individualized education.
-                </p>
-                <ul class="solution-features">
-                  <li>
-                    <i class="fas fa-check-circle"></i> AI-driven adaptation
-                  </li>
-                  <li><i class="fas fa-check-circle"></i> Progress tracking</li>
-                  <li><i class="fas fa-check-circle"></i> Custom goals</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-6"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-          >
-            <div class="solution-card">
-              <div class="solution-image">
-                <img
-                  src="../assests/images/industries/es4.jpg"
-                  alt="E-Learning Platforms"
-                />
-                <div class="solution-overlay">
-                  <i class="fas fa-laptop-code"></i>
-                </div>
-              </div>
-              <div class="solution-content">
-                <h3>E-Learning Platforms</h3>
-                <p>
-                  Empower learners with comprehensive e-learning platforms that
-                  deliver educational content and assessments online, with
-                  accessibility features for various devices and screen readers.
-                </p>
-                <ul class="solution-features">
-                  <li>
-                    <i class="fas fa-check-circle"></i> Multi-device support
-                  </li>
-                  <li>
-                    <i class="fas fa-check-circle"></i> Accessibility features
-                  </li>
-                  <li>
-                    <i class="fas fa-check-circle"></i> Content management
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Benefits Section -->
@@ -548,55 +501,66 @@
     <!--Footer Section-->
     <section class="footer-section"></section>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Custom -->
     <script src="../assests/js/commons.js"></script>
-    <script src="../assests/js/script.js"></script>
-    <!-- Boostrap -->
-    <script src="../assests/vendors/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Swiper-->
-    <script src="../assests/vendors/swipper/package/swiper-bundle.min.js"></script>
-    <!-- Slick Carousel JS and jQuery -->
-    <script src="../assests/vendors/jquery/jquery-3.7.1.min.js"></script>
-    <script src="../assests/vendors/slickcarousel/slick/slick.js"></script>
-    <script src="../assests/vendors/slickcarousel/slick/slick.min.js"></script>
-    <script src="../node_modules/aos/dist/aos.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       AOS.init({
         once: true,
         offset: 100,
       });
 
-      // Counter Animation
-      const counters = document.querySelectorAll(".stat-number");
-      const speed = 200;
-
-      const animateCounter = (counter) => {
-        const target = +counter.getAttribute("data-count");
-        const count = +counter.innerText;
-        const increment = target / speed;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(() => animateCounter(counter), 1);
-        } else {
-          counter.innerText = target + (target === 98 ? "%" : "+");
-        }
-      };
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const counter = entry.target;
-              animateCounter(counter);
-              observer.unobserve(counter);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-
-      counters.forEach((counter) => observer.observe(counter));
+      $(document).ready(function(){
+            // Initialize Owl Carousel first
+            const carousel = $('.education-carousel').owlCarousel({
+                loop: true,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                smartSpeed: 800,
+                navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 15
+                    },
+                    768: {
+                        items: 2,
+                        margin: 20
+                    },
+                    1024: {
+                        items: 3,
+                        margin: 20
+                    }
+                },
+                onInitialized: function() {
+                    // Initialize AOS after carousel is ready
+                    setTimeout(function() {
+                        AOS.init({
+                            once: true,
+                            duration: 800,
+                            easing: 'ease-out',
+                            disable: false,
+                            startEvent: 'DOMContentLoaded',
+                            offset: 50,
+                            delay: 0
+                        });
+                    }, 100);
+                }
+            });
+            
+            // Refresh AOS when carousel changes slides
+            carousel.on('changed.owl.carousel', function(event) {
+                AOS.refresh();
+            });
+        });
     </script>
   </body>
 </html>

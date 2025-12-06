@@ -62,7 +62,6 @@
 $(document).ready(function(){
     $('.practices-carousel').owlCarousel({
         loop: true,
-        margin: 20,
         nav: true,
         dots: false,
         autoplay: true,
@@ -71,13 +70,16 @@ $(document).ready(function(){
         navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>'],
         responsive: {
             0: {
-                items: 1
+                items: 1,
+                margin: 5
             },
             768: {
-                items: 2
+                items: 2,
+                margin: 30
             },
             1024: {
-                items: 4
+                items: 4,
+                margin: 20
             }
         }
     });
@@ -190,6 +192,8 @@ $(document).ready(function(){
             // Add smooth transitions
             activeReview.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         });
+
+        
         
 document.addEventListener('DOMContentLoaded', function() {
     const readMoreWrapper = document.querySelector('.read-more-wrapper');

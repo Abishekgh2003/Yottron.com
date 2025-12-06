@@ -247,6 +247,203 @@
 
 
 
+        .education-solutions {
+            background: var(--bg-light);
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--paragraph-color);
+          
+        }
+
+        .solution-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            background: white;
+            height: 100%;
+        }
+
+        .solution-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .solution-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover .solution-image img {
+            transform: scale(1.05);
+        }
+
+        .solution-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-dark);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .solution-card:hover .solution-overlay {
+            opacity: 1;
+        }
+
+        .solution-overlay i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .solution-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .solution-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .solution-content p {
+            color: var(--paragraph-color);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .solution-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .solution-features li {
+            color: var(--paragraph-color);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .solution-features li:last-child {
+            margin-bottom: 0;
+        }
+
+        .solution-features i {
+            color: var(--success-color);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* Owl Carousel Custom Styling */
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white !important;
+            color: var(--primary-color) !important;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px !important;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            left: -30px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            right: -30px;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev:hover,
+        .owl-carousel .owl-nav button.owl-next:hover {
+            background: var(--primary-color) !important;
+            color: white !important;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .owl-carousel .owl-dots {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .owl-carousel .owl-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .owl-carousel .owl-dot.active {
+            background: var(--primary-color);
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .owl-carousel .owl-nav button.owl-prev,
+            .owl-carousel .owl-nav button.owl-next {
+                width: 40px;
+                height: 40px;
+                font-size: 18px !important;
+            }
+
+            .owl-carousel .owl-nav button.owl-prev {
+                left: 0;
+            }
+
+            .owl-carousel .owl-nav button.owl-next {
+                right: 0;
+            }
+        }
+
+
+
 /* Common Section Styles */
 
 .section-title {
@@ -484,122 +681,10 @@
   flex-shrink: 0;
 }
 
-/* Solutions Section */
-.education-solutions {
-  padding: 50px 0;
-  background: var(--secondary-color);
-}
 
-.solution-card {
-  background: var(--white-color);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 
-.solution-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(246, 112, 61, 0.2);
-}
 
-.solution-image {
-  position: relative;
-  overflow: hidden;
-  height: 280px;
-}
 
-.solution-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.solution-card:hover .solution-image img {
-  transform: scale(1.1);
-}
-
-.solution-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--gradient-overlay);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.solution-card:hover .solution-overlay {
-  opacity: 1;
-}
-
-.solution-overlay i {
-  font-size: 3rem;
-  color: var(--white-color);
-  animation: zoomIn 0.5s ease;
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-.solution-content {
-  padding: 2rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.solution-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--black-color);
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-}
-
-.solution-card:hover .solution-content h3 {
-  color: var(--primary-color);
-}
-
-.solution-content p {
-  color: var(--paragraph-color);
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
-}
-
-.solution-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.solution-features li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  color: var(--paragraph-color);
-  font-size: 0.95rem;
-}
-
-.solution-features i {
-  color: var(--primary-color);
-  font-size: 1rem;
-}
 
 /* Benefits Section */
 .education-benefits {
@@ -977,7 +1062,6 @@
 
   
   .education-overview,
-  .education-solutions,
   .education-benefits {
     padding: 60px 0;
   }

@@ -1,7 +1,6 @@
 $(document).ready(function(){
             $('.bigdata-carousel').owlCarousel({
                 loop: true,
-                margin: 15,
                 nav: true,
                 dots: false,
                 autoplay: true,
@@ -10,16 +9,20 @@ $(document).ready(function(){
                 navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
                 responsive: {
                     0: {
-                        items: 1
+                        items: 1,
+                        margin: 15
                     },
                     768: {
-                        items: 2
+                        items: 2,
+                        margin: 15
                     },
                     992: {
-                        items: 3
+                        items: 3,
+                        margin: -10
                     },
                     1207: {
-                        items: 4
+                        items: 4,
+                        margin: 15
                     }
                 }
             });

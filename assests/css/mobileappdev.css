@@ -349,7 +349,8 @@
     display: flex;
     flex-direction: column;
     /* gap: 1.5rem; */
-    /* max-width: 32rem; */
+    max-width: 32rem;
+    margin: 0 auto;
 }
 
 .slide-title {
@@ -390,28 +391,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     position: relative;
     z-index: 3;
 }
 
 .carousel-button {
-    background: none;
-    border: none;
+    background: var(--bg-light);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
     color: var(--text-dark);
-    font-size: 1.875rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: color 0.3s ease;
-    padding: 0.5rem;
 }
 
 .carousel-button:hover {
-    color: var(--primary-color);
+    color: var(--text-light);
+    background-color: var(--primary-color);
 }
 
 .carousel-button:disabled {
     color: var(--text-muted);
     cursor: not-allowed;
+    background-color: var(--bg-light);
 }
 
 .carousel-dots {
@@ -461,7 +466,7 @@
 
 .best-practices-section .body-text {
     font-size: var(--para-size);
-    line-height: 1.7;
+    line-height: 1.6;
     color: var(--text-light);
     opacity: 0.9;
 }
@@ -475,10 +480,9 @@
     background: var(--bg-gray);
     border: 1px solid var(--border-gray);
     border-radius: 8px;
-    padding: 2.5rem;
+    padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
-    margin: 0 10px;
 }
 
 .practice-card:hover {
@@ -651,13 +655,13 @@
 
 .features-expanded.expanded {
     opacity: 1;
-    max-height: 500px;
+    max-height: 1100px;
 }
 
 .features-grid-expanded {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
+    gap: 2rem;
     padding-top: 1.5rem;
 }
 
@@ -668,30 +672,23 @@
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.4s ease;
-}
-
-.feature-icon-expanded {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--hover-gray-bg);
 }
 
 .feature-title-expanded {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .feature-description-expanded {
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--text-gray);
+    color: var(--text-dark);
 }
 
 /* ========== PROCESS SECTION ========== */
@@ -846,11 +843,6 @@
     color: var(--text-light);
     padding: 4rem 0;
 }
-
-/* .reviews-section .section-content {
-    max-width: 1200px;
-    margin: 0 auto;
-} */
 
 .reviews-section .tagline {
     font-size: 0.9rem;
@@ -1174,6 +1166,10 @@
     .phone-mockup.front {
         transform: rotate(-10deg) translateX(30px) translateY(20px) scale(0.85);
     }
+
+    .carousel-section {
+        padding-top: 0;
+    }
     
     .carousel-container {
         flex-direction: column;
@@ -1193,7 +1189,7 @@
     }
     
     .slide-title {
-        font-size: 2.5rem;
+        font-size: var(--title-size-md);
     }
     
     .features-grid-expanded {
@@ -1256,7 +1252,6 @@
     }
     
     .overview-section,
-    .carousel-section,
     .industries-section,
     .best-practices-section,
     .why-choose-section,
@@ -1275,7 +1270,7 @@
     .process-section .heading-secondary,
     .technologies-section .heading-secondary,
     .cta-content .heading-secondary {
-        font-size: 2rem;
+        font-size: var(--title-size-md);
     }
     
     .overview-visual {
@@ -1402,15 +1397,31 @@
     }
 }
 @media (max-width: 540px) {
+    p {
+        line-height: 1.5;
+    }
     .hero-section {
         padding: 2rem 2rem;
     }
   .overview-section {
     padding: 1rem 0;
+    gap: 0;
+    .overview-content {
+        gap: 0;
+    }
+    .overview-visual {
+        height: 230px;
+    }
   }
   .carousel-section {
-    padding: 1rem 0;
+    padding:  0 0 1rem 0;
+    .carousel-fixed-image {
+        height: 200px;
+    }
   }
+  .carousel-container {
+        gap: 0rem;
+    }
   .best-practices-section {
     padding: 1rem 0;
   }
@@ -1419,13 +1430,40 @@
   }
   .process-section {
     padding: 1rem 0;
+    .process-timeline {
+        gap: 15px;
+        .process-step {
+            padding: 15px;
+        }
+        .step-number {
+            margin-bottom: 10px;
+        }
+        .step-title {
+            margin-bottom: 10px;
+        }
+    }
   }
   .reviews-section {
     padding: 1rem 0;
   }
+
   .cta-section {
     padding: 1rem 0;
   }
+  .cta-section .heading-secondary {
+    margin-bottom: 15px;
+  }
+  .cta-content .body-text {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .cta-section .cta-button {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 8px;
+  }
+
   .review-quote-large {
     display: none;
   }
@@ -1437,11 +1475,11 @@
   }
 
   .practices-carousel .owl-nav button.owl-prev {
-    left: 20px;
+    left: 0px;
   }
 
   .practices-carousel .owl-nav button.owl-next {
-      right: 20px;
+      right: 0px;
   }
   .review-nav {
         width: 30px;
@@ -1619,11 +1657,6 @@
     .review-ratings {
         flex-direction: column;
         gap: 1.5rem;
-    }
-    
-    .cta-content .cta-button {
-        padding: 0.875rem 1.75rem;
-        font-size: 0.95rem;
     }
     .process-timeline {
         grid-template-columns: 1fr;

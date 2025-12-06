@@ -8,11 +8,11 @@
     <link rel="icon" type="image/x-icon" sizes="48x48px" href="../assests/images/ys-favicon.png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../assests/css/main.css">
     <link rel="stylesheet" href="../assests/css/mobileappdev.css">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -75,9 +75,8 @@
 
         <section class="carousel-section">
             <div class="container">
-                <div class="carousel-container new-layout">
+                <div class="carousel-container">
                     <div class="carousel-fixed-image">
-                        
                         <img src="../assests/images/mobileAppDev/mobb.png" alt="Mobile development" class="slide-image">
                     </div>
                     
@@ -118,7 +117,6 @@
                                             <li><span class="list-item-title">Cross-Platform Apps:</span> Utilizing frameworks like Flutter and React Native to deliver consistent experiences across devices.</li>
                                             <li><span class="list-item-title">Hybrid Apps:</span> Combining native functionality with web development technologies to enable rapid development.</li>
                                             <li><span class="list-item-title">Progressive Web Apps (PWAs):</span> Web applications with native app-like features, accessible through browsers.</li>
-                                            <!-- <li><span class="list-item-title">Wearable & Embedded Software:</span> Developing applications for smartwatches, fitness trackers, and IoT devices.</li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -145,14 +143,21 @@
                             </div>
                         </div>
 
+                        
                         <div class="carousel-navigation">
-                            <button id="prev-btn" class="carousel-button">&lt;</button>
+                            <button id="prev-btn" class="carousel-button">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+
                             <div id="carousel-dots" class="carousel-dots">
                                 <span class="carousel-dot active"></span>
                                 <span class="carousel-dot"></span>
                                 <span class="carousel-dot"></span>
                             </div>
-                            <button id="next-btn" class="carousel-button">&gt;</button>
+
+                            <button id="next-btn" class="carousel-button">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -173,7 +178,7 @@
                             <i class="fa-solid fa-lock-open practice-icon"></i>
                         </div>
                         <h3 class="practice-title">Security</h3>
-                        <p class="practice-desc">Implementing robust security measures to protect user data and privacy.</p>
+                        <p class="practice-desc">Implementing the security measures to protect user data and privacy.</p>
                     </div>
                     <div class="practice-card">
                         <div class="practice-icon-wrapper">
@@ -201,7 +206,7 @@
                             <i class="fa-solid fa-arrow-up practice-icon"></i>
                         </div>
                         <h3 class="practice-title">Scalability</h3>
-                        <p class="practice-desc">Building applications that can seamlessly grow with your user base expansion.</p>
+                        <p class="practice-desc">Building applications that seamlessly grow with user base expansion.</p>
                     </div>
                     <div class="practice-card">
                         <div class="practice-icon-wrapper">
@@ -241,19 +246,13 @@
                     <div class="features-grid-expanded">
 
                         <div class="feature-column"> 
-                            <div class="feature-icon-expanded"> 
-                            <i class="fa-solid fa-cogs"></i> 
-                            </div> 
                             <h3 class="feature-title-expanded">Proven Methodologies</h3> 
                             <p class="feature-description-expanded">
-                            We use agile, cloud-native development with CI/CD pipelines, DevOps automation, and performance tuning to deliver faster releases, reduce downtime, and ensure smooth scalability across AWS, Azure, and Google Cloud.
+                            We use agile, cloud-native development with CI/CD pipelines, DevOps automation, and performance tuning to deliver faster, and smooth scalability across AWS, Azure, and Google Cloud.
                             </p>
                         </div>
 
                         <div class="feature-column">
-                            <div class="feature-icon-expanded"> 
-                                <i class="fa-solid fa-users"></i> 
-                            </div>
                             <h3 class="feature-title-expanded">Client-First Approach.</h3>
                             <p class="feature-description-expanded">
                             We begin every project with a deep understanding of your goals and user flows, designing cloud solutions that focus on usability, efficiency, and long-term value for your team and your customers.
@@ -261,18 +260,13 @@
                         </div>
 
                         <div class="feature-column"> 
-                            <div class="feature-icon-expanded"> 
-                                <i class="fa-solid fa-dollar-sign"></i> 
-                            </div> <h3 class="feature-title-expanded">Transparent Pricing Models.</h3>
+                            <h3 class="feature-title-expanded">Transparent Pricing Models.</h3>
                             <p class="feature-description-expanded">
                             We provide clear cost breakdowns, flexible engagement options, and cloud cost-optimization strategies so you always understand your budget and can confidently plan your development roadmap.
                             </p>
                         </div>
 
                         <div class="feature-column">
-                            <div class="feature-icon-expanded"> 
-                                <i class="fa-solid fa-industry"></i> 
-                            </div> 
                             <h3 class="feature-title-expanded">Cross-Industry Expertise.</h3>
                             <p class="feature-description-expanded">
                             We apply industry-specific insight and strong cloud engineering skills, using technologies like Kubernetes, APIs, microservices, and containerization to build secure, reliable, and scalable applications.
@@ -444,7 +438,7 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <span class="tagline orange-text">READY TO START?</span>
+                    <span class="tagline">READY TO START?</span>
                     <h2 class="heading-secondary">Let's Build Your <span class="orange-text">Mobile App</span> Together</h2>
                     <p class="body-text">Transform your ideas into powerful mobile applications that drive business growth and engage users worldwide.</p>
                     <a href="/contactus" class="cta-button">Get Started Today</a>
@@ -453,19 +447,15 @@
         </section>
 
         <section class="footer-section"></section>
-        
     </section>
-
+  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Custom  -->
     <script src="../assests/js/commons.js"></script>
     <script src="../assests/js/mobileappdev.js"></script>
-    <!-- Boostrap -->
-    <script src="../assests/vendors/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  </body>
 </html>
