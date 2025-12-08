@@ -213,11 +213,7 @@ textarea.form-control {
 
 /* Connect Section */
 .connect-section {
-    background-color: var(--text-light);
-    background-image: var(--bg-light);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: var(--bg-light);
 }
 
 .section-label {
@@ -238,7 +234,6 @@ textarea.form-control {
   justify-content: center;  
   align-items: center;      
   text-align: center;      
-  /* height: 20vh;           */
 }
 /* Contact Cards */
 .contact-card {
@@ -376,6 +371,20 @@ ease;
     .form-container {
         padding: 2rem 1.5rem;
     }
+    .connect-section {
+        .contact-image-wrapper {
+            height: 150px;
+        }
+        .card-overlay {
+            height: 150px ;
+        }
+        .contact-img {
+            height: 150px;
+        }
+        .card-content {
+            padding: 30px 10px 10px 10px;
+        }
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -432,6 +441,22 @@ ease;
         padding: 0.65rem 0.875rem;
         font-size: 0.95rem;
     }
+    .connect-section {
+        .section-label {
+            display: none;
+        }
+        h2 {
+            font-size: var(--title-size-sm);
+        }
+        .lead {
+            margin-bottom: 10px;
+        }
+        .contact-card {
+            h4 {
+                font-size: 1rem;
+            }
+        }
+    }
 
     .contact-image-wrapper {
         height: 180px;
@@ -439,6 +464,12 @@ ease;
 
     .card-content {
         padding: 2.5rem 1.5rem 1.5rem;
+    }
+    .map-section {
+        padding-bottom: 0;
+    }
+    .map-frame {
+        height: 200px;
     }
 }
 

@@ -57,7 +57,7 @@ html {
 body {
     padding-top: 60px; /* match header height */
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
     padding-top: 50px;
   }

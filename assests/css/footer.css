@@ -30,8 +30,8 @@
 }
 
 .footer-bot {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   animation: floatBot 3s ease-in-out infinite;
   transition: transform 0.4s ease;
 }
