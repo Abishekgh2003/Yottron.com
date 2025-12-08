@@ -276,7 +276,7 @@
             border-radius: 20px;
             box-shadow: var(--box-shadow);
             overflow: hidden;
-            border: 1px solid var(--primary-lite);
+            border:  1px solid var(--primary-color);
             padding: 25px;
         }
 
@@ -395,6 +395,7 @@
             background: white;
             border-radius: 15px;
             box-shadow: var(--box-shadow);
+            border:  1px solid var(--primary-color);
         }
 
         .innovation-item:nth-child(even) {

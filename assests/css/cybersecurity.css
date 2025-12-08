@@ -834,20 +834,15 @@
     .threat-icon {
       width: 50px;
       height: 50px;
-      background: linear-gradient(135deg, var(--primary-lite), #fff);
+      background: var(--primary-color);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      color: var(--primary-color);
+      color: var(--bg-light);
       transition: all 0.3s ease;
       flex-shrink: 0;
-    }
-
-    .threat-item:hover .threat-icon {
-      background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
-      color: var(--text-light);
     }
 
     .threat-desc {
@@ -1015,13 +1010,9 @@
       position: relative;
       overflow: hidden;
     }
-
-
-
     .section-header {
       text-align: center;
     }
-
     .section-header h2 {
       font-size: var(--title-size);
       font-weight: var(--title-weight);

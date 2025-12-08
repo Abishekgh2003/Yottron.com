@@ -558,6 +558,11 @@
   .tech-expertise h2 {
     font-size: var(--title-size-sm);
   }
+  .highlights {
+    img {
+        height: 200px;
+    }
+  }
   .higlights h3 {
     font-size: var(--title-size-sm);
     margin-bottom: 1rem;
@@ -684,8 +689,8 @@
 
         .timeline-badge {
             flex: 0 0 auto;
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             border: 5px solid;
             margin-left: 81px;
@@ -699,6 +704,27 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-color: var(--primary-color);
         }
+        
+            .timeline-badge::before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                left: -20px;
+                right: -20px;
+                bottom: -20px;
+                border: 2px dashed var(--primary-color);
+                border-radius: 50%;
+                animation: rotate 20s linear infinite;
+                }
+
+                @keyframes rotate {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+                }
 
         .timeline-badge i {
             font-size: 2.3rem;
@@ -805,6 +831,12 @@
                 border-width: 3px;
                 margin-left: 10px;
             }
+            
+            .timeline-badge::before {
+                top: -15px;
+                left: -15px;
+                right: -15px;
+                bottom: -15px;
 
             .timeline-badge i {
                 font-size: 1.5rem;
