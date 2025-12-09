@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 } 
             });
 
+            // Wait for next tick to ensure DOM is ready
+            return new Promise(resolve => setTimeout(resolve, 0));
+        })
+        .then(() => {
             // Initialize header functionality AFTER content is loaded
             initializeHeader();
             setActiveNavLink();
@@ -94,6 +98,15 @@ function setActiveNavLink() {
                 }
             }
         });
+    }
+    
+    // Check for Careers page
+    if (!foundActive && (currentPage === 'careers' || currentPath.includes('/careers'))) {
+        const careersLink = document.querySelector('a.nav-link[href*="careers"]');
+        if (careersLink) {
+            careersLink.classList.add('active');
+        }
+        foundActive = true;
     }
     
     // Check for About page
@@ -251,6 +264,8 @@ function initializeHeader() {
             document.querySelectorAll('.toggle-icon').forEach(icon => {
                 icon.classList.remove('rotated');
             });
+            // Enable body scroll
+            document.body.style.overflow = '';
             // Don't remove 'active' class from category-toggle as it indicates page selection
         }
     });

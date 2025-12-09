@@ -227,12 +227,13 @@
 
 .section-header {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .section-tag {
     display: inline-block;
     color: var(--text-dark);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2px;
     font-size: var(--para-size);
     text-transform: uppercase;
@@ -262,10 +263,10 @@
 
 .section-desc {
     font-size: var(--para-size);
-    color: var(--grey-color);
-    max-width: 750px;
+    color: var(--text-dark);
+    max-width: 850px;
     margin: 0 auto;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 /* Services Section - Job Listings */
