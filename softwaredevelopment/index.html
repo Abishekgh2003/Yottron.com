@@ -9,7 +9,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"> -->
+
+	  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     
     <link rel="stylesheet" href="../assests/css/main.css">
     <link rel="stylesheet" href="../assests/css/softwaredev.css">
@@ -189,83 +192,107 @@
           </div>
         </section>
 
-        <section class="higlights">
-          <div class="container" 
-          data-aos="fade-up"
-              data-aos-duration="2000">
+        <section class="highlights" data-aos="fade-in">
+        <div class="container" data-aos="fade-up" data-aos-duration="2000">
             <h3>Highlights</h3>
-            <div class="row highlights">
-              <div class="col-lg-6 highlignt-item">
-                <ul>
-                  <li 
-                  data-aos="fade-right"
-                      data-aos-duration="2000">
-                    <i class="fas fa-code"></i> Provides full-stack development with
-                    seamless front-end and back-end integration.
-                  </li>
-                  <li 
-                  data-aos="fade-left"
-                      data-aos-duration="2000">
-                    <i class="fas fa-laptop-code"></i> Delivers custom software
-                    solutions using a wide range of programming languages and
-                    frameworks.
-                  </li>
-                  <li 
-                  data-aos="fade-right"
-                      data-aos-duration="2000">
-                    <i class="fas fa-mobile-alt"></i> Specializes in web application
-                    development, mobile app development, and enterprise software
-                    solutions.
-                  </li>
-                </ul>
-              </div>
+            
+            <div class="owl-carousel owl-theme highlights-carousel">
+                
+                <!-- Highlight Card 1 - Content First -->
+                <div class="highlight-card content-first">
+                    <div class="highlight-image">
+                        <img src="../assests/images/software/sd3.jpg" alt="Software Development Highlight">
+                    </div>
+                    <div class="highlight-content">
+                        <ul>
+                            <li>
+                                <i class="fas fa-code"></i>
+                                <span>Provides full-stack development with seamless front-end and back-end integration.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Delivers custom software solutions using a wide range of programming languages and frameworks.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Specializes in web application development, mobile app development, and enterprise softwares.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-              <div class="col-lg-6 highlignt-item" 
-              data-aos="fade-up"
-                  data-aos-duration="2000">
-                <img
-                  src="../assests/images/software/sd3.jpg"
-                  alt="Software Development Highlight"
-                />
-              </div>
+                <!-- Highlight Card 2 - Image First -->
+                <div class="highlight-card image-first">
+                    <div class="highlight-image">
+                        <img src="../assests/images/software/sd4.jpg" alt="Delivery Excellence">
+                    </div>
+                    <div class="highlight-content">
+                        <ul>
+                            <li>
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Delivers not just software development services, strategic insights and proactive problem-solving.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Holistic approach combining technical expertise with a deep understanding of market dynamics.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-handshake"></i>
+                                <span>Build long-term relationships with clients, serving as a trusted advisor for their success.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Additional Highlight Card 3 - Content First -->
+                <div class="highlight-card content-first">
+                    <div class="highlight-image">
+                        <img src="../assests/images/software/sd2.jpg" alt="Innovation">
+                    </div>
+                    <div class="highlight-content">
+                        <ul>
+                            <li>
+                                <i class="fas fa-rocket"></i>
+                                <span>Accelerates digital transformation with cutting-edge technologies and innovative methodologies.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Ensures robust security and compliance across all software solutions and development processes.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-users-cog"></i>
+                                <span>Provides a dedicated development teams that seamlessly integrate with your organization.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Additional Highlight Card 4 - Image First -->
+                <div class="highlight-card image-first">
+                    <div class="highlight-image">
+                        <img src="../assests/images/software/sd1.jpg" alt="Quality Assurance">
+                    </div>
+                    <div class="highlight-content">
+                        <ul>
+                            <li>
+                                <i class="fas fa-check-double"></i>
+                                <span>Implements comprehensive quality assurance processes to deliver bug-free, high-performance software.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Follows agile methodologies for flexible, iterative development with continuous client collaboration.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Commits to on-time delivery while maintaining the highest standards of code quality and documentation.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
-            <div class="row highlights">
-              <div class="col-lg-6 highlignt-item" 
-              data-aos="fade-up"
-                  data-aos-duration="2000">
-                <img
-                  src="../assests/images/software/sd4.jpg"
-                  alt="delivery"
-                />
-              </div>
-              <div class="col-lg-6 highlignt-item">
-                <ul>
-                  <li 
-                  data-aos="fade-right"
-                      data-aos-duration="2000">
-                    <i class="fas fa-lightbulb"></i> Delivers more than just
-                    software development services, offering strategic insights and
-                    proactive problem-solving.
-                  </li>
-                  <li 
-                  data-aos="fade-left"
-                      data-aos-duration="2000">
-                    <i class="fas fa-chart-pie"></i> Employs a holistic approach
-                    combining technical expertise with a deep understanding of
-                    business needs and market dynamics.
-                  </li>
-                  <li 
-                  data-aos="fade-right"
-                      data-aos-duration="2000">
-                    <i class="fas fa-handshake"></i> Strives to build long-term
-                    relationships with clients, serving as a trusted advisor and
-                    catalyst for their success.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
+    </section>
 
         <!--software service as works with yottron-->
         <section class="service-timeline">
@@ -369,4 +396,56 @@
 	  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
     <!-- Custom  -->
     <script src="../assests/js/commons.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Initialize Owl Carousel first
+            const carousel = $('.highlights-carousel').owlCarousel({
+                loop: true,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 6000,
+                autoplayHoverPause: true,
+                smartSpeed: 800,
+                navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 15
+                    },
+                    768: {
+                        items: 2,
+                        margin: 20
+                    },
+                    1200: {
+                        items: 3,
+                        margin: 25
+                    }
+                },
+                onInitialized: function() {
+                    // Initialize AOS after carousel is ready
+                    setTimeout(function() {
+                        AOS.init({
+                            once: true,
+                            duration: 800,
+                            easing: 'ease-out',
+                            disable: false,
+                            startEvent: 'DOMContentLoaded',
+                            offset: 50,
+                            delay: 0
+                        });
+                    }, 100);
+                }
+            });
+            
+            // Refresh AOS when carousel changes slides
+            carousel.on('changed.owl.carousel', function(event) {
+                AOS.refresh();
+            });
+        });
+    </script>
 </html>

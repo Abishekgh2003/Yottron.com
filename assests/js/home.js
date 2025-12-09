@@ -298,7 +298,7 @@
                 content: 'Advanced AI technologies that automate workflows, enhance intelligence, and drive smarter business outcomes through innovation.',
                 image: '../assests/images/Home/t2.jpg',
                 leftTitle: 'AI-Powered Innovation.',
-                leftDescription: 'Transform your business with cutting-edge artificial intelligence solutions. From predictive analytics to natural language processing, we develop AI systems that automate processes, enhance decision-making, and unlock new opportunities for growth and innovation.',
+                leftDescription: 'Transform your business with artificial intelligence solutions. From predictive analytics to natural language processing, we develop AI systems that automate processes, enhance decision-making, and new opportunities for innovation.',
                 buttonLink: '/machinelearning-artificialintelligence'
             },
             {
@@ -306,7 +306,7 @@
                 content: 'Enterprise-grade cloud infrastructure engineered for scalability, security, and seamless high-performance operations.',
                 image: '../assests/images/Home/t3.jpg',
                 leftTitle: 'Cloud Excellence.',
-                leftDescription: 'Migrate, optimize, and scale with confidence using our robust cloud solutions. We design and manage secure infrastructures on AWS, Azure, and Google Cloud to ensure maximum uptime, flexibility, and operational efficiency across all platforms.',
+                leftDescription: 'Migrate, optimize, and scale with our robust cloud solutions. We design and manage secure infrastructures on AWS, Azure, and Google Cloud to ensure maximum uptime, flexibility, and efficiency across all cross platforms.',
                 buttonLink: '/cloudmigrations-cloudsolutions'
             },
             {
@@ -314,7 +314,7 @@
                 content: 'Smart connectivity that unites devices, data, and intelligence to enable real-time business insights and automation.',
                 image: '../assests/images/Home/t4.jpg',
                 leftTitle: 'Connected Intelligence.',
-                leftDescription: 'Bridge the physical and digital worlds with our IoT integration expertise. We connect devices, sensors, and systems to create intelligent ecosystems that deliver real-time data, automate workflows, and power informed business decisions.',
+                leftDescription: 'Bridge the physical and digital worlds with our IoT integration expertise. We connect devices, sensors, and systems to create intelligent and that deliver real-time data, automate workflows, and power informed business decisions.',
                 buttonLink: '/embeddedsoftware-IoT'
             },
             {
@@ -330,7 +330,7 @@
                 content: 'Robust digital protection strategies ensuring complete data privacy, threat resilience, and comprehensive security.',
                 image: '../assests/images/Home/bg9.jpg',
                 leftTitle: 'Security First.',
-                leftDescription: 'Safeguard your business with enterprise-grade cybersecurity services. We deliver proactive defense through penetration testing, threat detection, compliance audits, and incident response to ensure your data and systems stay completely secure.',
+                leftDescription: 'Safeguard your business with enterprise-grade cybersecurity services. We deliver proactive defense through penetration testing, threat detection, compliance audits, and incident response to ensure your data stay secure.',
                 buttonLink: '/cybersecurityservice'
             },
             {
@@ -338,7 +338,7 @@
                 content: 'Powerful analytics solutions that turn raw data into actionable business intelligence and strategic insights.',
                 image: '../assests/images/Home/t6.jpg',
                 leftTitle: 'Data-Driven Decisions.',
-                leftDescription: 'Unlock the full potential of your data with our advanced analytics solutions. We design intelligent dashboards and predictive models that help organizations identify trends, measure performance, and make data-backed strategic business decisions.',
+                leftDescription: 'Unlock full potential of data with our advanced analytics solutions. We design intelligent dashboards and predictive models that help organizations identify trends, measure performance, and make data-backed business decisions.',
                 buttonLink: '/datavisualization'
             },
             {
@@ -346,7 +346,7 @@
                 content: 'Modern, responsive, and performance-driven websites that elevate your digital presence and user engagement.',
                 image: '../assests/images/Home/t7.jpg',
                 leftTitle: 'Digital Experiences.',
-                leftDescription: 'Build visually stunning and technically sound web experiences with our full-stack expertise. We use frameworks like React, Vue, and Angular to craft responsive, fast-loading, and conversion-focused websites that drive measurable business results.',
+                leftDescription: 'Build stunning and technically sound web experiences with our expertise. We use frameworks like React, Vue, and Angular to craft responsive, fast-loading, and conversion-focused websites that drive measurable business results.',
                 buttonLink: '/softwaredevelopment'
             },
             {
@@ -354,7 +354,7 @@
                 content: 'Streamlined development and deployment pipelines that enhance speed, quality, reliability, and team collaboration.',
                 image: '../assests/images/Home/t8.jpg',
                 leftTitle: 'Accelerate Delivery.',
-                leftDescription: 'Accelerate your software lifecycle with our DevOps expertise. We implement CI/CD pipelines, containerization, infrastructure as code, and automated monitoring to improve collaboration, reduce downtime, and enable continuous rapid delivery.',
+                leftDescription: 'Accelerate your software lifecycle with our DevOps expertise. We implement CI/CD pipelines, containerization, infrastructure, and automated monitoring to improve collaboration, reduce downtime, and enable rapid delivery.',
                 buttonLink: '/bigdata'
             }
         ];

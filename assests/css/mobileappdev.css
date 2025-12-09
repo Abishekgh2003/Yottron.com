@@ -1409,7 +1409,7 @@
         min-height: 60vh;
     }
     .overview-section {
-        padding: 1rem 0;
+        padding: 1rem 0.4rem;
         gap: 0;
     }
     .overview-container {
