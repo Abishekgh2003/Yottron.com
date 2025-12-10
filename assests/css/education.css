@@ -1,22 +1,11 @@
 :root {
-  /* --primary-color: #f6703d;
-  --secondary-color: #f1f1f1;
-  --grey-color: grey; */
-  --white-color: var(--text-light);
-  /* --box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(140, 143, 145, 0.32) 0px 2px 16px 0px;
-  --primary-lite: blanchedalmond; */
-  --paragraph-color: #666;
-  --gradient-primary: linear-gradient(135deg, #f6703d 0%, #ff8c61 100%);
+  --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--hover-color) 100%);
   --gradient-overlay: linear-gradient(
     135deg,
-    rgba(246, 112, 61, 0.9) 0%,
-    rgba(26, 26, 26, 0.8) 100%
+    var(--primary-color) 0%,
+    var(--bg-dark) 100%
   );
 }
-
-
-
 
 /* ========== HERO SECTION ========== */
 .hero-section {
@@ -252,7 +241,7 @@
 
         .section-description {
             font-size: 1.1rem;
-            color: var(--paragraph-color);
+            color: var(--text-dark);
           
         }
 
@@ -263,7 +252,7 @@
             border: 1px solid var(--primary-color);
             display: flex;
             flex-direction: column;
-            background: white;
+            background: var(--bg-light);
             height: 100%;
         }
 
@@ -307,7 +296,7 @@
         }
 
         .solution-overlay i {
-            color: white;
+            color: var(--text-light);
             font-size: 24px;
         }
 
@@ -326,7 +315,7 @@
         }
 
         .solution-content p {
-            color: var(--paragraph-color);
+            color: var(--text-gray);
             line-height: 1.7;
             font-size: 0.95rem;
             margin-bottom: 10px;
@@ -337,11 +326,11 @@
             padding: 0;
             margin: 0;
             padding-top: 15px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid var(--text-muted);
         }
 
         .solution-features li {
-            color: var(--paragraph-color);
+            color: var(--text-dark);
             font-size: 0.9rem;
             margin-bottom: 10px;
             display: flex;
@@ -354,7 +343,7 @@
         }
 
         .solution-features i {
-            color: var(--success-color);
+            color: var(--primary-color);
             font-size: 0.85rem;
             flex-shrink: 0;
         }
@@ -365,7 +354,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: white !important;
+            background: var(--bg-light) !important;
             color: var(--primary-color) !important;
             width: 50px;
             height: 50px;
@@ -386,7 +375,7 @@
         .owl-carousel .owl-nav button.owl-prev:hover,
         .owl-carousel .owl-nav button.owl-next:hover {
             background: var(--primary-color) !important;
-            color: white !important;
+            color: var(--text-light) !important;
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -447,14 +436,14 @@
 
 .section-description {
   font-size: var(--para-size);
-  color: var(--paragraph-color);
+  color: var(--text-dark);
   line-height: 1.8;
 }
 
 /* Overview Section */
 .education-overview {
   padding: 50px 0;
-  background: var(--white-color);
+  background: var(--bg-light);
   position: relative;
   overflow: hidden;
 }
@@ -478,36 +467,8 @@
 .overview-image {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
 }
 
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.image-badge i {
-  font-size: 2rem;
-  color: var(--primary-color);
-  animation: rotateIcon 3s ease-in-out infinite;
-}
-
-@keyframes rotateIcon {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(15deg);
-  }
-}
 
 .image-badge strong {
   display: block;
@@ -517,7 +478,7 @@
 
 .image-badge span {
   display: block;
-  color: var(--paragraph-color);
+  color: var(--text-dark);
   font-size: 0.85rem;
 }
 
@@ -537,36 +498,37 @@
   padding: 0.75rem 1.5rem;
   background: var(--secondary-color);
   border-radius: 50px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
   cursor: pointer;
 }
 
 .mini-stat:hover {
   background: var(--gradient-primary);
-  color: var(--white-color);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(246, 112, 61, 0.3);
+  color: var(--text-light);
 }
 
 .mini-stat i {
   font-size: 1.2rem;
   color: var(--primary-color);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease !important;
 }
 
 .mini-stat:hover i {
-  color: var(--white-color);
+  color: var(--text-light);
 }
 
 .mini-stat span {
   font-weight: 600;
   font-size: 0.95rem;
 }
+.mini-stat:hover span {
+  color: var(--text-light);
+}
 
 /* Feature Cards Grid */
 .feature-card {
-  background: var(--white-color);
-  padding: 2.5rem;
+  background: var(--bg-light);
+  padding: 2rem;
   border-radius: 20px;
   height: 100%;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -579,7 +541,6 @@
 
 
 .feature-card:hover {
-  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(246, 112, 61, 0.15);
 }
 
@@ -610,7 +571,7 @@
 }
 
 .feature-card:hover .feature-card-icon i {
-  color: var(--white-color);
+  color: var(--text-light);
   transform: rotateY(360deg);
 }
 
@@ -641,7 +602,7 @@
 }
 
 .feature-card p {
-  color: var(--paragraph-color);
+  color: var(--text-dark);
   margin-bottom: 1.5rem;
   line-height: 1.7;
 }
@@ -657,7 +618,7 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
-  color: var(--paragraph-color);
+  color: var(--text-dark);
   font-size: 0.95rem;
   transition: all 0.3s ease;
 }
@@ -680,98 +641,23 @@
 /* Benefits Section */
 .education-benefits {
   padding: 50px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: var(--bg-light);
   position: relative;
   overflow: hidden;
 }
 
-.benefits-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.benefits-shape {
-  position: absolute;
-  background: rgba(246, 112, 61, 0.05);
-  border-radius: 50%;
-  animation: float-shape 20s ease-in-out infinite;
-}
-
-.shape-1 {
-  width: 400px;
-  height: 400px;
-  top: -100px;
-  right: -100px;
-  animation-delay: 0s;
-}
-
-.shape-2 {
-  width: 300px;
-  height: 300px;
-  bottom: -50px;
-  left: -50px;
-  animation-delay: 5s;
-}
-
-.shape-3 {
-  width: 250px;
-  height: 250px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation-delay: 10s;
-}
-
-@keyframes float-shape {
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  33% {
-    transform: translate(30px, -30px) rotate(120deg);
-  }
-  66% {
-    transform: translate(-20px, 20px) rotate(240deg);
-  }
-}
-
-.education-benefits .container {
-  position: relative;
-  z-index: 1;
-}
 
 .benefit-card {
-  background: var(--white-color);
-  padding: 2.5rem;
+  background: var(--bg-light);
+  padding: 2rem;
   border-radius: 20px;
   height: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   border: 2px solid transparent;
   cursor: pointer;
-}
-
-.benefit-number {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 3rem;
-  font-weight: 900;
-  color: rgba(246, 112, 61, 0.1);
-  transition: all 0.4s ease;
-  z-index: 0;
-}
-
-.benefit-card:hover .benefit-number {
-  color: rgba(246, 112, 61, 0.2);
-  transform: scale(1.2);
 }
 
 .benefit-card::before {
@@ -794,8 +680,7 @@
 }
 
 .benefit-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(246, 112, 61, 0.25);
+  transform: scale(1.02);
   border-color: var(--primary-color);
 }
 
@@ -835,7 +720,7 @@
 }
 
 .benefit-card:hover .benefit-icon {
-  background: var(--white-color);
+  background: var(--bg-light);
   transform: scale(1.1) rotate(360deg);
 }
 
@@ -862,11 +747,11 @@
 }
 
 .benefit-card:hover h3 {
-  color: var(--white-color);
+  color: var(--text-light);
 }
 
 .benefit-card p {
-  color: var(--paragraph-color);
+  color: var(--text-dark);
   margin: 0 0 1.5rem 0;
   line-height: 1.8;
   transition: all 0.4s ease;
@@ -875,7 +760,7 @@
 }
 
 .benefit-card:hover p {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--text-light);
 }
 
 .benefit-tags {
@@ -891,7 +776,7 @@
   display: inline-block;
   padding: 0.4rem 1rem;
   background: var(--secondary-color);
-  color: var(--paragraph-color);
+  color: var(--text-dark);
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 600;
@@ -900,7 +785,7 @@
 
 .benefit-card:hover .benefit-tags .tag {
   background: rgba(255, 255, 255, 0.2);
-  color: var(--white-color);
+  color: var(--text-light);
   transform: translateY(-2px);
 }
 
@@ -910,7 +795,7 @@
   right: 2rem;
   width: 50px;
   height: 50px;
-  background: var(--white-color);
+  background: var(--bg-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -933,7 +818,7 @@
 
 /* Testimonial Section */
 .testimonial-wrapper {
-  background: var(--white-color);
+  background: var(--bg-light);
   padding: 3rem;
   border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
@@ -975,7 +860,7 @@
 
 .testimonial-author span {
   font-size: 0.95rem;
-  color: var(--paragraph-color);
+  color: var(--text-dark);
 }
 
 .testimonial-rating {
@@ -1035,7 +920,7 @@
 
 .rating-subtext {
   font-size: 0.9rem;
-  color: var(--paragraph-color);
+  color: var(--text-dark);
   margin: 0;
 }
 
