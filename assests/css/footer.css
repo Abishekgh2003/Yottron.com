@@ -3,7 +3,7 @@
 .footer-modern {
   background-color: var(--black-color);
   color: var(--secondary-color);
-  padding: 60px 0 20px;
+  padding: 30px 0 20px;
   position: relative;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
@@ -41,8 +41,7 @@
   color: var(--secondary-color);
   font-size: var(--para-size);
   line-height: 1.7;
-  margin-top: 10px;
-  padding: 0 15px;
+  /* padding: 0 15px; */
 }
 
 .footer-social a {

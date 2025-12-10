@@ -53,18 +53,6 @@
                 salary: '4-7 LPA',
                 email: 'hr@yottron.com',
                 phone: '+91 98765 43210'
-            },
-            'sales-specialist-hms': {
-                title: 'Sales Specialist (Hospital Management Software)',
-                experience: '0-5 Years',
-                location: 'Hybrid',
-                type: 'Full Time',
-                language: 'Hindi & English',
-                salary: '6-12 LPA',
-                email: 'careers@shmsolutions.in',
-                phone: '+91 98765 43210',
-                closing: 'Dec 22, 2025',
-                posted: 'Nov 07, 2025'
             }
         };
 
@@ -83,14 +71,8 @@
 
 
 
-        // Method 1: Direct navigation to Google Form
+        // navigation to Google Form
         function openFutureOpportunitiesForm() {
-            // Replace this URL with your actual Google Form URL
             const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScwhIBEMiJg2SgHi2hKl8sOekz0zt7BaGDr4ppDC7WVHv7MlQ/viewform?usp=preview';
-            
-            // Option A: Open in new tab (recommended for better UX)
             window.open(googleFormUrl, '_blank');
-            
-            // Option B: Open in same tab
-            // window.location.href = googleFormUrl;
         }

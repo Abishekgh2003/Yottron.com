@@ -1,18 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     const urls = [
         "../commons/header.html",
-        "../commons/footer.html",
-        "../commons/getintouch.html",
-        "../commons/expertise.html"
+        "../commons/footer.html"
     ];
 
     Promise.all(urls.map(url => fetch(url).then(response => response.text())))
         .then(htmls => {
             const selectors = [
                 ".nav-container",
-                ".footer-section",
-                ".common-contactus",
-                ".expertise"
+                ".footer-section"
             ];
             selectors.forEach((selector, index) => {
                 const container = document.querySelector(selector);
