@@ -4,75 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application - Yottron</title>
+    <link rel="icon" type="image/x-icon" sizes="48x48px" href="../assests/images/ys-favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="../assests/css/main.css">
     <style>
+
         .job-detail-page {
-            padding: 20px 0;
-            /* min-height: 100vh; */
-            background: #f5f5f5;
-            display: none;
+            padding: 40px 0;
+            min-height: 100vh;
         }
 
-        .job-detail-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
         }
 
         .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .job-badge {
-            display: inline-block;
-            background: #c8f7c5;
-            color: #2d7a28;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .close-detail-btn {
-            background: #000;
-            color: #fff;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .close-detail-btn:hover {
-            background: #f5713d;
-            transform: rotate(90deg);
+            background: var(--bg-dark);
+            padding: 50px;
+            position: relative;
         }
 
         .job-detail-title {
             font-size: var(--title-size);
             font-weight: var(--title-weight);
-            color: var(--primary-color);
-            margin-bottom: 10px;
+            color: var(--text-light);
+            margin-bottom: 30px;
         }
 
-        .job-detail-experience {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 40px;
+        .job-meta-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+        }
+
+        .job-meta-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .job-meta-item strong {
+            color: var(--text-light);
+            margin-right: 5px;
+        }
+
+        .job-content-wrapper {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            padding: 50px;
+        }
+
+        .job-detail-left {
+            padding-right: 30px;
         }
 
         .job-detail-section {
@@ -80,234 +79,738 @@
         }
 
         .job-detail-section h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            color: #000;
-            margin-bottom: 15px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .job-detail-section h3 i {
+            font-size: 1.3rem;
         }
 
         .job-detail-section p {
             font-size: 1rem;
-            color: #555;
+            color: var(--text-dark);
             line-height: 1.8;
+            margin-bottom: 15px;
         }
 
         .job-detail-section ul {
             list-style: none;
-            padding: 0;
+            padding: 0 0 0 20px;
         }
 
         .job-detail-section ul li {
             font-size: 1rem;
-            color: #555;
+            color: var(--text-gray);
             line-height: 1.8;
-            padding-left: 25px;
+            padding-left: 30px;
             position: relative;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .job-detail-section ul li::before {
-            content: "•";
+            content: "●";
             position: absolute;
-            top: 0.2rem;
             left: 0;
-            color: #f5713d;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .job-detail-right {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .job-apply-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--primary-lite);
+        }
+
+        .job-apply-card h3 {
             font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .contact-section {
-            background: #f9f9f9;
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-section h3 {
-            font-size: 1.3rem;
             font-weight: 600;
-            color: #000;
-            margin-bottom: 20px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: var(--text-light);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
         }
 
         .contact-item {
-            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            /* border-bottom: 1px solid #e5e7eb; */
+        }
+
+        /* .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        } */
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-lite);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
             font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
-        .contact-item strong {
-            color: #000;
-            display: inline-block;
-            min-width: 100px;
+        .contact-value a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .contact-item a {
-            color: #f5713d;
+        .contact-value a:hover {
+            color: var(--primary-color);
+        }
+
+        .apply-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .apply-btn {
+            width: 100%;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             text-decoration: none;
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
+        .apply-btn-primary {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .apply-btn-primary:hover {
+            background: var(--hover-color);
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+            color: var(--text-light);
+        }
+
+        .apply-btn-secondary {
+            background: var(--text-light);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .apply-btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            transform: translateY(-2px);
+        }
+
+
+        @media (max-width: 1024px) {
+            .job-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .job-detail-right {
+                position: static;
+            }
+
+            .job-detail-left {
+                padding-right: 0;
+            }
         }
 
         @media (max-width: 768px) {
-            .job-detail-container {
-                padding: 25px;
+            .job-header {
+                padding: 35px 25px;
+            }
+
+            .job-content-wrapper {
+                padding: 30px 25px;
+                gap: 0;
             }
 
             .job-detail-title {
-                font-size: 2rem;
+                font-size: var(--title-size-md);
             }
 
+            .job-apply-card {
+                padding: 25px;
+            }
+
+            .job-meta-container {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .job-detail-page {
+                padding:  25px 0;
+                a {
+                    margin-bottom: 20px;
+                }
+            }
             .job-header {
-                flex-wrap: wrap;
+                padding: 25px 20px;
+            }
+
+            .job-content-wrapper {
+                padding: 25px 0;
+                gap: 10px;
+            }
+
+            .job-detail-title {
+                font-size: var(--title-size-sm);
+            }
+            .job-detail-section {
+                margin-bottom: 20px;
+                p {
+                    line-height: 1.5;
+                }
+            }
+            .job-detail-section ul {
+                padding-left: 10px;
+            }
+            .job-detail-section li {
+                line-height: 1.5 !important;
+                padding-left: 20px !important;
+            }
+            .job-detail-section h3 {
+                font-size: 1.2rem;
+            }
+            .job-apply-card h3 {
+                font-size: var(--title-size-sm);
+                margin-bottom: 0;
+            }
+            .contact-info {
+                margin: 0;
+            }
+            .apply-btn {
+                margin: 0 !important;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <section class="nav-container" id="sticky-header"></section>
-
-    <!-- Job Detail Page -->
-    <div id="jobDetailPage" class="job-detail-page">
+    <section class="nav-container"></section>
+    <div class="job-detail-page">
         <div class="container">
-            <div class="job-header">
-                <span class="job-badge">Full Time</span>
-                <button class="close-detail-btn" onclick="closeJobDetail()">✕</button>
-            </div>
+            <a href="/careers" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to All Jobs
+            </a>
 
-            <h1 class="job-detail-title" id="jobTitle">Senior .NET Developer</h1>
-            <p class="job-detail-experience" id="jobExperience">6+ Years</p>
-
-            <div class="job-detail-section">
-                <h3>Description</h3>
-                <p id="jobDescription">
-                    We are seeking an accomplished .NET Developer with over 6 years of hands-on experience...
-                </p>
-            </div>
-
-            <div class="job-detail-section">
-                <h3>Responsibilities</h3>
-                <ul id="jobResponsibilities">
-                    <li>Develop and maintain applications using .NET Core, C#, and .NET Framework.</li>
-                </ul>
-            </div>
-
-            <div class="contact-section">
-                <h3>Apply for this Position</h3>
-                <div class="contact-item">
-                    <strong>Email:</strong> <a href="mailto:careers@yottron.com">careers@yottron.com</a>
+            <div class="container fade-in">
+                <div class="job-header">
+                    <h1 class="job-detail-title" id="jobTitle">Senior .NET Developer</h1>
+                    
+                    <div class="job-meta-container">
+                        <div class="job-meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <strong>Experience:</strong>
+                                <span id="jobExperience">6+ Years</span>
+                            </div>
+                        </div>
+                        <div class="job-meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location:</strong>
+                                <span id="jobLocation">On-site</span>
+                            </div>
+                        </div>
+                        <div class="job-meta-item" id="languageItem" style="display: none;">
+                            <i class="fas fa-language"></i>
+                            <div>
+                                <strong>Language:</strong>
+                                <span id="jobLanguage">-</span>
+                            </div>
+                        </div>
+                        <div class="job-meta-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div>
+                                <strong>Salary:</strong>
+                                <span id="jobSalary">Competitive</span>
+                            </div>
+                        </div>
+                        <div class="job-meta-item">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <strong>Role:</strong>
+                                <span id="jobRole">Full Time</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <strong>WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank">+91 98765 43210</a>
+
+                <div class="job-content-wrapper">
+                    <div class="job-detail-left">
+                        <div class="job-detail-section">
+                            <h3>Job Description</h3>
+                            <p id="jobDescription">
+                                We are seeking an accomplished .NET Developer with over 6 years of hands-on experience...
+                            </p>
+                        </div>
+
+                        <div class="job-detail-section">
+                            <h3>Key Responsibilities</h3>
+                            <ul id="jobResponsibilities">
+                                <li>Develop and maintain applications using .NET Core, C#, and .NET Framework.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-detail-section">
+                            <h3>Required Qualifications</h3>
+                            <ul id="jobQualifications">
+                                <li>Bachelor's degree in Computer Science or related field</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-detail-section" id="preferredSection">
+                            <h3>Preferred Skills</h3>
+                            <ul id="jobPreferred">
+                                <li>Strong problem-solving abilities</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job-detail-right">
+                        <div class="job-apply-card">
+                            <h3>Apply for this Position</h3>
+
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <div class="contact-label">Email Application</div>
+                                        <div class="contact-value">
+                                            <!-- <a href="mailto:hr@yottron.com" id="jobEmail">hr@yottron.com</a> -->
+                                             hr@yottron.com
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <div class="contact-label">WhatsApp</div>
+                                        <div class="contact-value">
+                                            <!-- <a href="https://wa.me/919876543210" target="_blank" id="jobPhone">+91 98765 43210</a> -->
+                                             +91 98765 43210
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="contact-item" id="closingDateItem">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-calendar-times"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <div class="contact-label">Application Deadline</div>
+                                        <div class="contact-value" id="jobClosing">Dec 22, 2025</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="apply-buttons">
+                                <a href="mailto:hr@yottron.com" class="apply-btn apply-btn-primary" id="emailBtn">
+                                    <i class="fas fa-envelope-circle-check"></i> Send Email
+                                </a>
+                                <a href="https://wa.me/919876543210" target="_blank" class="apply-btn apply-btn-secondary" id="whatsappBtn">
+                                    <i class="fab fa-whatsapp"></i> Apply via WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer Section -->
     <section class="footer-section"></section>
+</body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="../assests/js/commons.js"></script>
     <script>
-        // Job Details Data
         const jobsData = {
-            'senior-net-developer': {
-                title: 'Senior .NET Developer',
-                experience: '6+ Years',
-                badge: 'Full Time',
-                description: 'We are seeking an accomplished .NET Developer with over 6 years of hands-on experience in building, optimizing, and maintaining enterprise-level applications using the Microsoft .NET ecosystem. The ideal candidate should demonstrate strong expertise in C#, ASP.NET, .NET Core, Web API, and SQL Server, along with sound knowledge of design patterns, architecture, and modern software development practices. You will be responsible for end-to-end development, ensuring application performance, scalability, and security while mentoring junior developers and contributing to technical decisions and best practices.',
+            'net-tech-lead': {
+                title: '.NET Technical Lead',
+                experience: '2+ Years',
+                location: 'On-site',
+                type: 'Full Time',
+                salary: '8-15 LPA',
+                email: 'hr@yottron.com',
+                phone: '+91 98765 43210',
+                closing: 'Dec 22, 2025',
+                description: 'We are seeking an experienced .NET Technical Lead to guide our development team in building enterprise-level applications. The ideal candidate will have strong expertise in C#, ASP.NET Core, microservices architecture, and cloud technologies, along with proven leadership skills.',
                 responsibilities: [
-                    'Develop and maintain applications using .NET Core, C#, and .NET Framework.',
-                    'Ensure code quality by following best practices, coding standards, and testing methodologies.',
-                    'Troubleshoot issues related to application performance, security, and scalability on Microsoft Azure platform.',
-                    'Collaborate with cross-functional teams to identify requirements and deliver high-quality software solutions.',
-                    'Design and implement RESTful APIs and Web Services.',
-                    'Mentor junior developers and provide technical guidance.',
-                    'Participate in code reviews and contribute to continuous improvement initiatives.'
+                    'Lead and mentor a team of .NET developers in building scalable applications',
+                    'Design and implement robust software architecture using .NET Core and microservices',
+                    'Conduct code reviews and ensure adherence to coding standards and best practices',
+                    'Collaborate with stakeholders to define technical requirements and project timelines',
+                    'Optimize application performance, security, and scalability',
+                    'Stay updated with latest .NET technologies and industry trends',
+                    'Troubleshoot complex technical issues and provide innovative solutions'
+                ],
+                qualifications: [
+                    'Bachelor\'s degree in Computer Science or related field',
+                    '2+ years of experience in .NET development with leadership experience',
+                    'Strong expertise in C#, ASP.NET Core, Web API, and Entity Framework',
+                    'Experience with microservices architecture and cloud platforms (Azure/AWS)',
+                    'Proficient in SQL Server and database optimization',
+                    'Excellent problem-solving and communication skills'
+                ],
+                preferred: [
+                    'Experience with CI/CD pipelines and DevOps practices',
+                    'Knowledge of containerization (Docker, Kubernetes)',
+                    'Understanding of Agile/Scrum methodologies',
+                    'Experience with front-end frameworks (Angular, React)'
                 ]
             },
-            'senior-tech-lead': {
-                title: 'Senior Tech Lead (Full Stack)',
-                experience: '5+ Years',
-                badge: 'Full Time',
-                description: 'We are looking for an experienced Senior Tech Lead with strong expertise in front-end, back-end, server, and database technologies. The ideal candidate should have AI knowledge and excellent team leadership skills to guide development teams in building scalable, high-performance applications.',
+            'business-analytics': {
+                title: 'Business Analytics',
+                experience: '2+ Years',
+                location: 'Hybrid',
+                type: 'Full Time',
+                salary: '6-12 LPA',
+                email: 'hr@yottron.com',
+                phone: '+91 98765 43210',
+                closing: 'Dec 22, 2025',
+                description: 'We are looking for a skilled Business Analyst to transform data into actionable insights. You will work closely with stakeholders to analyze business requirements, identify opportunities for improvement, and drive data-driven decision making across the organization.',
                 responsibilities: [
-                    'Lead and mentor a team of developers in full-stack development.',
-                    'Design and implement scalable architecture for web applications.',
-                    'Work with front-end technologies like React, Angular, or Vue.js.',
-                    'Develop back-end services using Node.js, Python, or Java.',
-                    'Manage database design and optimization (SQL and NoSQL).',
-                    'Integrate AI/ML capabilities into applications.',
-                    'Ensure code quality, performance, and security standards.',
-                    'Collaborate with stakeholders to define technical requirements.'
+                    'Gather and analyze business requirements from stakeholders',
+                    'Create detailed documentation including BRDs, FRDs, and user stories',
+                    'Conduct data analysis to identify trends, patterns, and insights',
+                    'Develop dashboards and reports using BI tools (Power BI, Tableau)',
+                    'Facilitate workshops and meetings with cross-functional teams',
+                    'Support UAT and ensure solutions meet business needs',
+                    'Monitor KPIs and provide recommendations for improvement'
+                ],
+                qualifications: [
+                    'Bachelor\'s degree in Business Administration, IT, or related field',
+                    '2+ years of experience in business analysis or related role',
+                    'Strong analytical and problem-solving skills',
+                    'Proficiency in data analysis tools (Excel, SQL, Power BI)',
+                    'Excellent communication and stakeholder management skills',
+                    'Understanding of software development lifecycle'
+                ],
+                preferred: [
+                    'MBA or relevant certification (CBAP, PMI-PBA)',
+                    'Experience with Agile methodologies',
+                    'Knowledge of statistical analysis and data modeling',
+                    'Familiarity with CRM or ERP systems'
                 ]
             },
-            'devops-engineer': {
-                title: 'DevOps Engineer',
-                experience: '1.5 - 2 Year',
-                badge: 'Full Time',
-                description: 'We are looking for a passionate and enthusiastic DevOps Engineer to join our growing team. This is an entry-level role, ideal for recent graduates or candidates with up to 1 year of experience who want to build their career in DevOps and cloud infrastructure.',
+            'net-developer': {
+                title: '.NET Developer Fresher',
+                experience: '0-1 Years',
+                location: 'On-site',
+                type: 'Full Time',
+                salary: '3-6 LPA',
+                email: 'hr@yottron.com',
+                phone: '+91 98765 43210',
+                closing: 'Dec 22, 2025',
+                description: 'Kickstart your career as a .NET Developer with Yottron. We are looking for fresh graduates or entry-level developers passionate about building web applications using Microsoft technologies. You will work in a supportive team environment with mentorship from senior developers.',
                 responsibilities: [
-                    'Set up and maintain CI/CD pipelines using Jenkins, GitLab CI, or similar tools.',
-                    'Manage cloud infrastructure on AWS, Azure, or Google Cloud Platform.',
-                    'Containerize applications using Docker and orchestrate with Kubernetes.',
-                    'Monitor system performance and troubleshoot issues.',
-                    'Automate deployment processes and infrastructure provisioning.',
-                    'Implement security best practices in DevOps workflows.',
-                    'Collaborate with development teams to improve deployment efficiency.'
+                    'Develop and maintain web applications using C# and ASP.NET',
+                    'Write clean, maintainable code following best practices',
+                    'Participate in code reviews and team discussions',
+                    'Debug and troubleshoot application issues',
+                    'Collaborate with team members to deliver quality software',
+                    'Learn and implement new technologies under guidance',
+                    'Document code and technical specifications'
+                ],
+                qualifications: [
+                    'Bachelor\'s degree in Computer Science, IT, or related field',
+                    '0-1 years of experience or strong academic projects in .NET',
+                    'Basic understanding of C#, ASP.NET, and object-oriented programming',
+                    'Knowledge of HTML, CSS, JavaScript, and SQL',
+                    'Strong willingness to learn and grow',
+                    'Good communication and teamwork skills'
+                ],
+                preferred: [
+                    'Exposure to .NET Core and Web API',
+                    'Understanding of version control systems (Git)',
+                    'Completed internship or training in .NET development',
+                    'Knowledge of front-end frameworks'
                 ]
             },
-            'flutter-developer': {
-                title: 'Flutter Developer',
-                experience: '2 years',
-                badge: 'Full Time',
-                description: 'We are looking for a passionate and skilled Flutter Developer to join our team and help build high-performance, beautiful, and scalable mobile applications for Android and iOS platforms using Flutter framework.',
+            'android-developer': {
+                title: 'Android Developer',
+                experience: '2+ Years',
+                location: 'On-site',
+                type: 'Full Time',
+                salary: '6-10 LPA',
+                email: 'hr@yottron.com',
+                phone: '+91 98765 43210',
+                closing: 'Dec 22, 2025',
+                description: 'We are seeking a skilled Android Developer to design and build advanced mobile applications. You will work on creating seamless user experiences, integrating with backend services, and ensuring high-quality, performant applications for Android platforms.',
                 responsibilities: [
-                    'Develop cross-platform mobile applications using Flutter and Dart.',
-                    'Build reusable widgets and maintain clean code architecture.',
-                    'Integrate RESTful APIs and third-party services.',
-                    'Optimize app performance and ensure smooth user experience.',
-                    'Collaborate with UI/UX designers to implement pixel-perfect designs.',
-                    'Debug and fix issues across different devices and screen sizes.',
-                    'Stay updated with the latest Flutter and mobile development trends.',
-                    'Participate in code reviews and contribute to team knowledge sharing.'
+                    'Develop native Android applications using Kotlin/Java',
+                    'Design and implement intuitive user interfaces following Material Design',
+                    'Integrate RESTful APIs and third-party services',
+                    'Optimize app performance, memory usage, and battery consumption',
+                    'Implement modern Android architecture components (MVVM, LiveData, Room)',
+                    'Write unit and instrumentation tests for quality assurance',
+                    'Collaborate with UI/UX designers and backend developers',
+                    'Debug and resolve issues across different Android versions and devices'
+                ],
+                qualifications: [
+                    'Bachelor\'s degree in Computer Science or related field',
+                    '2+ years of Android development experience',
+                    'Strong proficiency in Kotlin and/or Java',
+                    'Experience with Android SDK, Android Studio, and Gradle',
+                    'Knowledge of RESTful APIs, JSON, and networking libraries',
+                    'Understanding of Material Design principles',
+                    'Published apps on Google Play Store is a plus'
+                ],
+                preferred: [
+                    'Experience with Jetpack Compose',
+                    'Knowledge of RxJava, Coroutines, or reactive programming',
+                    'Familiarity with Firebase services',
+                    'Understanding of CI/CD for mobile applications',
+                    'Experience with app security and performance optimization'
                 ]
-            }
+            },
+            'firmware-engineer': {
+                title: 'Firmware Engineer',
+                experience: '4+ Years',
+                location: 'On-site',
+                type: 'Full Time',
+                salary: '8-14 LPA',
+                email: 'hr@yottron.com',
+                phone: '+91 98765 43210',
+                closing: 'Dec 22, 2025',
+                description: 'We are looking for an experienced Firmware Engineer to design, develop, and optimize embedded firmware for IoT devices and hardware systems. You will work on cutting-edge embedded systems, collaborating with hardware engineers to create robust, efficient solutions.',
+                responsibilities: [
+                    'Design and develop firmware for embedded systems and IoT devices',
+                    'Write efficient, low-level code in C/C++ for microcontrollers',
+                    'Integrate firmware with hardware components and sensors',
+                    'Implement communication protocols (UART, SPI, I2C, CAN, BLE, Wi-Fi)',
+                    'Work with RTOS (FreeRTOS, Zephyr) for real-time applications',
+                    'Debug firmware using oscilloscopes, logic analyzers, and debugging tools',
+                    'Optimize code for performance, memory, and power consumption',
+                    'Create technical documentation and firmware specifications'
+                ],
+                qualifications: [
+                    'Bachelor\'s degree in Electronics, Electrical Engineering, or Computer Science',
+                    '4+ years of embedded firmware development experience',
+                    'Strong proficiency in C/C++ programming for embedded systems',
+                    'Experience with microcontrollers (ARM Cortex, ESP32, STM32, etc.)',
+                    'Knowledge of RTOS and bare-metal programming',
+                    'Understanding of hardware-software integration',
+                    'Experience with debugging tools and test equipment'
+                ],
+                preferred: [
+                    'Experience with IoT platforms and cloud connectivity',
+                    'Knowledge of bootloaders and OTA updates',
+                    'Familiarity with PCB design and hardware schematics',
+                    'Experience with safety-critical or automotive systems',
+                    'Understanding of power management and battery optimization'
+                ]
+            },
+            'hr-executive': {
+                title: 'HR Executive',
+                experience: '2+ Years',
+                location: 'On-site',
+                type: 'Full Time',
+                salary: '4-7 LPA',
+                email: 'hr@yottron.com',
+                phone: '+91 98765 43210',
+                closing: 'Dec 22, 2025',
+                description: 'We are seeking a dynamic HR Executive to manage recruitment, employee relations, and HR operations. You will play a key role in attracting top talent, fostering a positive workplace culture, and supporting the overall HR functions of the organization.',
+                responsibilities: [
+                    'Manage end-to-end recruitment process including sourcing, screening, and interviewing',
+                    'Coordinate onboarding and induction programs for new hires',
+                    'Maintain employee records and HR databases',
+                    'Handle employee queries and grievances professionally',
+                    'Support performance management and appraisal processes',
+                    'Coordinate training and development initiatives',
+                    'Ensure compliance with labor laws and company policies',
+                    'Assist in payroll processing and attendance management'
+                ],
+                qualifications: [
+                    'Bachelor\'s degree in HR, Business Administration, or related field',
+                    '2+ years of experience in HR or talent acquisition',
+                    'Strong understanding of recruitment and selection processes',
+                    'Excellent communication and interpersonal skills',
+                    'Proficiency in MS Office and HR software',
+                    'Knowledge of labor laws and HR best practices'
+                ],
+                preferred: [
+                    'MBA in HR or relevant HR certification (SHRM, PHR)',
+                    'Experience in the IT/technology sector',
+                    'Knowledge of HRMS systems',
+                    'Strong organizational and multitasking abilities',
+                    'Experience with employee engagement initiatives'
+                ]
+            },
+        
         };
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const jobId = sessionStorage.getItem('selectedJobId');
+        // Get job ID from URL parameter or sessionStorage
+        function getJobId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobIdFromUrl = urlParams.get('job');
             
-            if (jobId && jobsData[jobId]) {
-                const job = jobsData[jobId];
-                
-                document.querySelector('.job-badge').textContent = job.badge;
-                document.getElementById('jobTitle').textContent = job.title;
-                document.getElementById('jobExperience').textContent = job.experience;
-                document.getElementById('jobDescription').textContent = job.description;
-                
-                const responsibilitiesList = document.getElementById('jobResponsibilities');
-                responsibilitiesList.innerHTML = '';
-                job.responsibilities.forEach(function(responsibility) {
-                    const li = document.createElement('li');
-                    li.textContent = responsibility;
-                    responsibilitiesList.appendChild(li);
-                });
-                
-                document.getElementById('jobDetailPage').style.display = 'block';
-            } else {
-                window.location.href = 'index.html';
+            if (jobIdFromUrl) {
+                return jobIdFromUrl;
             }
             
-            sessionStorage.removeItem('selectedJobId');
-        });
-
-        function closeJobDetail() {
-            window.location.href = 'index.html';
+            return sessionStorage.getItem('selectedJobId') || 'net-tech-lead';
         }
+
+        // Populate job details on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const jobId = getJobId();
+            const job = jobsData[jobId];
+
+            if (!job) {
+                console.error('Job not found');
+                return;
+            }
+
+            // Update page title
+            document.title = `${job.title} - Yottron`;
+
+            // Update header information
+            document.getElementById('jobTitle').textContent = job.title;
+            document.getElementById('jobExperience').textContent = job.experience;
+            document.getElementById('jobLocation').textContent = job.location;
+            document.getElementById('jobSalary').textContent = job.salary;
+            document.getElementById('jobRole').textContent = job.type;
+
+            // Show/hide language field
+            const languageItem = document.getElementById('languageItem');
+            if (job.language) {
+                languageItem.style.display = 'flex';
+                document.getElementById('jobLanguage').textContent = job.language;
+            } else {
+                languageItem.style.display = 'none';
+            }
+
+            // Update job description
+            document.getElementById('jobDescription').textContent = job.description;
+
+            // Update responsibilities
+            const responsibilitiesList = document.getElementById('jobResponsibilities');
+            responsibilitiesList.innerHTML = '';
+            job.responsibilities.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                responsibilitiesList.appendChild(li);
+            });
+
+            // Update qualifications
+            const qualificationsList = document.getElementById('jobQualifications');
+            qualificationsList.innerHTML = '';
+            job.qualifications.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                qualificationsList.appendChild(li);
+            });
+
+            // Update preferred skills
+            if (job.preferred && job.preferred.length > 0) {
+                const preferredList = document.getElementById('jobPreferred');
+                preferredList.innerHTML = '';
+                job.preferred.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    preferredList.appendChild(li);
+                });
+                document.getElementById('preferredSection').style.display = 'block';
+            } else {
+                document.getElementById('preferredSection').style.display = 'none';
+            }
+
+            // Update contact information
+            document.getElementById('jobEmail').textContent = job.email;
+            document.getElementById('jobEmail').href = `mailto:${job.email}`;
+            
+            const phoneFormatted = job.phone;
+            const phoneWhatsApp = job.phone.replace(/\s+/g, '');
+            document.getElementById('jobPhone').textContent = phoneFormatted;
+            document.getElementById('jobPhone').href = `https://wa.me/${phoneWhatsApp}`;
+
+            // Update closing date if available
+            if (job.closing) {
+                document.getElementById('jobClosing').textContent = job.closing;
+                document.getElementById('closingDateItem').style.display = 'flex';
+            } else {
+                document.getElementById('closingDateItem').style.display = 'none';
+            }
+
+            // Update apply buttons
+            document.getElementById('emailBtn').href = `mailto:${job.email}?subject=Application for ${job.title}`;
+            document.getElementById('whatsappBtn').href = `https://wa.me/${phoneWhatsApp}?text=Hi, I'm interested in applying for the ${job.title} position`;
+        });
     </script>
-</body>
+
 </html>

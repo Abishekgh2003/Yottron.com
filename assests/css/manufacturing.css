@@ -238,7 +238,7 @@
   font-size: 1.1rem;
   color: var(--paragraph-color);
   line-height: 1.8;
-  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .section-description.light {
@@ -302,7 +302,7 @@
 }
 
 .service-card {
-  background: white;
+  background: var(--bg-light);
   padding: 20px;
   border-radius: 20px;
   height: 100%;
@@ -314,9 +314,9 @@
 
 
 .service-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  background: rgba(246, 112, 61, 0.1);
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -327,14 +327,14 @@
 
 
 .service-icon-wrapper i {
-  font-size: 2.5rem;
-  color: var(--primary-color);
+  font-size: 1.5rem;
+  color: var(--text-light);
 }
 
 .service-card h3 {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin-bottom: 15px;
 }
 
@@ -366,7 +366,7 @@
 /* Technologies Section */
 .technologies-section {
   padding: 50px 0;
-  background: white;
+  background: var(--bg-light);
 }
 
 .tech-card {
@@ -382,7 +382,7 @@
 .tech-icon {
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--bg-icon);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -447,14 +447,14 @@
 }
 
 .benefit-icon i {
-  color: white;
+  color: var(--bg-light);
   font-size: 1.8rem;
 }
 
 .benefit-item h4 {
   font-size: 1.3rem;
   font-weight: 800;
-  color: white;
+  color: var(--bg-light);
   margin-bottom: 8px;
 }
 
@@ -473,21 +473,20 @@
 .counter-card {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  padding: 40px 25px;
+  padding: 25px 15px;
   border-radius: 20px;
   text-align: center;
   transition: all 0.4s ease;
-  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 
 .counter-card:hover .counter-icon i {
-  color: white;
+  color: var(--bg-light);
 }
 
 .counter-card:hover .counter-number,
 .counter-card:hover p {
-  color: white;
+  color: var(--bg-light);
 }
 
 .counter-icon {
@@ -504,14 +503,14 @@
 
 .counter-icon i {
   font-size: 1.8rem;
-  color: white;
+  color: var(--bg-light);
   transition: all 0.3s ease;
 }
 
 .counter-number {
   font-size: 2.5rem;
   font-weight: 900;
-  color: white;
+  color: var(--bg-light);
   margin-bottom: 5px;
   transition: all 0.3s ease;
 }
@@ -798,7 +797,7 @@
 }
 
 .btn-light-custom {
-  background: white;
+  background: var(--bg-light);
   color: var(--primary-color);
   padding: 15px 40px;
   border-radius: 50px;
@@ -814,18 +813,18 @@
 
 .btn-outline-light-custom {
   background: transparent;
-  color: white;
+  color: var(--bg-light);
   padding: 15px 40px;
   border-radius: 50px;
   font-weight: 700;
   text-decoration: none;
-  border: 2px solid white;
+  border: 2px solid var(--bg-light);
   transition: all 0.3s ease;
   display: inline-block;
 }
 
 .btn-outline-light-custom:hover {
-  background: white;
+  background: var(--bg-light);
   color: var(--primary-color);
   transform: translateY(-3px);
 }
