@@ -491,7 +491,7 @@
 
     .about-section {
       padding: 50px 0;
-      background-color: var(--background-color);
+      background-color: var(--bg-light);
     }
 
     .about-container {
@@ -1098,7 +1098,7 @@
 
 .trust-section {
     min-height: 60vh;
-    background: var(--background-color);
+    background: var(--bg-light);
     overflow-x: hidden;
 }
 .trust-header h2 {
@@ -1799,7 +1799,7 @@
 
     .future-section {
       padding:50px 0;
-      background-color: var(--background-color);
+      background-color: var(--bg-light);
     }
 
     .future-header {

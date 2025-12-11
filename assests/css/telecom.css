@@ -274,7 +274,7 @@
 }
 
 .solution-card {
-  background: var(--background-color);
+  background: var(--bg-light);
   border-radius: 16px;
   padding: 2rem;
   height: 100%;
