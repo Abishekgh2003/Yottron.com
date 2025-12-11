@@ -203,9 +203,6 @@
     }
 }
 
-
-
-
 /* Retail and ecom overview section style starts */
 .retail-ecom-overview-container {
     padding: 3rem 0;
@@ -322,7 +319,7 @@
     cursor: pointer;
     background: var(--primary-lite);
     border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--box-shadow);
 }
 
 .retail-ecom-expertise i {
@@ -398,7 +395,7 @@
 
 /* Why yottron for retail and ecom section style starts */
 .why-yottron-retail-ecom {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, #2a2a3e 100%);
+    background: var(--bg-dark);
     padding: 3rem 0;
     color: var(--bg-light);
 }
@@ -586,7 +583,7 @@
     right: -50%;
     width: 200%;
     height: 200%;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-gray);
     border-radius: 50%;
 }
 

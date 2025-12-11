@@ -573,9 +573,7 @@
     }
 }  
 
-/* Mobile Responsive - 431px and below */
 @media (max-width: 431px) {
-    /* Overview Section Mobile */
     .overview-section {
         padding: 20px 0;
     }
@@ -603,6 +601,7 @@
         line-height: 1.5 !important;
         text-align: justify;
     }
+    
 
     /* Expertise Section Mobile */
     .expertise-section {

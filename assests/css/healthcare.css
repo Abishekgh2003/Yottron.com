@@ -207,7 +207,7 @@
 
 /* Section 1: Healthcare Expertise - Light */
         .expertise-section {
-            background: white;
+            background: var(--bg-light);
             padding: 50px 0;
         }
 
@@ -225,7 +225,7 @@
 
         .section-header p {
             font-size: 1.1rem;
-            color: var(--paragraph-color);
+            color: var(--text-dark);
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.8;
@@ -248,7 +248,6 @@
         .expertise-content p {
             color: var(--text-dark);
             line-height: 1.6;
-            /* margin-bottom: 25px; */
             font-size: var(--para-size);
         }
 
@@ -308,7 +307,7 @@
 
         .section-header p {
             font-size: var(--para-size);
-            color: var(--paragraph-color);
+            color: var(--text-dark);
             max-width: 700px;
             margin: 0 auto;
         }
@@ -356,7 +355,7 @@
         }
 
         .solution-content p {
-            color: var(--paragraph-color);
+            color: var(--text-dark);
             line-height: 1.6;
             font-size: 0.95rem;
             flex-grow: 1;
@@ -371,7 +370,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: white !important;
+            background: var(--bg-light) !important;
             color: var(--primary-color) !important;
             width: 50px;
             height: 50px;
@@ -392,7 +391,7 @@
         .owl-carousel .owl-nav button.owl-prev:hover,
         .owl-carousel .owl-nav button.owl-next:hover {
             background: var(--primary-color) !important;
-            color: white !important;
+            color: var(--text-light) !important;
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -488,7 +487,7 @@
 
         .innovation-card .icon-wrapper i {
             font-size: 1.8rem;
-            color: white;
+            color: var(--text-light);
         }
 
         .innovation-card h4 {
@@ -506,7 +505,7 @@
 
         /* Section 4: Client Success - Light */
         .success-section {
-            background: linear-gradient(to bottom, white 0%, var(--bg-light) 100%);
+            background: var(--bg-light);
             padding: 50px 0;
             position: relative;
         }
@@ -616,7 +615,7 @@
         }
 
         .success-icon i {
-            color: white;
+            color: var(--text-light);
             font-size: 1.4rem;
         }
 
@@ -629,7 +628,7 @@
         }
 
         .success-item p {
-            color: var(--paragraph-color);
+            color: var(--text-dark);
             line-height: 1.8;
             font-size: var(--para-size);
         }
@@ -638,10 +637,10 @@
         /* Bottom Stats Bar */
         .why-choose-us {
             background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
-            padding: 50px;
+            padding: 30px;
             border-radius: 20px;
             text-align: center;
-            color: white;
+            color: var(--text-light);
             box-shadow: var(--box-shadow);
             transition: all var(--d) var(--e);
             margin-top: 40px;
@@ -660,7 +659,7 @@
         }
 
         .why-choose-us-stat {
-            border-right: 1px solid rgba(255,255,255,0.2);
+            border-right: 1px solid var(--text-muted);
             transition: all var(--d) var(--e);
         }
 
@@ -715,7 +714,7 @@
 
             .why-choose-us-stat {
                 border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
+                border-bottom: 1px solid var(--text-muted);
                 padding-bottom: 20px;
             }
 
@@ -825,7 +824,7 @@
         }
 
         .partnership-content p {
-            color: var(--paragraph-color);
+            color: var(--text-dark);
             font-size: var(--para-size);
             line-height: 1.8;
             margin-bottom: 30px;
@@ -839,7 +838,7 @@
         }
 
         .benefit-tag {
-            background: white;
+            background: var(--bg-light);
             padding: 15px 20px;
             border-radius: 10px;
             display: flex;
@@ -869,7 +868,7 @@
 
         .btn-primary {
             background: var(--primary-color);
-            color: white;
+            color: var(--text-light);
             padding: 15px 35px;
             text-decoration: none;
             border-radius: 8px;
@@ -903,7 +902,7 @@
 
         .btn-secondary:hover {
             background: var(--primary-color);
-            color: white;
+            color: var(--text-light);
         }
 
         .partnership-visual {

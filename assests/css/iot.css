@@ -280,7 +280,6 @@
 
             .content-wrapper {
                 padding: 0;
-                /* margin-top: 30px; */
             }
 
             .content-wrapper h2 {
@@ -323,7 +322,6 @@
 
         .feature-row {
             margin-bottom: 30px;
-            /* align-items: center; */
         }
 
         .feature-row:last-child {
@@ -331,27 +329,13 @@
         }
 
         .content-card {
-            /* background: var(--bg-light); */
             padding: 20px 40px;
             border-radius: 20px;
-            /* box-shadow: var(--hover-shadow); */
             transition: all 0.4s ease;
             height: 100%;
             position: relative;
             overflow: hidden;
         }
-
-        /* .content-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0.05;
-            height: 100%;
-            background: linear-gradient(180deg, var(--primary-color) 0%, var(--hover-color) 100%);
-            transition: width 0.4s ease;
-        } */
         .content-card h3 {
             font-size: var(--title-size-md);
             font-weight: var(--title-weight);
@@ -426,8 +410,6 @@
         .image-container img {
             width: 100%;
             height: 100%;
-            /* object-fit: contain; */
-            /* display: block; */
         }
 
         @media (max-width: 768px) {
@@ -508,7 +490,7 @@
             display: flex;
             align-items: center;
             padding: 15px 0;
-            color: #fff;
+            color: var(--text-light);
             font-size: 1.1rem;
             font-weight: 500;
             border-bottom: 1px solid var(--border-gray);
@@ -521,13 +503,13 @@
 
         .services-grid li:hover {
             padding-left: 15px;
-            color: #fff;
+            color: var(--text-light);
         }
 
         .services-grid li i {
             font-size: 1.5rem;
             margin-right: 20px;
-            color: #fff;
+            color: var(--text-light);
             background: var(--primary-color);
             width: 50px;
             height: 50px;
@@ -688,7 +670,6 @@
             color: var(--text-light);
             position: relative;
             z-index: 2;
-            box-shadow: 0 10px 30px rgba(245, 113, 61, 0.3);
             flex-shrink: 0;
         }
 

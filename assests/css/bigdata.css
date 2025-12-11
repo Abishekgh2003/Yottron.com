@@ -398,7 +398,6 @@
             border-radius: 15px;
             padding: 35px 30px;
             height: 100%;
-            /* box-shadow: var(--box-shadow); */
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -522,7 +521,7 @@
         }
         
         .bigdata-card:hover {
-            background: rgba(246, 112, 61, 0.1);
+            background: var(--hover-gray-bg);
             border-color: var(--primary-color);
         }
         
@@ -560,7 +559,6 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            /* background: var(--primary-color) !important; */
             color: var(--primary-color) !important;
             width: 50px;
             height: 50px;
@@ -573,7 +571,6 @@
         .owl-nav button:hover {
             background: none !important;
             color: var(--text-light) !important;
-            /* transform: translateX(-50%) !important; */
         }
         
         .owl-nav .owl-prev {
@@ -685,12 +682,10 @@
 }
 
 .why-choose-visual {
-    /* flex: 0 0 auto; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
-    /* max-width: 700px; */
     height: 330px;
 }
 

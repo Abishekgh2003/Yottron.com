@@ -22,7 +22,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+    background: linear-gradient(90deg, var(--bg-dark) 0%, transparent 100%);
     animation: overlayPulse 8s ease-in-out infinite;
 }
 
@@ -206,7 +206,7 @@
 
 
 
-/* section2 */
+/* machine-learning-intro-overview section */
 .machine-learning-intro-overview {
   padding: 50px 0;
   background: var(--bg-light);
@@ -247,21 +247,13 @@
   margin-bottom: 0;
   text-align: justify;
 }
-/* section3 */
+
+/* machine-learning-expertise section */
 .machine-learning-expertise {
   padding: 50px 0;
   background: var(--bg-light);
   position: relative;
   overflow: hidden;
-}
-
-
-.machine-learning-expertise .container {
-  /* max-width: 1400px;
-  margin: 0 auto; */
-  padding: 0 40px;
-  position: relative;
-  z-index: 1;
 }
 
 .machine-learning-expertise h2 {
@@ -287,26 +279,9 @@
   }
 }
 
-.machine-learning-expertise h2::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  width: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--hover-color));
-  border-radius: 2px;
-  animation: expandLine 1.5s ease-out 0.5s forwards;
-}
-
-@keyframes expandLine {
-  to {
-    width: 100%;
-  }
-}
 
 .machine-learning-expertise .row {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .machine-learning-expertise .row:last-child {
@@ -317,33 +292,17 @@
   background: var(--text-light);
   padding: 40px 35px;
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all var(--d) var(--e);
+  box-shadow: var(--box-shadow);
+  transition: all 2s var(--e) !important;
   height: 100%;
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
-.machine-learning-expertise .ml-expertise::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  /* background: linear-gradient(135deg, var(--primary-color), var(--hover-color), #667eea); */
-background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
-
-  border-radius: 20px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity var(--d) var(--e);
-}
 
 .machine-learning-expertise .ml-expertise:hover {
   transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(245, 113, 61, 0.25);
 }
 
 .machine-learning-expertise .ml-expertise:hover::after {
@@ -370,7 +329,7 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
   font-size: 2rem;
   color: var(--primary-color);
   transition: all var(--d) var(--e);
-  background: linear-gradient(135deg, rgba(245, 113, 61, 0.1), rgba(245, 113, 61, 0.2));
+  background: var(--primary-lite);
   padding: 15px;
   border-radius: 12px;
   display: flex;
@@ -382,10 +341,9 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
 
 .machine-learning-expertise .ml-expertise:hover h4 i {
   color: var(--hover-color);
-  transform: scale(1.2) rotate(360deg);
+  transform: scale(1.1) rotate(360deg);
   background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
   color: var(--text-light);
-  box-shadow: 0 8px 20px rgba(245, 113, 61, 0.4);
 }
 
 .machine-learning-expertise .ml-expertise p {
@@ -426,23 +384,10 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
   }
 }
 
-/* Pulse Effect on Load */
-.machine-learning-expertise .ml-expertise {
-  animation: pulse 2s ease-in-out 1s;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  }
-  50% {
-    box-shadow: 0 8px 30px rgba(245, 113, 61, 0.2);
-  }
-}
 /* section4 */
  .service-timeline {
             padding: 50px 20px;
-            background: linear-gradient(135deg, var(--bg-gray) 0%, var(--bg-orange) 100%);
+            background: var(--bg-light);
             min-height: 100vh;
         }
 
@@ -464,7 +409,7 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
             position: relative;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: var(--hover-shadow);
+            box-shadow: var(--box-shadow);
         }
 
         .carousel-wrapper {
@@ -505,7 +450,7 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
     width: 100%;
     height: 100%;
     border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: var(--box-shadow);
     object-fit: cover;
 }
 .slide-number {
@@ -572,7 +517,6 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
             display: flex;
             gap: 10px;
             justify-content: center;
-            margin-top: 30px;
             flex-wrap: wrap;
         }
 
@@ -580,7 +524,7 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: var(--border-gray);
+            background: var(--primary-lite);
             cursor: pointer;
             transition: all var(--d) var(--e);
             border: 2px solid transparent;
@@ -641,7 +585,7 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
   }
 }
 
-/* section2 */
+/* machine-learning-intro-overview section */
 
 @media (max-width: 992px) {
 
@@ -732,8 +676,7 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
     font-size: 0.9rem;
   }
 }
-/* section3 */
-/* Tablet - 992px and below */
+/* machine-learning-expertise section */
 @media (max-width: 992px) {
     .machine-learning-expertise {
         padding: 30px 0;
@@ -768,7 +711,6 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
     }
 }
 
-/* Mobile - 768px and below */
 @media (max-width: 768px) {
     .machine-learning-expertise {
         padding: 30px 0;
@@ -809,7 +751,6 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
     }
 }
 
-/* Small Mobile - 480px and below */
 @media (max-width: 480px) {
     .machine-learning-expertise {
         padding: 50px 0;
@@ -872,8 +813,7 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
         display: none;
     }
 }
-/* section4 */
-/* Tablet - 992px and below */
+/* service-timeline section */
 @media (max-width: 992px) {
     .service-timeline {
         padding: 30px 20px;
@@ -916,7 +856,6 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
     }
 }
 
-/* Mobile - 768px and below */
 @media (max-width: 768px) {
     .service-timeline {
         padding: 30px 15px;
@@ -984,7 +923,6 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
     }
 }
 
-/* Small Mobile - 480px and below */
 @media (max-width: 480px) {
     .service-timeline {
         padding: 40px 10px;
@@ -1069,8 +1007,6 @@ background: linear-gradient(135deg, #ffb366, #ff944d, #ff7f32);
         border-radius: 8px;
     }
 }
-
-
 
 /* ========== CTA SECTION ========== */
 .cta-section {

@@ -1,10 +1,8 @@
 /* Hero Section */
 .hero-section {
-    /* min-height: 100vh; */
     padding: 50px 0;
     position: relative;
     overflow: hidden;
-    /* background: var(--bg-dark); */
 }
 
 .hero-image-bg {
@@ -73,32 +71,28 @@
 /* Form Container */
 .form-container {
     background: linear-gradient(to right, var(--bg-dark) 0%, var(--bg-dark) 15%);
-    /* background-color: rgb(40, 46, 50); */
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    /* backdrop-filter: blur(25px); */
     position: relative;
     z-index: 2;
-    border: 2px solid rgba(245, 113, 61, 0.2);
+    border: 2px solid var(--border-gray);
 }
 
 .form-label {
     font-weight: 600;
     color: var(--text-light);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
     font-size:  var(--para-size);
-    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
 }
 
 .form-control,
 .form-select {
-    padding: 0.75rem 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.65rem 1rem;
+    border: 2px solid var(--border-gray);
     border-radius: 8px;
-    font-size:  var(--para-size);
+    font-size:  0.9rem;
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--bg-gray);
     color: var(--text-light);
     backdrop-filter: blur(10px);
 }
@@ -106,14 +100,14 @@
 .form-control:focus,
 .form-select:focus {
     border-color: var(--primary-color);
-    /* box-shadow: 0 0 0 0.2rem rgba(245, 113, 61, 0.3); */
     outline: none;
-    background-color: rgba(255, 255, 255, 0.2);
+    /* background-color: rgba(255, 255, 255, 0.2); */
     color: var(--text-light);
+    background-color: var(--bg-gray);
 }
 
 .form-control::placeholder {
-    color: var(--text-light);
+    color: var(--text-gray) !important;
 }
 
 .form-select option {
@@ -125,31 +119,11 @@ textarea.form-control {
     resize: vertical;
     min-height: 120px;
 }
-
-.form-check-input {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-top: 0.25rem;
-    border: 2px solid var(--secondary-color);
-    cursor: pointer;
-}
-
-.form-check-input:checked {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.form-check-input:focus {
-    /* box-shadow: 0 0 0 0.2rem rgba(245, 113, 61, 0.15); */
-    border-color: var(--primary-color);
-}
-
 .form-check-label {
     color: var(--text-light);
     font-size: var(--para-size);
     letter-spacing: 0.5px;
     cursor: pointer;
-    /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); */
 }
 /* Buttons */
 .btn-orange {
@@ -167,48 +141,9 @@ textarea.form-control {
     overflow: hidden;
 }
 
-.btn-orange::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.btn-orange:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
 .btn-orange:hover {
     background-color: var(--hover-color);
-    /* transform: translateY(-2px); */
-    /* box-shadow: var(--hover-shadow); */
     color: var(--text-light);
-}
-
-.btn-orange:active {
-    transform: translateY(0);
-}
-
-.btn-light {
-    background-color: var(--text-light);
-    color: var(--primary-color);
-    border: 2px solid var(--text-light);
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-light:hover {
-    background-color: transparent;
-    color: var(--text-light);
-    border-color: var(--text-light);
-    transform: translateY(-2px);
 }
 
 /* Connect Section */
@@ -238,7 +173,6 @@ textarea.form-control {
 /* Contact Cards */
 .contact-card {
     background: var(--text-light);
-    /* border: 1px solid var(--primary-color); */
     border-radius: 16px;
     box-shadow: var(--box-shadow);
     transition: all 0.4s ease;
@@ -267,7 +201,7 @@ textarea.form-control {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, transparent 0%, rgba(34, 34, 34, 0.5) 100%);
+    background: linear-gradient(180deg, transparent 0%, var(--bg-dark) 100%);
 }
 .icon-badge {
     position: absolute;

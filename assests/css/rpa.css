@@ -1,20 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-:root {
-  --primary-color: #f6703d;
-  --secondary-color: #f1f1f1;
-  --grey-color: grey;
-  --black-color: black;
-  --box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(140, 143, 145, 0.32) 0px 2px 16px 0px;
-  --primary-lite: blanchedalmond;
-}
-body {
-  font-family: "Lato", sans-serif;
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-}
 
 .rpa-intro {
   position: relative;
@@ -45,7 +29,7 @@ body {
     transition: background-color 0.3s ease;
   }
   .rpa-overlaytext a:hover {
-    background-color: var(--black-color);
+    background-color: var(var(--bg-dark));
   }
 }
 @media (max-width: 768px) {
@@ -75,7 +59,7 @@ body {
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.6;
-  color: #666666;
+  color: var(--text-gray)666;
   text-align: center;
 }
 .rpa-ourapproach .content p {
@@ -91,7 +75,7 @@ body {
   transition: background-color 0.3s ease;
 }
 .rpa-getstarted-button:hover {
-  background-color: var(--black-color);
+  background-color: var(var(--bg-dark));
   color: var(--secondary-color);
 }
 
@@ -113,7 +97,7 @@ body {
     transition: 0.3s ease-in-out;
   }
   .content-features-and-benefits .shadow-box:hover {
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    box-shadow: var(--box-shadow);
     border-radius: 25px;
     background-color: var(--primary-lite);
   }
@@ -143,7 +127,7 @@ body {
 
 /*why-yottron-rpa  section Style start */
 .why-yottron-rpa {
-    background-color: #f9f9f9;
+    background-color: var(--bg-light);
     padding: 50px 0;
     line-height: 2rem;
   }
@@ -174,7 +158,7 @@ body {
   
   .reason p {
     font-size: 16px;
-    color: #666;
+    color: var(--text-gray);
   }
 /*why-yottron-rpa  section Style end */
 
@@ -190,7 +174,7 @@ body {
   .faq-item h3 {
     font-weight: bold;
     font-size: 16px;
-    color: black;
+    color: var(--text-dark);
   }
   .faq-item i {
     color: var(--primary-color);
@@ -200,11 +184,11 @@ body {
     transition: 0.2s ease-in;
   }
   .faq-item i:hover{
-    background-color: var(--black-color);
+    background-color: var(var(--bg-dark));
     border-radius: 50%;
   }
   .faq-item {
-    color: #666;
+    color: var(--text-gray);
     padding: 0% 30%;
   }
   .faq-item .answer{
@@ -232,7 +216,7 @@ body {
     }
 
     .faq-item {
-        color: #666;
+        color: var(--text-gray);
         padding:0% !important;
     }
     .faq-item .answer p {
