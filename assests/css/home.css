@@ -1,3 +1,169 @@
+/* ============================================
+   CRITICAL PERFORMANCE OPTIMIZATIONS
+   Add these to your home.css file
+   ============================================ */
+
+/* Force GPU acceleration for animated elements only */
+.CarouselOne-wrapper,
+.Sculpting,
+.particle,
+.service-card:before,
+.service-card:after,
+.card-container,
+.feature-card,
+.carousel {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Optimize will-change for frequently animated elements */
+.CarouselOne-wrapper {
+    will-change: transform;
+}
+
+.Sculpting-title,
+.Sculpting-description,
+.cta-button {
+    will-change: transform, opacity;
+}
+
+/* Reduce particle animations - they're very heavy on CPU */
+.particle {
+    animation: floatComplex 8s ease-in-out infinite;
+}
+
+/* Remove particles completely on mobile for better performance */
+@media (max-width: 768px) {
+    .particle {
+        display: none !important;
+    }
+}
+
+/* Optimize scan line - only animate when slide is active */
+.Sculpting::after {
+    animation: none;
+}
+
+.Sculpting.active::after {
+    animation: scanLine 2s ease-out forwards;
+}
+
+/* Disable expensive hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .service-card:hover:before,
+    .service-card:hover:after,
+    .service-card:hover .content,
+    .feature-card:hover {
+        transform: none !important;
+    }
+}
+
+/* Optimize carousel transitions - slightly faster */
+.CarouselOne-wrapper.transitioning {
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Reduce blur effects - very expensive on performance */
+.card-container {
+    filter: blur(calc(var(--abs-offset) * 0.5rem));
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        filter: blur(calc(var(--abs-offset) * 0.3rem));
+    }
+}
+
+/* Disable background parallax on mobile */
+@media (max-width: 768px) {
+    .Sculpting {
+        background-attachment: scroll !important;
+    }
+}
+
+/* Optimize box shadows - simpler shadows perform better */
+.feature-card,
+.service-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+    box-shadow: 0 4px 16px rgba(245, 113, 61, 0.2);
+}
+
+/* Optimize trust section carousel */
+.card {
+    will-change: transform;
+}
+
+/* Temporarily disable animations during scroll */
+body.is-scrolling .particle,
+body.is-scrolling .CarouselOne-nav,
+body.is-scrolling .indicator {
+    animation-play-state: paused !important;
+}
+
+/* Optimize indicator animations */
+.indicator,
+.indicator::before {
+    will-change: width, background, opacity;
+}
+
+/* Reduce animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Optimize service card transforms */
+.service-card:before {
+    will-change: transform;
+}
+
+/* Optimize stats counter */
+.stat-number {
+    will-change: contents;
+}
+
+/* Improve rendering performance for cards */
+.service-card,
+.feature-card,
+.card-container {
+    contain: layout style paint;
+}
+
+/* Optimize floating button animations */
+.view-all-btn,
+.get-cta-button,
+.cta-button {
+    will-change: transform;
+}
+
+/* Optimize slide images - prevent repaints */
+.Sculpting.slide-1,
+.Sculpting.slide-2,
+.Sculpting.slide-3,
+.Sculpting.slide-4 {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Optimize carousel navigation */
+.CarouselOne-nav {
+    will-change: transform, background-color;
+}
+
+/* Optimize trust section cards */
+.trust-section .card {
+    contain: layout style;
+}
 
 
 /* CarouselOne-container start */
