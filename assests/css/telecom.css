@@ -56,8 +56,8 @@
 }
 
 .hero-content .heading-primary {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--text-light);
@@ -229,7 +229,7 @@
 .section-subtitle,
 .section-description {
   font-size: var(--para-size);
-  color: var(--paragraph-color);
+  color: var(--text-gray);
 }
 
 
@@ -308,7 +308,7 @@
 }
 
 .solution-card p {
-  color: var(--paragraph-color);
+  color: var(--text-gray);
   margin-bottom: 1.5rem;
   line-height: 1.7;
 }
@@ -453,7 +453,7 @@
 
         .section-subtitle {
             font-size: var(--para-size);
-            color: var(--paragraph-color);
+            color: var(--text-gray);
         }
 
         .ai-feature-card {
@@ -642,7 +642,7 @@
 }
 
 .benefit-card p {
-  color: var(--paragraph-color);
+  color: var(--text-gray);
   line-height: 1.7;
   margin: 0;
 }

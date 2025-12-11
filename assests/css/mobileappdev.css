@@ -58,8 +58,8 @@
         }
 
         .hero-content .heading-primary {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: var(--title-size);
+            font-weight: var(--title-weight);
             line-height: 1.1;
             margin-bottom: 1.5rem;
             color: var(--text-light);
@@ -1081,10 +1081,6 @@
     .hero-container {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-    
-    .hero-content .heading-primary {
-        font-size: 2.5rem;
     }
     
     .overview-container {

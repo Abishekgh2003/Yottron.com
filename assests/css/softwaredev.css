@@ -57,8 +57,8 @@
 }
 
 .hero-content .heading-primary {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--text-light);
@@ -509,7 +509,7 @@
         }
 
         .highlight-content ul li {
-            color: var(--paragraph-color);
+            color: var(--text-gray);
             font-size: 1rem;
             line-height: 1.8;
             margin-bottom: 20px;

@@ -1,6 +1,6 @@
 
 :root {
-  --paragraph-color: #666;
+  --text-gray: #666;
 }
 
 
@@ -51,8 +51,8 @@
 }
 
 .hero-content .heading-primary {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--text-light);
@@ -227,7 +227,7 @@
 
 .section-description {
   font-size: 1.1rem;
-  color: var(--paragraph-color);
+  color: var(--text-gray);
   line-height: 1.8;
   padding-bottom: 20px;
 }
@@ -281,7 +281,7 @@
 }
 
 .feature-content p {
-  color: var(--paragraph-color);
+  color: var(--text-gray);
   margin: 0;
   line-height: 1.6;
 }
@@ -330,7 +330,7 @@
 }
 
 .service-card p {
-  color: var(--paragraph-color);
+  color: var(--text-gray);
   line-height: 1.7;
   margin-bottom: 20px;
 }
@@ -342,7 +342,7 @@
 }
 
 .service-features li {
-  color: var(--paragraph-color);
+  color: var(--text-gray);
   padding: 8px 0;
   font-size: 0.95rem;
 }
