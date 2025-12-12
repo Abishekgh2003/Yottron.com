@@ -374,13 +374,32 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 540px) {
+            .hiring-section {
+                padding: 20px 0;
+            }
+            .section-header {
+                margin-bottom: 15px;
+            }
+            .section-tag {
+                font-weight: 700;
+                letter-spacing: 1.5px;
+                margin-bottom: 0.8rem !important;
+            }
             .section-title {
                 font-size: var(--title-size-sm);
+                margin-bottom: 15px;
             }
 
             .job-card-title {
-                font-size: 1.25rem;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+            .job-card-description {
+                margin-bottom: 10px;
+            }
+            .job-card-footer {
+                padding-top: 15px;
             }
         }
 
@@ -443,10 +462,6 @@
             .future-opportunities-title {
                 font-size: var(--title-size-md);
             }
-
-            .future-opportunities-section p {
-                font-size: var(--title-size-md);
-            }
             .future-apply-btn {
                 padding: 15px 35px;
                 font-size: 1rem;
@@ -456,5 +471,9 @@
         @media (max-width: 480px) {
             .future-opportunities-title {
                 font-size: var(--title-size-sm);
+                margin-bottom: 10px;
+            }
+            .future-opportunities-section p {
+                margin-bottom: 10px;
             }
         }

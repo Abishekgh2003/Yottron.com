@@ -170,14 +170,14 @@ body.is-scrolling .indicator {
         .CarouselOne-container {
             position: relative;
             width: 100%;
-            max-height: 70vh;
+            min-height: 70vh;
             overflow: hidden;
             perspective: 1000px;
         }
 
         .CarouselOne-wrapper {
             display: flex;
-            height: 100%;
+            min-height: 100%;
             transform-style: preserve-3d;
         }
 
@@ -187,7 +187,7 @@ body.is-scrolling .indicator {
 
         .Sculpting {
             position: relative;
-            height: 80vh;
+            min-height: 80vh;
             width: 100%;
             
             min-width: 100%;
@@ -227,7 +227,7 @@ body.is-scrolling .indicator {
             top: -100%;
             left: 0;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             background: linear-gradient(to bottom, 
                 transparent 0%, 
                 rgba(255, 255, 255, 0.1) 50%, 
@@ -325,18 +325,6 @@ body.is-scrolling .indicator {
             
         }
 
-        /* Parallax zoom and blur effect on background */
-        /* .Sculpting {
-            background-size: 120% 120% !important;
-            filter: blur(10px);
-            transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-
-        .Sculpting.active {
-            background-size: 100% 100% !important;
-            filter: blur(0px);
-        } */
-
         /* Enhanced floating particles with trails */
         @keyframes floatComplex {
             0%, 100% { 
@@ -415,7 +403,7 @@ body.is-scrolling .indicator {
             top: 50%;
             left: 50%;
             width: 0;
-            height: 0;
+            min-height: 0;
             background: var(--primary-color);
             border-radius: 50%;
             transform: translate(-50%, -50%);
@@ -430,7 +418,7 @@ body.is-scrolling .indicator {
 
         .indicator.active::before {
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             border-radius: 20px;
         }
 
@@ -441,7 +429,7 @@ body.is-scrolling .indicator {
             top: 50%;
             left: 50%;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             border: 2px solid var(--primary-color);
             border-radius: 50%;
             transform: translate(-50%, -50%);
@@ -455,12 +443,12 @@ body.is-scrolling .indicator {
         @keyframes ripple {
             0% {
                 width: 100%;
-                height: 100%;
+                min-height: 100%;
                 opacity: 1;
             }
             100% {
                 width: 200%;
-                height: 200%;
+                min-height: 200%;
                 opacity: 0;
             }
         }
@@ -527,7 +515,7 @@ body.is-scrolling .indicator {
                 min-height: 65vh;
             }
             .Sculpting {
-                max-height: 65vh;
+                min-height: 65vh;
             }
         }
 
@@ -536,7 +524,7 @@ body.is-scrolling .indicator {
                 min-height: 65vh;
             }
             .Sculpting {
-                max-height: 65vh;
+                min-height: 65vh;
             }
             .Sculpting-title {
                 font-size: 2.3rem;
@@ -553,18 +541,18 @@ body.is-scrolling .indicator {
             }
             
             .Sculpting {
-                max-height: 52vh;
+                min-height: 52vh;
             }
             
             .Sculpting-title {
                 font-size: 2rem;
             }
             .cta-button {
-            padding: 8px 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border-radius: 8px;
-        }
+                padding: 8px 15px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                border-radius: 8px;
+            }
         }
 
         @media (max-width: 785px) {
@@ -572,34 +560,31 @@ body.is-scrolling .indicator {
                 min-height: 50vh;
             }
             .Sculpting {
-                max-height: 50vh;
+                min-height: 50vh;
                 background-position: top center; 
                 background-size: contain;
-            
             }
-            
             .Sculpting.slide-1 {
-            background: 
-            linear-gradient(to right, var(--bg-dark) 0%, var(--bg-dark) 35%, transparent 100%), 
-                        url('../images/Home/sbm1.jpg');
-            
-        }
+                background: 
+                linear-gradient(to right, var(--bg-dark) 0%, var(--bg-dark) 35%, transparent 100%), 
+                            url('../images/Home/sbm1.jpg');
+            }
 
-        .Sculpting.slide-2 {
-            background: linear-gradient(to right, var(--bg-dark)  0%, var(--bg-dark) 35%, transparent 100%), 
-                        url('../images/Home/sbm2.jpg') ;
-        }
+            .Sculpting.slide-2 {
+                background: linear-gradient(to right, var(--bg-dark)  0%, var(--bg-dark) 35%, transparent 100%), 
+                            url('../images/Home/sbm2.jpg') ;
+            }
 
-        .Sculpting.slide-3 {
-            background: 
-            linear-gradient(to right, var(--bg-dark) 0%, var(--bg-dark) 35%, transparent 100%), 
-                        url('../images/Home/sbm3.jpg') ;
-        }
+            .Sculpting.slide-3 {
+                background: 
+                linear-gradient(to right, var(--bg-dark) 0%, var(--bg-dark) 35%, transparent 100%), 
+                            url('../images/Home/sbm3.jpg') ;
+            }
 
-        .Sculpting.slide-4 {
-            background: linear-gradient(to right, var(--bg-dark) 0%, var(--bg-dark) 35%, transparent 100%), 
-                        url('../images/Home/sbm4.jpg');
-        }
+            .Sculpting.slide-4 {
+                background: linear-gradient(to right, var(--bg-dark) 0%, var(--bg-dark) 35%, transparent 100%), 
+                            url('../images/Home/sbm4.jpg');
+            }
             .Sculpting-title {
                 font-size: var(--title-size-md);
                 letter-spacing: -0.1px;
@@ -611,7 +596,7 @@ body.is-scrolling .indicator {
                 min-height: 50vh;
             }
             .Sculpting {
-                max-height: 50vh;
+                min-height: 50vh;
             }
             .Sculpting-content {
                 width: 80vw;
@@ -623,7 +608,7 @@ body.is-scrolling .indicator {
                 width: 6px;
                 height: 6px;
             }
-                .indicator.active {
+            .indicator.active {
                 background: transparent;
                 width: 20px;
                 border-radius: 20px;
@@ -634,7 +619,7 @@ body.is-scrolling .indicator {
                 min-height: 50vh;
             }
             .Sculpting {
-                max-height: 50vh;
+                min-height: 50vh;
             }
             .Sculpting-title {
                 font-size: var(--title-size-sm);
@@ -645,7 +630,7 @@ body.is-scrolling .indicator {
                 min-height: 50vh;
             }
             .Sculpting {
-                max-height: 65vh;
+                min-height: 65vh;
             }
         }
 
@@ -656,7 +641,7 @@ body.is-scrolling .indicator {
 /* about-section start */
 
     .about-section {
-      padding: 50px 0;
+      padding: 50px 0 30px;
       background-color: var(--bg-light);
     }
 
@@ -726,9 +711,11 @@ body.is-scrolling .indicator {
       font-size: 0.9rem;
     }
     @media (max-width: 1650px) {
-        .about-section {
-            padding: 50px 5%;
-            }
+        /* .about-container {
+            max-width: 90vw;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        } */
         .about-content p:nth-of-type(2) {
             display: none;
         }
@@ -737,12 +724,13 @@ body.is-scrolling .indicator {
         }
 
     }
-    @media (max-width: 968px) {
-      .about-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+    @media (max-width: 1024px) {
 
+        .about-container {
+            max-width: 90vw;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
       .about-content {
         padding-right: 0;
       }
@@ -845,7 +833,7 @@ body.is-scrolling .indicator {
 .services-cards-container {
     position: sticky;
     top: 0;
-    height: 55vh;
+    min-height: 55vh;
     display: flex;
     align-items: center;
     overflow-x: auto;
@@ -857,6 +845,8 @@ body.is-scrolling .indicator {
     transform: translateZ(0);
     cursor: grab;
     user-select: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 .cards-container.active {
     cursor: grabbing;
@@ -869,11 +859,6 @@ body.is-scrolling .indicator {
 
 .services-cards-container::-webkit-scrollbar {
     display: none;
-}
-
-.services-cards-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 .cards-track {
@@ -892,7 +877,7 @@ body.is-scrolling .indicator {
     padding: 1rem;
     width: 350px;
     min-width: 350px;
-    height: 450px;
+    min-height: 450px;
     text-align: center;
     color: var(--text-light);
     border-radius: 16px;
@@ -910,7 +895,7 @@ body.is-scrolling .indicator {
     top: 0;
     left: 0;
     width: 100%;
-    height: 110%;
+    min-height: 110%;
     background-size: cover;
     background-position: center;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -962,7 +947,7 @@ body.is-scrolling .indicator {
     top: 0;
     left: 0;
     width: 100%;
-    height: 200%;
+    min-height: 200%;
     pointer-events: none;
     background-image: linear-gradient(
         to bottom,
@@ -1116,17 +1101,17 @@ body.is-scrolling .indicator {
         padding-top: 30px;
     }
     .services-cards-container {
-        height: 65vh;
+        min-height: 65vh;
     }
 }
 
 @media (max-width: 1300px) {
     .services-section {
-        min-height: 75vh;
+        min-height: 35vh;
         padding-top: 30px;
     }
     .services-cards-container {
-        height: 75vh;
+        min-height: 35vh;
     }
     .cards-track {
         gap: 15px;
@@ -1157,7 +1142,7 @@ body.is-scrolling .indicator {
         min-height: 40vh;
     }
     .services-cards-container {
-        height: 40vh;
+        min-height: 40vh;
     }
     .cards-track {
         gap: 15px;
@@ -1167,10 +1152,10 @@ body.is-scrolling .indicator {
 @media (max-width: 768px) {
     .services-section {
         min-height: 45vh;
-        padding: 0px 10px;
+        padding: 25px 10px;
     }
     .services-cards-container {
-        height: 45vh;
+        min-height: 45vh;
     }
     
     .cards-track {
@@ -1189,7 +1174,7 @@ body.is-scrolling .indicator {
     .service-card {
         width: 300px;
         min-width: 300px;
-        height: 410px;
+        min-height: 410px;
     }
 }
 
@@ -1199,7 +1184,7 @@ body.is-scrolling .indicator {
         padding: 20px 10px;
     }
     .services-cards-container {
-        height: 50vh;
+        min-height: 50vh;
     }
     .services-header h2 {
         font-size: var(--title-size-sm);
@@ -1208,7 +1193,7 @@ body.is-scrolling .indicator {
         line-height: 1.5;
     }
     .service-card {
-       height: 350px;
+       min-height: 350px;
    }
    .service-card .content {
        padding: 16px 0;
@@ -1227,7 +1212,6 @@ body.is-scrolling .indicator {
             padding: 5px 0 5px 15px ;
         }
     }
-    
     .cards-track {
         gap: 10px;
         padding: 0px 0px;
@@ -1240,20 +1224,20 @@ body.is-scrolling .indicator {
         padding: 20px 10px;
     }
     .services-cards-container {
-        height: 42vh;
+        min-height: 42vh;
     }
 }
 
 @media (max-width: 380px) {
     .services-cards-container {
-        height: 50vh;
+        min-height: 50vh;
     }
     .services-section {
         min-height: 50vh;
         padding: 20px 10px;
     }
     .service-card {
-        height: 300px;
+        min-height: 300px;
     }
 }
 
@@ -1263,7 +1247,7 @@ body.is-scrolling .indicator {
 /* trust-section start */
 
 .trust-section {
-    min-height: 60vh;
+    min-height: 35vh;
     background: var(--bg-light);
     overflow-x: hidden;
 }

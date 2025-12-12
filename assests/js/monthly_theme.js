@@ -99,7 +99,7 @@ const themes = [
     textGray: '#64748b',
     textMuted: '#94a3b8',
     bgIcon: 'rgba(255, 255, 255, 0.2)',
-    textDark: '#0c4a6e',
+    textDark: '#0a3e5cff',
     textLight: '#fff',
     bgDark: '#0c2f3bff',
     bgLight: '#f0f9ff',

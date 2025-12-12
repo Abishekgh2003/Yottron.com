@@ -364,7 +364,7 @@
         font-size: var(--title-size-md);
       }
       .dataoverview-section {
-        padding: 60px 0;
+        padding: 20px 0;
       }
     }
 
@@ -413,7 +413,7 @@
 
     .section-subtitle {
       font-size: 1.05rem;
-      color: #666;
+      color: var(--text-gray);
       line-height: 1.7;
     }
 
@@ -543,7 +543,19 @@
       }
       .tech-card {
         padding: 25px 20px;
+        .tech-icon-wrapper {
+          height: 50px;
+          width: 50px;
+          margin-bottom: 10px;
+          i {
+            font-size: 1.2rem;
+          }
+        }
+        h4 {
+          font-size: 1rem;
+        }
       }
+      
     }
 
 

@@ -275,7 +275,7 @@
               flex-direction: column;
           }
             .introsection-embedded-iot {
-                padding: 20px 0;
+                padding: 10px 0;
             }
 
             .content-wrapper {
@@ -285,6 +285,9 @@
             .content-wrapper h2 {
                 font-size: var(--title-size-md);
             }
+            .content-wrapper p {
+               margin-bottom: 10px;
+            }
 
             .image-wrapper {
                 margin-bottom: 0;
@@ -292,7 +295,7 @@
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 536px) {
             .content-wrapper h2 {
                 font-size: var(--title-size-sm);
             }
@@ -441,13 +444,25 @@
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 536px) {
+            .whychooseyottronsolutions-embeddedit > h2 {
+                font-size: var(--title-size-sm);
+            }
             .content-card {
                 padding: 10px;
+                h3 {
+                    margin-bottom: 10px;
+                    font-size: 1rem;
+                }
+                p {
+                    margin-bottom: 10px;
+                    line-height: 1.5;
+                }
             }
 
             .content-card ul li {
                 font-size: 0.9rem;
+                padding: 5px 0 5px 10px;
             }
 
             .image-container {
@@ -528,7 +543,7 @@
 
         @media (max-width: 768px) {
             .our-embedded-it-services h3 {
-                font-size: 2rem;
+                font-size: var(--title-size-md);
             }
 
             .services-grid {
@@ -546,6 +561,25 @@
                 font-size: 1.3rem;
             }
         }
+        @media (max-width: 530px) {
+            .our-embedded-it-services {
+                padding: 20px 0;
+            }
+            .our-embedded-it-services h3 {
+                font-size: var(--title-size-sm);
+                margin: 0;
+            }
+            .services-grid li {
+                font-size: 1rem;
+                padding: 10px 0;
+            }
+            .services-grid li i {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+
 
 
 

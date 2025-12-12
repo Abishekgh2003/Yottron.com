@@ -304,9 +304,13 @@
 
 /* ========== STATS SECTION ========== */
 .stats-section {
+    background-color: var(--bg-light);
+}
+.stats-section .container {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--hover-color) 100%);
     color: var(--text-light);
-    padding: 80px 20px;
+    padding: 50px 20px;
+    border-radius: 15px;
     position: relative;
     overflow: hidden;
 }
@@ -439,7 +443,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--secondary-color);
+    background: var(--text-gray);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -643,27 +647,26 @@
 
 .values-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
+    margin-bottom: 35px;
 }
 
 .value-item {
+    background: var(--bg-light);
+    padding: 15px 20px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 1rem;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
 }
 
-.value-check {
-    width: 30px;
-    height: 30px;
+.value-item i {
     color: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-weight: 700;
+    font-size: 1.3rem;
 }
 
 .team-image-wrapper {

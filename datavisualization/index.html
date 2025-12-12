@@ -10,6 +10,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+        <!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
         <link rel="stylesheet" href="../assests/css/main.css">
         <link rel="stylesheet" href="../assests/css/datavisulaization.css">
     </head>
@@ -205,19 +209,20 @@
             
         <section class="service-timeline">
             <div class="container">
-                <h3>Streamlining Data Warehousing and Data Lakes with Yottron Solutions</h3>
+                <div class="header-section">
+                    <h3>Streamlining Data Warehousing and Data Lakes with Yottron Solutions</h3>
+                    <p class="description">
+                        Transform your data infrastructure with our comprehensive approach. From initial analysis to advanced analytics, 
+                        we guide you through every step of building scalable, secure, and high-performance data solutions.
+                    </p>
+                </div>
+                
                 <div class="carousel-wrapper">
-                    <button class="carousel-arrow prev" id="prevBtn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
-
-                    <div class="timeline-carousel">
-                        <div class="timeline-container" id="timelineContainer">
-
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                    <div class="timeline-carousel owl-carousel owl-theme">
+                        
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">01</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-tasks"></i></div>
                                 </div>
@@ -225,11 +230,12 @@
                                     <h2>Requirement Analysis</h2>
                                     <p>We begin by examining your business goals, data sources, and technical constraints. This helps define the scope, expected outcomes, and foundation for your data warehouse or data lake initiative.</p>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">02</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-project-diagram"></i></div>
                                 </div>
@@ -237,11 +243,12 @@
                                     <h2>Data Integration Planning</h2>
                                     <p>Next, we create a clear integration strategy that outlines required tools, resources, timelines, and potential risks. This plan ensures all data movements and processes align with your project objectives.</p>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">03</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-table"></i></div>
                                 </div>
@@ -249,11 +256,12 @@
                                     <h2>Data Modeling</h2>
                                     <p>Here we design detailed data models, schemas, and flows that describe how information will be structured, stored, and accessed. This architecture guides the entire data warehousing and data lake framework.</p>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">04</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-upload"></i></div>
                                 </div>
@@ -261,11 +269,12 @@
                                     <h2>Data Ingestion</h2>
                                     <p>During this stage, pipelines and ingestion scripts are executed to bring data into the warehouse or lake. We ensure the data loads smoothly, consistently, and meets defined quality and performance expectations.</p>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">05</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-check-circle"></i></div>
                                 </div>
@@ -273,11 +282,12 @@
                                     <h2>Data Quality Assurance</h2>
                                     <p>Once data is ingested, it is validated, cleansed, and standardized. Quality checks and reports help identify and resolve issues, ensuring your data remains accurate, complete, and dependable.</p>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">06</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-flag-checkered"></i></div>
                                 </div>
@@ -285,11 +295,12 @@
                                     <h2>Project Closure</h2>
                                     <p>After all integrations and validations are completed, the project is reviewed and finalized. We confirm objectives were met, document key outcomes, and prepare the environment for ongoing use and analysis.</p>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">07</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-server"></i></div>
                                 </div>
@@ -297,23 +308,25 @@
                                     <h2>Deployment & Monitoring</h2>
                                     <p>The solution is deployed to production and continuous monitoring begins. System stability, performance, and usage patterns are tracked to maintain smooth and reliable long-term operation.</p>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">08</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-shield-alt"></i></div>
                                 </div>
                                 <div class="text-content">
-                                    <h2>Data Governance & Compliance</h2>
+                                    <h2>Data Governance</h2>
                                     <p>We establish governance policies, security controls, and compliance standards. This includes managing permissions, lineage, audits, and procedures to ensure responsible and compliant data usage.</p>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="timeline-slide">
-                                <div class="content-box">
+                        <div class="timeline-slide">
+                            <div class="content-box">
+                                <div class="step-number">09</div>
                                 <div class="image-container">
                                     <div class="placeholder-icon"><i class="fas fa-brain"></i></div>
                                 </div>
@@ -321,19 +334,11 @@
                                     <h2>Advanced Analytics Enablement</h2>
                                     <p>Finally, we integrate BI tools, dashboards, and machine-learning pipelines. This empowers teams to explore data, generate insights, and support strategic, data-driven decision-making.</p>
                                 </div>
-                                </div>
                             </div>
-
                         </div>
-                    </div>
 
-                    <button class="carousel-arrow next" id="nextBtn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
+                    </div>
                 </div>
-                <div class="carousel-dots" id="carouselDots"></div>
             </div>
         </section>
 
@@ -353,85 +358,46 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <script src="../assests/js/monthly_theme.js"></script>
     <script src="../assests/js/commons.js"></script>
 
-    <script >
-      AOS.init();
-        const container = document.getElementById('timelineContainer');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dotsContainer = document.getElementById('carouselDots');
-        const slides = document.querySelectorAll('.timeline-slide');
-        
-        let currentPage = 0;
-        let slidesPerView = 3;
-        
-        function updateSlidesPerView() {
-        if (window.innerWidth <= 768) {
-            slidesPerView = 1;
-        } else {
-            slidesPerView = 3;
-        }
-        }
+    <script>
+        $(document).ready(function(){
+            $('.timeline-carousel').owlCarousel({
+                loop: false,
+                margin: 30,
+                nav: true,
+                dots: false,
+                autoplay: false,
+                smartSpeed: 600,
+                autoplayHoverPause: true,
+                navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 20
+                    },
+                    768: {
+                        items: 2,
+                        margin: 25
+                    },
+                    1024: {
+                        items: 3,
+                        margin: 30
+                    }
+                }
+            });
 
-        function getTotalPages() {
-        return Math.ceil(slides.length / slidesPerView);
-        }
-
-        function createDots() {
-        dotsContainer.innerHTML = '';
-        const totalPages = getTotalPages();
-        for (let i = 0; i < totalPages; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToPage(i));
-            dotsContainer.appendChild(dot);
-        }
-        }
-
-        function updateCarousel() {
-        const slideWidth = slides[0].offsetWidth;
-        const gap = 25;
-        const totalWidth = (slideWidth + gap) * slidesPerView;
-        const offset = -currentPage * totalWidth;
-        
-        container.style.transform = `translateX(${offset}px)`;
-        
-        prevBtn.disabled = currentPage === 0;
-        nextBtn.disabled = currentPage >= getTotalPages() - 1;
-
-        document.querySelectorAll('.dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentPage);
+            // Add animation delay to slides
+            $('.timeline-slide').each(function(index) {
+                $(this).css('animation-delay', (index * 0.1) + 's');
+            });
         });
-        }
-
-        function goToPage(page) {
-        const totalPages = getTotalPages();
-        if (page >= 0 && page < totalPages) {
-            currentPage = page;
-            updateCarousel();
-        }
-        }
-
-        nextBtn.addEventListener('click', () => {
-        goToPage(currentPage + 1);
-        });
-
-        prevBtn.addEventListener('click', () => {
-        goToPage(currentPage - 1);
-        });
-
-        window.addEventListener('resize', () => {
-        updateSlidesPerView();
-        currentPage = 0;
-        createDots();
-        updateCarousel();
-        });
-
-        updateSlidesPerView();
-        createDots();
-        updateCarousel();
     </script>
 </html>

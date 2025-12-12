@@ -370,34 +370,40 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 540px) {
             .introsection-cloud {
-                padding: 50px 0;
+                padding: 20px 0;
             }
 
             .introsection-cloud h3 {
-                font-size: 1.5rem;
+                font-size: var(--title-size-sm);
+                margin: 0;
+                
             }
 
             .introsection-cloud p {
                 font-size: 0.9rem;
+                text-align: justify;
             }
 
             .whychooseyottronsolutions-cloud {
-                padding: 50px 0;
+                padding: 20px 0;
             }
 
             .whychooseyottronsolutions-cloud > h2 {
-                font-size: 1.5rem;
+                font-size: var(--title-size-sm);
+                margin: 0 0 20px 0;
             }
 
             .whychooseyottronsolutions-cloud .item h3 {
-                font-size: 1.1rem;
+                font-size: var(--title-size-sm);
+                margin: 0 0 10px 0;
             }
 
             .whychooseyottronsolutions-cloud .item p,
             .whychooseyottronsolutions-cloud .item ul li {
                 font-size: 0.9rem;
+                margin-bottom: 15px;
             }
         }
 
@@ -490,9 +496,20 @@
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 540px) {
+            .aws-solutions {
+                padding: 20px 0;
+            }
             .aws-solutions h3 {
-                font-size: 1.75rem;
+                font-size: var(--title-size-sm);
+                margin-bottom: 10px;
+            }
+            .aws-solutions p {
+                margin-bottom: 10px;
+            }
+            .solution-card h4 {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
             }
         }
 
@@ -525,7 +542,7 @@
 
         .service-item {
             position: relative;
-            background: rgba(255, 255, 255, 0.7);
+            background: var(--bg-light);
             backdrop-filter: blur(10px);
             border: 1px solid var(--primary-lite);
             border-radius: 20px;
@@ -597,11 +614,6 @@
             .section-title {
                 font-size: var(--title-size-md);
             }
-
-            .cta-title {
-                font-size: var(--title-size-md);
-            }
-
             .our-cloud-services {
                 padding: 2rem 0;
             }
@@ -612,8 +624,19 @@
         }
 
         @media (max-width: 576px) {
+            .our-cloud-services {
+                padding: 20px 0;
+            }
             .section-title {
                 font-size: var(--title-size-sm);
+                margin-bottom: 10px;
+            }
+            .section-description {
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+            .service-item h5 {
+                font-size: 0.9rem;
             }
         }
 
@@ -674,7 +697,7 @@
             position: relative;
             padding-left: 28px;
             margin-bottom: 12px;
-            color: #444;
+            color: var(--text-gray);
             line-height: 1.6;
             font-size: 1rem;
         }
@@ -690,10 +713,18 @@
 
         @media (max-width: 768px) {
             .devops-solutions {
-                padding: 80px 0;
+                padding: 20px 0;
             }
             .devops-solutions h3 {
-                font-size: 2rem;
+                font-size: var(--title-size-sm);
+                margin-bottom: 10px;
+            }
+            .service-card {
+                padding: 20px;
+                h4 {
+                    font-size: var(--title-size-sm);
+                    margin-bottom: 15px;
+                }
             }
         }
 

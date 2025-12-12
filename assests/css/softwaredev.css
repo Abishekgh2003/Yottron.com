@@ -395,11 +395,17 @@
                 min-height: 200px;
             }
             .top-tier-experts {
+                padding: 20px 0;
                 p {
                     line-height: 1.5;
+                    margin: 0;
                 }
                 h3 {
                     font-size: var(--title-size-sm);
+                    text-align: center;
+                }
+                .content-wrapper {
+                    margin-top: 20px;
                 }
             }
         }
@@ -635,10 +641,14 @@
 
 @media (max-width: 576px) {
   .tech-expertise {
-    padding: 1rem 0.5rem;
+    padding: 20px 0;
   }
   .tech-expertise h2 {
     font-size: var(--title-size-sm);
+    margin-bottom: 10px;
+  }
+  .tech-expertise p {
+    margin-bottom: 10px;
   }
   .expertise-item {
     padding: 1rem;
@@ -654,7 +664,7 @@
 
 
 /* service timeline section */
-.service-timeline {
+        .service-timeline {
             padding: 2rem 0;
             background-color: var(--bg-light);
             
@@ -686,7 +696,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background-color: var(--bg-light);
+            background-color: var(--grey-color);
         }
 
         .timeline-item {
@@ -761,8 +771,8 @@
             height: 80px;
             border-radius: 50%;
             border: 5px solid;
-            margin-left: 81px;
-            margin-right: 81px;
+            margin-left: 88px;
+            margin-right: 88px;
             background-color: var(--text-light);
             display: flex;
             align-items: center;
@@ -796,7 +806,7 @@
 
         .timeline-badge i {
             font-size: 2.3rem;
-            color: var(--text-gray);
+            color: var(--text-dark);
         }
 
         /* Connector dots */

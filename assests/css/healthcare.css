@@ -205,7 +205,7 @@
 }
 
 
-/* Section 1: Healthcare Expertise - Light */
+/*  Healthcare Expertise */
         .expertise-section {
             background: var(--bg-light);
             padding: 50px 0;
@@ -288,7 +288,7 @@
             box-shadow: var(--box-shadow);
         }
 
-        /* Section 2: Solutions Showcase - Light */
+        /* Solutions Showcase */
         .solutions-section {
             background: var(--bg-light);
             padding: 50px 0;
@@ -317,7 +317,6 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             border: 1px solid var(--primary-color);
-            /* margin: 15px 0; */
             display: flex;
             flex-direction: column;
             max-height: 350px;
@@ -393,27 +392,6 @@
             background: var(--primary-color) !important;
             color: var(--text-light) !important;
             transform: translateY(-50%) scale(1.1);
-        }
-
-        .owl-carousel .owl-dots {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .owl-carousel .owl-dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background: #cbd5e1;
-            border-radius: 50%;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-        }
-
-        .owl-carousel .owl-dot.active {
-            background: var(--primary-color);
-            width: 30px;
-            border-radius: 6px;
         }
 
         /* Responsive */
@@ -503,7 +481,7 @@
             line-height: 1.6;
         }
 
-        /* Section 4: Client Success - Light */
+        /* Client Success */
         .success-section {
             background: var(--bg-light);
             padding: 50px 0;
@@ -589,7 +567,6 @@
         .success-item {
             position: relative;
             padding-left: 80px;
-            /* border: 1px solid var(--primary-color); */
         }
 
 
@@ -802,7 +779,7 @@
 
 
 
-        /* Section 5: Partnership CTA - Light */
+        /*  Partnership Section*/
         .partnership-section {
             background: var(--bg-light);
             padding: 50px 0;
@@ -852,57 +829,6 @@
         .benefit-tag i {
             color: var(--primary-color);
             font-size: 1.3rem;
-        }
-
-        .benefit-tag span {
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: var(--text-light);
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            background: var(--hover-color);
-            transform: translateY(-2px);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: var(--text-light);
         }
 
         .partnership-visual {

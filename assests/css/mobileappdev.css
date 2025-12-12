@@ -207,23 +207,13 @@
   padding: 15px;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     max-width: 50%;
 }
 
 .overview-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-}
-
-.overview-content .tagline {
-    font-size: 0.9rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.5rem;
 }
 
 .overview-content .orange-text {
@@ -233,8 +223,7 @@
 .overview-content .heading-secondary {
     font-size: var(--title-size);
     font-weight: var(--title-weight);
-    line-height: 1.3;
-    margin-bottom: 1rem;
+    line-height: 1.2;
     color: var(--text-dark);
 }
 
@@ -242,7 +231,6 @@
     font-size: var(--para-size);
     line-height: 1.8;
     color: var(--text-dark);
-    margin-bottom: 0.5rem;
     color: var(--text-dark);
 }
 
@@ -1339,9 +1327,12 @@
 @media (max-width: 540px) {
     p {
         line-height: 1.5 !important;
+        font-size: 1rem !important;
+        margin-bottom: 10px !important;
     }
     .heading-secondary {
     margin-bottom: 10px !important;
+    text-align: center;
   }
     .hero-section {
         padding: 2rem 2rem;
@@ -1508,6 +1499,7 @@
     
     .slide-title {
         font-size: var(--title-size-sm);
+        text-align: center;
     }
     
     .slide-description,
