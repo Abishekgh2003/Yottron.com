@@ -321,7 +321,57 @@ window.goToSlide = function(index) {
     if (window.heroCarouselInstance) window.heroCarouselInstance.heroNavigateToSlide(index);
 };
 
+// ============================================
+// SERVICES SECTION (HORIZONTAL SCROLL)
+// ============================================
 
+class ServicesHorizontalSlider {
+    constructor() {
+        this.servicesSlider = document.querySelector('.services-cards-container');
+        this.servicesIsDown = false;
+        this.servicesStartX = 0;
+        this.servicesScrollLeft = 0;
+        
+        this.servicesInit();
+    }
+    
+    servicesInit() {
+        if (!this.servicesSlider) return;
+        
+        this.servicesSlider.addEventListener('mousedown', (e) => this.servicesHandleMouseDown(e));
+        this.servicesSlider.addEventListener('mouseleave', () => this.servicesHandleMouseLeave(), { passive: true });
+        this.servicesSlider.addEventListener('mouseup', () => this.servicesHandleMouseUp(), { passive: true });
+        this.servicesSlider.addEventListener('mousemove', (e) => this.servicesHandleMouseMove(e));
+    }
+    
+    servicesHandleMouseDown(e) {
+        this.servicesIsDown = true;
+        this.servicesSlider.classList.add('active');
+        this.servicesStartX = e.pageX - this.servicesSlider.offsetLeft;
+        this.servicesScrollLeft = this.servicesSlider.scrollLeft;
+        this.servicesSlider.style.cursor = 'grabbing';
+    }
+    
+    servicesHandleMouseLeave() {
+        this.servicesIsDown = false;
+        this.servicesSlider.classList.remove('active');
+        this.servicesSlider.style.cursor = 'grab';
+    }
+    
+    servicesHandleMouseUp() {
+        this.servicesIsDown = false;
+        this.servicesSlider.classList.remove('active');
+        this.servicesSlider.style.cursor = 'grab';
+    }
+    
+    servicesHandleMouseMove(e) {
+        if (!this.servicesIsDown) return;
+        e.preventDefault();
+        const servicesX = e.pageX - this.servicesSlider.offsetLeft;
+        const servicesWalk = (servicesX - this.servicesStartX) * 2;
+        this.servicesSlider.scrollLeft = this.servicesScrollLeft - servicesWalk;
+    }
+}
 
 // ============================================
 // TRUST SECTION CAROUSEL
