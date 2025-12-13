@@ -1,8 +1,8 @@
 // ============================================
-// UTILITY FUNCTIONS FOR PERFORMANCE
+// GLOBAL UTILITY FUNCTIONS
 // ============================================
 
-function throttle(func, delay) {
+function globalThrottle(func, delay) {
     let lastCall = 0;
     return function(...args) {
         const now = Date.now();
@@ -12,7 +12,7 @@ function throttle(func, delay) {
     };
 }
 
-function debounce(func, delay) {
+function globalDebounce(func, delay) {
     let timeoutId;
     return function(...args) {
         clearTimeout(timeoutId);
@@ -21,76 +21,76 @@ function debounce(func, delay) {
 }
 
 // ============================================
-// SCROLL PERFORMANCE OPTIMIZATION
+// GLOBAL SCROLL PERFORMANCE OPTIMIZATION
 // ============================================
 
-let scrollTimeout;
-let ticking = false;
+let globalScrollTimeout;
+let globalScrollTicking = false;
 
 window.addEventListener('scroll', () => {
-    if (!ticking) {
+    if (!globalScrollTicking) {
         window.requestAnimationFrame(() => {
             document.body.classList.add('is-scrolling');
-            ticking = false;
+            globalScrollTicking = false;
         });
-        ticking = true;
+        globalScrollTicking = true;
     }
     
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
+    clearTimeout(globalScrollTimeout);
+    globalScrollTimeout = setTimeout(() => {
         document.body.classList.remove('is-scrolling');
     }, 150);
 }, { passive: true });
 
 // ============================================
-// CAROUSEL ONE (MAIN SLIDER)
+// CAROUSEL ONE (MAIN HERO SLIDER)
 // ============================================
 
-class CarouselOne {
+class HeroCarouselController {
     constructor() {
-        this.currentSlide = 0;
-        this.totalSlides = 4;
-        this.wrapper = document.getElementById('CarouselOneWrapper');
-        this.container = document.querySelector('.CarouselOne-container');
-        this.indicators = document.querySelectorAll('.indicator');
-        this.slides = document.querySelectorAll('.Sculpting');
-        this.autoSlideInterval = null;
-        this.isTransitioning = false;
-        this.slideDirection = 'next';
-        this.isReversing = false;
+        this.heroCurrentSlide = 0;
+        this.heroTotalSlides = 4;
+        this.heroWrapper = document.getElementById('CarouselOneWrapper');
+        this.heroContainer = document.querySelector('.CarouselOne-container');
+        this.heroIndicators = document.querySelectorAll('.indicator');
+        this.heroSlides = document.querySelectorAll('.Sculpting');
+        this.heroAutoSlideInterval = null;
+        this.heroIsTransitioning = false;
+        this.heroSlideDirection = 'next';
+        this.heroIsReversing = false;
         
-        this.init();
+        this.heroInit();
     }
     
-    init() {
-        if (!this.wrapper || !this.container) return;
+    heroInit() {
+        if (!this.heroWrapper || !this.heroContainer) return;
         
         // Set first slide as active
-        this.slides[0].classList.add('active');
+        this.heroSlides[0].classList.add('active');
         
         // Setup event listeners
-        this.setupEventListeners();
+        this.heroSetupEventListeners();
         
         // Start auto-slide
-        this.startAutoSlide();
+        this.heroStartAutoSlide();
     }
     
-    updateCarousel(animate = true) {
+    heroUpdateCarousel(animate = true) {
         if (animate) {
-            this.wrapper.classList.add('transitioning');
-            this.wrapper.classList.add(this.slideDirection === 'next' ? 'slide-left' : 'slide-right');
+            this.heroWrapper.classList.add('transitioning');
+            this.heroWrapper.classList.add(this.heroSlideDirection === 'next' ? 'slide-left' : 'slide-right');
         } else {
-            this.wrapper.classList.remove('transitioning', 'slide-left', 'slide-right');
+            this.heroWrapper.classList.remove('transitioning', 'slide-left', 'slide-right');
         }
         
         // Update transform
-        this.wrapper.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+        this.heroWrapper.style.transform = `translateX(-${this.heroCurrentSlide * 100}%)`;
         
         // Batch DOM updates using requestAnimationFrame
         requestAnimationFrame(() => {
             // Update indicators
-            this.indicators.forEach((indicator, index) => {
-                const isActive = index === this.currentSlide;
+            this.heroIndicators.forEach((indicator, index) => {
+                const isActive = index === this.heroCurrentSlide;
                 indicator.classList.toggle('active', isActive);
                 
                 if (isActive) {
@@ -100,198 +100,198 @@ class CarouselOne {
             });
             
             // Update slides
-            this.slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === this.currentSlide);
+            this.heroSlides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === this.heroCurrentSlide);
             });
         });
         
         // Cleanup transition classes
         if (animate) {
             setTimeout(() => {
-                this.wrapper.classList.remove('slide-left', 'slide-right');
+                this.heroWrapper.classList.remove('slide-left', 'slide-right');
             }, 900);
         }
     }
     
-    autoAdvanceSlide() {
-        if (this.isTransitioning) return;
+    heroAutoAdvanceSlide() {
+        if (this.heroIsTransitioning) return;
         
-        this.isTransitioning = true;
+        this.heroIsTransitioning = true;
         
-        if (!this.isReversing) {
-            this.slideDirection = 'next';
-            if (this.currentSlide < this.totalSlides - 1) {
-                this.currentSlide++;
+        if (!this.heroIsReversing) {
+            this.heroSlideDirection = 'next';
+            if (this.heroCurrentSlide < this.heroTotalSlides - 1) {
+                this.heroCurrentSlide++;
             } else {
-                this.isReversing = true;
-                this.currentSlide--;
+                this.heroIsReversing = true;
+                this.heroCurrentSlide--;
             }
         } else {
-            this.slideDirection = 'prev';
-            if (this.currentSlide > 0) {
-                this.currentSlide--;
+            this.heroSlideDirection = 'prev';
+            if (this.heroCurrentSlide > 0) {
+                this.heroCurrentSlide--;
             } else {
-                this.isReversing = false;
-                this.currentSlide++;
+                this.heroIsReversing = false;
+                this.heroCurrentSlide++;
             }
         }
         
-        this.updateCarousel(true);
+        this.heroUpdateCarousel(true);
         
         setTimeout(() => {
-            this.isTransitioning = false;
+            this.heroIsTransitioning = false;
         }, 900);
     }
     
-    nextSlide() {
-        if (this.isTransitioning) return;
+    heroNavigateNext() {
+        if (this.heroIsTransitioning) return;
         
-        this.isTransitioning = true;
-        this.slideDirection = 'next';
+        this.heroIsTransitioning = true;
+        this.heroSlideDirection = 'next';
         
-        if (this.currentSlide < this.totalSlides - 1) {
-            this.currentSlide++;
-            this.isReversing = false;
+        if (this.heroCurrentSlide < this.heroTotalSlides - 1) {
+            this.heroCurrentSlide++;
+            this.heroIsReversing = false;
         } else {
-            this.currentSlide = 0;
-            this.isReversing = false;
+            this.heroCurrentSlide = 0;
+            this.heroIsReversing = false;
         }
         
-        this.updateCarousel(true);
+        this.heroUpdateCarousel(true);
         
         setTimeout(() => {
-            this.isTransitioning = false;
+            this.heroIsTransitioning = false;
         }, 900);
         
-        this.resetAutoSlide();
+        this.heroResetAutoSlide();
     }
     
-    prevSlide() {
-        if (this.isTransitioning) return;
+    heroNavigatePrev() {
+        if (this.heroIsTransitioning) return;
         
-        this.isTransitioning = true;
-        this.slideDirection = 'prev';
+        this.heroIsTransitioning = true;
+        this.heroSlideDirection = 'prev';
         
-        if (this.currentSlide > 0) {
-            this.currentSlide--;
+        if (this.heroCurrentSlide > 0) {
+            this.heroCurrentSlide--;
         } else {
-            this.currentSlide = this.totalSlides - 1;
+            this.heroCurrentSlide = this.heroTotalSlides - 1;
         }
         
-        this.isReversing = true;
-        this.updateCarousel(true);
+        this.heroIsReversing = true;
+        this.heroUpdateCarousel(true);
         
         setTimeout(() => {
-            this.isTransitioning = false;
+            this.heroIsTransitioning = false;
         }, 900);
         
-        this.resetAutoSlide();
+        this.heroResetAutoSlide();
     }
     
-    goToSlide(index) {
-        if (this.isTransitioning || index === this.currentSlide) return;
+    heroNavigateToSlide(index) {
+        if (this.heroIsTransitioning || index === this.heroCurrentSlide) return;
         
-        this.isTransitioning = true;
-        this.slideDirection = index > this.currentSlide ? 'next' : 'prev';
-        this.currentSlide = index;
-        this.isReversing = false;
+        this.heroIsTransitioning = true;
+        this.heroSlideDirection = index > this.heroCurrentSlide ? 'next' : 'prev';
+        this.heroCurrentSlide = index;
+        this.heroIsReversing = false;
         
-        this.updateCarousel(true);
+        this.heroUpdateCarousel(true);
         
         setTimeout(() => {
-            this.isTransitioning = false;
+            this.heroIsTransitioning = false;
         }, 900);
         
-        this.resetAutoSlide();
+        this.heroResetAutoSlide();
     }
     
-    startAutoSlide() {
-        this.stopAutoSlide();
-        this.autoSlideInterval = setInterval(() => this.autoAdvanceSlide(), 5000);
+    heroStartAutoSlide() {
+        this.heroStopAutoSlide();
+        this.heroAutoSlideInterval = setInterval(() => this.heroAutoAdvanceSlide(), 5000);
     }
     
-    stopAutoSlide() {
-        if (this.autoSlideInterval) {
-            clearInterval(this.autoSlideInterval);
-            this.autoSlideInterval = null;
+    heroStopAutoSlide() {
+        if (this.heroAutoSlideInterval) {
+            clearInterval(this.heroAutoSlideInterval);
+            this.heroAutoSlideInterval = null;
         }
     }
     
-    resetAutoSlide() {
-        this.stopAutoSlide();
-        this.startAutoSlide();
+    heroResetAutoSlide() {
+        this.heroStopAutoSlide();
+        this.heroStartAutoSlide();
     }
     
-    setupEventListeners() {
+    heroSetupEventListeners() {
         // Navigation buttons
-        const nextBtn = document.querySelector('.CarouselOne-nav.next');
-        const prevBtn = document.querySelector('.CarouselOne-nav.prev');
+        const heroNextBtn = document.querySelector('.CarouselOne-nav.next');
+        const heroPrevBtn = document.querySelector('.CarouselOne-nav.prev');
         
-        if (nextBtn) nextBtn.addEventListener('click', () => this.nextSlide());
-        if (prevBtn) prevBtn.addEventListener('click', () => this.prevSlide());
+        if (heroNextBtn) heroNextBtn.addEventListener('click', () => this.heroNavigateNext());
+        if (heroPrevBtn) heroPrevBtn.addEventListener('click', () => this.heroNavigatePrev());
         
         // Indicators
-        this.indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => this.goToSlide(index));
+        this.heroIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => this.heroNavigateToSlide(index));
         });
         
         // Pause on hover
-        this.container.addEventListener('mouseenter', () => this.stopAutoSlide(), { passive: true });
-        this.container.addEventListener('mouseleave', () => this.startAutoSlide(), { passive: true });
+        this.heroContainer.addEventListener('mouseenter', () => this.heroStopAutoSlide(), { passive: true });
+        this.heroContainer.addEventListener('mouseleave', () => this.heroStartAutoSlide(), { passive: true });
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') this.prevSlide();
-            else if (e.key === 'ArrowRight') this.nextSlide();
+            if (e.key === 'ArrowLeft') this.heroNavigatePrev();
+            else if (e.key === 'ArrowRight') this.heroNavigateNext();
         });
         
         // Touch support
-        let touchStartX = 0;
-        let touchEndX = 0;
+        let heroTouchStartX = 0;
+        let heroTouchEndX = 0;
         
-        this.container.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
+        this.heroContainer.addEventListener('touchstart', (e) => {
+            heroTouchStartX = e.changedTouches[0].screenX;
         }, { passive: true });
         
-        this.container.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const touchDistance = Math.abs(touchStartX - touchEndX);
+        this.heroContainer.addEventListener('touchend', (e) => {
+            heroTouchEndX = e.changedTouches[0].screenX;
+            const heroTouchDistance = Math.abs(heroTouchStartX - heroTouchEndX);
             
-            if (touchDistance > 50) {
-                if (touchStartX - touchEndX > 50) this.nextSlide();
-                else if (touchEndX - touchStartX > 50) this.prevSlide();
+            if (heroTouchDistance > 50) {
+                if (heroTouchStartX - heroTouchEndX > 50) this.heroNavigateNext();
+                else if (heroTouchEndX - heroTouchStartX > 50) this.heroNavigatePrev();
             }
         }, { passive: true });
         
         // Parallax effect (throttled and only on desktop)
         if (window.innerWidth > 768) {
-            const throttledParallax = throttle((e) => {
-                const activeSlide = this.slides[this.currentSlide];
-                if (!activeSlide) return;
+            const heroThrottledParallax = globalThrottle((e) => {
+                const heroActiveSlide = this.heroSlides[this.heroCurrentSlide];
+                if (!heroActiveSlide) return;
                 
-                const rect = this.container.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                const heroRect = this.heroContainer.getBoundingClientRect();
+                const heroX = (e.clientX - heroRect.left) / heroRect.width - 0.5;
+                const heroY = (e.clientY - heroRect.top) / heroRect.height - 0.5;
                 
-                const title = activeSlide.querySelector('.Sculpting-title');
+                const heroTitle = heroActiveSlide.querySelector('.Sculpting-title');
                 
-                if (title) {
+                if (heroTitle) {
                     requestAnimationFrame(() => {
-                        title.style.transform = `translateX(${x * 20}px) translateY(${y * 20}px)`;
+                        heroTitle.style.transform = `translateX(${heroX * 20}px) translateY(${heroY * 20}px)`;
                     });
                 }
             }, 100);
             
-            this.container.addEventListener('mousemove', throttledParallax);
+            this.heroContainer.addEventListener('mousemove', heroThrottledParallax);
             
-            this.container.addEventListener('mouseleave', () => {
-                const activeSlide = this.slides[this.currentSlide];
-                if (!activeSlide) return;
+            this.heroContainer.addEventListener('mouseleave', () => {
+                const heroActiveSlide = this.heroSlides[this.heroCurrentSlide];
+                if (!heroActiveSlide) return;
                 
-                const title = activeSlide.querySelector('.Sculpting-title');
-                if (title) {
+                const heroTitle = heroActiveSlide.querySelector('.Sculpting-title');
+                if (heroTitle) {
                     requestAnimationFrame(() => {
-                        title.style.transform = '';
+                        heroTitle.style.transform = '';
                     });
                 }
             });
@@ -300,84 +300,34 @@ class CarouselOne {
         // Pause when tab is hidden
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
-                this.stopAutoSlide();
+                this.heroStopAutoSlide();
             } else {
-                this.startAutoSlide();
+                this.heroStartAutoSlide();
             }
         });
     }
 }
 
-// Make functions global for HTML onclick attributes
+// Global functions for HTML onclick attributes
 window.nextSlide = function() {
-    if (window.carousel) window.carousel.nextSlide();
+    if (window.heroCarouselInstance) window.heroCarouselInstance.heroNavigateNext();
 };
 
 window.prevSlide = function() {
-    if (window.carousel) window.carousel.prevSlide();
+    if (window.heroCarouselInstance) window.heroCarouselInstance.heroNavigatePrev();
 };
 
 window.goToSlide = function(index) {
-    if (window.carousel) window.carousel.goToSlide(index);
+    if (window.heroCarouselInstance) window.heroCarouselInstance.heroNavigateToSlide(index);
 };
 
-// ============================================
-// SERVICES SECTION (HORIZONTAL SCROLL)
-// ============================================
 
-class ServicesSlider {
-    constructor() {
-        this.slider = document.querySelector('.services-cards-container');
-        this.isDown = false;
-        this.startX = 0;
-        this.scrollLeft = 0;
-        
-        this.init();
-    }
-    
-    init() {
-        if (!this.slider) return;
-        
-        this.slider.addEventListener('mousedown', (e) => this.handleMouseDown(e));
-        this.slider.addEventListener('mouseleave', () => this.handleMouseLeave(), { passive: true });
-        this.slider.addEventListener('mouseup', () => this.handleMouseUp(), { passive: true });
-        this.slider.addEventListener('mousemove', (e) => this.handleMouseMove(e));
-    }
-    
-    handleMouseDown(e) {
-        this.isDown = true;
-        this.slider.classList.add('active');
-        this.startX = e.pageX - this.slider.offsetLeft;
-        this.scrollLeft = this.slider.scrollLeft;
-        this.slider.style.cursor = 'grabbing';
-    }
-    
-    handleMouseLeave() {
-        this.isDown = false;
-        this.slider.classList.remove('active');
-        this.slider.style.cursor = 'grab';
-    }
-    
-    handleMouseUp() {
-        this.isDown = false;
-        this.slider.classList.remove('active');
-        this.slider.style.cursor = 'grab';
-    }
-    
-    handleMouseMove(e) {
-        if (!this.isDown) return;
-        e.preventDefault();
-        const x = e.pageX - this.slider.offsetLeft;
-        const walk = (x - this.startX) * 2;
-        this.slider.scrollLeft = this.scrollLeft - walk;
-    }
-}
 
 // ============================================
 // TRUST SECTION CAROUSEL
 // ============================================
 
-const carouselData = [
+const trustCarouselDataset = [
     {
         title: 'AI Solutions',
         content: 'Advanced AI technologies that automate workflows, enhance intelligence, and drive smarter business outcomes through innovation.',
@@ -444,174 +394,181 @@ const carouselData = [
     }
 ];
 
-class TrustCarousel {
+class TrustSectionCarousel {
     constructor() {
-        this.MAX_VISIBILITY = 3;
-        this.active = 2;
-        this.isTransitioning = false;
-        this.autoInterval = null;
-        this.isPaused = false;
+        this.trustMaxVisibility = 3;
+        this.trustActiveIndex = 2;
+        this.trustIsTransitioning = false;
+        this.trustAutoInterval = null;
+        this.trustIsPaused = false;
         
-        this.carousel = document.getElementById('carousel');
-        this.navLeft = document.getElementById('navLeft');
-        this.navRight = document.getElementById('navRight');
-        this.pauseBtn = document.getElementById('pauseBtn');
-        this.leftTitle = document.getElementById('leftTitle');
-        this.leftDescription = document.getElementById('leftDescription');
-        this.viewAllBtn = document.getElementById('viewAllBtn');
+        this.trustCarouselElement = document.getElementById('carousel');
+        this.trustNavLeft = document.getElementById('navLeft');
+        this.trustNavRight = document.getElementById('navRight');
+        this.trustPauseBtn = document.getElementById('pauseBtn');
+        this.trustLeftTitle = document.getElementById('leftTitle');
+        this.trustLeftDescription = document.getElementById('leftDescription');
+        this.trustViewAllBtn = document.getElementById('viewAllBtn');
         
-        this.init();
+        this.trustInit();
     }
     
-    init() {
-        if (!this.carousel) return;
+    trustInit() {
+        if (!this.trustCarouselElement) return;
         
-        this.createCards();
-        this.updateCarousel();
-        this.setupEventListeners();
-        this.startAuto();
+        this.trustCreateCards();
+        this.trustUpdateCarousel();
+        this.trustSetupEventListeners();
+        this.trustStartAuto();
     }
     
-    createCards() {
-        carouselData.forEach((data, index) => {
-            const cardContainer = document.createElement('div');
-            cardContainer.className = 'card-container';
-            cardContainer.innerHTML = `
+    trustCreateCards() {
+        trustCarouselDataset.forEach((data, index) => {
+            const trustCardContainer = document.createElement('div');
+            trustCardContainer.className = 'card-container';
+            trustCardContainer.setAttribute('data-trust-card', 'true'); // Mark as trust card
+            trustCardContainer.innerHTML = `
                 <div class="card">
                     <img src="${data.image}" alt="${data.title}">
                     <h2>${data.title}</h2>
                     <p>${data.content}</p>
                 </div>
             `;
-            this.carousel.insertBefore(cardContainer, this.navLeft);
+            this.trustCarouselElement.insertBefore(trustCardContainer, this.trustNavLeft);
         });
     }
     
-    updateCarousel() {
-        const cards = document.querySelectorAll('.card-container');
+    trustUpdateCarousel() {
+        // Only select trust cards within the carousel
+        const trustCards = this.trustCarouselElement.querySelectorAll('.card-container[data-trust-card="true"]');
+        
+        if (trustCards.length === 0) {
+            console.error('Trust Carousel: No cards found');
+            return;
+        }
         
         // Update left content with fade animation
-        if (this.leftTitle && this.leftDescription) {
-            this.leftTitle.classList.add('fade-out');
-            this.leftDescription.classList.add('fade-out');
+        if (this.trustLeftTitle && this.trustLeftDescription) {
+            this.trustLeftTitle.classList.add('fade-out');
+            this.trustLeftDescription.classList.add('fade-out');
             
-            if (this.viewAllBtn) {
-                this.viewAllBtn.classList.add('eloiacs-btn-animate');
+            if (this.trustViewAllBtn) {
+                this.trustViewAllBtn.classList.add('eloiacs-btn-animate');
             }
             
             setTimeout(() => {
-                const activeData = carouselData[this.active];
-                this.leftTitle.textContent = activeData.leftTitle;
-                this.leftDescription.textContent = activeData.leftDescription;
+                const trustActiveData = trustCarouselDataset[this.trustActiveIndex];
+                this.trustLeftTitle.textContent = trustActiveData.leftTitle;
+                this.trustLeftDescription.textContent = trustActiveData.leftDescription;
                 
-                if (this.viewAllBtn) {
-                    this.viewAllBtn.href = activeData.buttonLink;
+                if (this.trustViewAllBtn) {
+                    this.trustViewAllBtn.href = trustActiveData.buttonLink;
                     setTimeout(() => {
-                        this.viewAllBtn.classList.remove('eloiacs-btn-animate');
+                        this.trustViewAllBtn.classList.remove('eloiacs-btn-animate');
                     }, 500);
                 }
                 
-                this.leftTitle.classList.remove('fade-out');
-                this.leftDescription.classList.remove('fade-out');
-                this.leftTitle.classList.add('fade-in');
-                this.leftDescription.classList.add('fade-in');
+                this.trustLeftTitle.classList.remove('fade-out');
+                this.trustLeftDescription.classList.remove('fade-out');
+                this.trustLeftTitle.classList.add('fade-in');
+                this.trustLeftDescription.classList.add('fade-in');
                 
                 setTimeout(() => {
-                    this.leftTitle.classList.remove('fade-in');
-                    this.leftDescription.classList.remove('fade-in');
+                    this.trustLeftTitle.classList.remove('fade-in');
+                    this.trustLeftDescription.classList.remove('fade-in');
                 }, 300);
             }, 150);
         }
         
         // Update card positions
-        cards.forEach((card, i) => {
-            const offset = (this.active - i) / 3;
-            const direction = Math.sign(this.active - i);
-            const absOffset = Math.abs(this.active - i) / 3;
-            const isActive = i === this.active ? 1 : 0;
+        trustCards.forEach((card, i) => {
+            const trustOffset = (this.trustActiveIndex - i) / 3;
+            const trustDirection = Math.sign(this.trustActiveIndex - i);
+            const trustAbsOffset = Math.abs(this.trustActiveIndex - i) / 3;
+            const trustIsActive = i === this.trustActiveIndex ? 1 : 0;
 
-            card.style.setProperty('--active', isActive);
-            card.style.setProperty('--offset', offset);
-            card.style.setProperty('--direction', direction);
-            card.style.setProperty('--abs-offset', absOffset);
-            card.style.opacity = Math.abs(this.active - i) >= this.MAX_VISIBILITY ? '0' : '1';
-            card.style.display = Math.abs(this.active - i) > this.MAX_VISIBILITY ? 'none' : 'block';
+            card.style.setProperty('--active', trustIsActive);
+            card.style.setProperty('--offset', trustOffset);
+            card.style.setProperty('--direction', trustDirection);
+            card.style.setProperty('--abs-offset', trustAbsOffset);
+            card.style.opacity = Math.abs(this.trustActiveIndex - i) >= this.trustMaxVisibility ? '0' : '1';
+            card.style.display = Math.abs(this.trustActiveIndex - i) > this.trustMaxVisibility ? 'none' : 'block';
             
-            card.classList.toggle('active', i === this.active);
+            card.classList.toggle('active', i === this.trustActiveIndex);
         });
     }
     
-    next() {
-        this.active = (this.active + 1) % carouselData.length;
-        this.updateCarousel();
+    trustNavigateNext() {
+        this.trustActiveIndex = (this.trustActiveIndex + 1) % trustCarouselDataset.length;
+        this.trustUpdateCarousel();
     }
     
-    prev() {
-        this.active = (this.active - 1 + carouselData.length) % carouselData.length;
-        this.updateCarousel();
+    trustNavigatePrev() {
+        this.trustActiveIndex = (this.trustActiveIndex - 1 + trustCarouselDataset.length) % trustCarouselDataset.length;
+        this.trustUpdateCarousel();
     }
     
-    startAuto() {
-        this.stopAuto();
-        if (!this.isPaused) {
-            this.autoInterval = setInterval(() => this.next(), 3000);
+    trustStartAuto() {
+        this.trustStopAuto();
+        if (!this.trustIsPaused) {
+            this.trustAutoInterval = setInterval(() => this.trustNavigateNext(), 3000);
         }
     }
     
-    stopAuto() {
-        if (this.autoInterval) {
-            clearInterval(this.autoInterval);
-            this.autoInterval = null;
+    trustStopAuto() {
+        if (this.trustAutoInterval) {
+            clearInterval(this.trustAutoInterval);
+            this.trustAutoInterval = null;
         }
     }
     
-    resetAuto() {
-        this.stopAuto();
-        if (!this.isPaused) {
-            this.startAuto();
+    trustResetAuto() {
+        this.trustStopAuto();
+        if (!this.trustIsPaused) {
+            this.trustStartAuto();
         }
     }
     
-    togglePause() {
-        this.isPaused = !this.isPaused;
-        const pauseIcon = this.pauseBtn.querySelector('i');
+    trustTogglePause() {
+        this.trustIsPaused = !this.trustIsPaused;
+        const trustPauseIcon = this.trustPauseBtn.querySelector('i');
         
-        if (this.isPaused) {
-            this.stopAuto();
-            pauseIcon.classList.remove('fa-pause');
-            pauseIcon.classList.add('fa-play');
+        if (this.trustIsPaused) {
+            this.trustStopAuto();
+            trustPauseIcon.classList.remove('fa-pause');
+            trustPauseIcon.classList.add('fa-play');
         } else {
-            pauseIcon.classList.remove('fa-play');
-            pauseIcon.classList.add('fa-pause');
-            this.startAuto();
+            trustPauseIcon.classList.remove('fa-play');
+            trustPauseIcon.classList.add('fa-pause');
+            this.trustStartAuto();
         }
     }
     
-    setupEventListeners() {
-        if (this.navLeft) {
-            this.navLeft.addEventListener('click', () => {
-                this.prev();
-                this.resetAuto();
+    trustSetupEventListeners() {
+        if (this.trustNavLeft) {
+            this.trustNavLeft.addEventListener('click', () => {
+                this.trustNavigatePrev();
+                this.trustResetAuto();
             });
         }
         
-        if (this.navRight) {
-            this.navRight.addEventListener('click', () => {
-                this.next();
-                this.resetAuto();
+        if (this.trustNavRight) {
+            this.trustNavRight.addEventListener('click', () => {
+                this.trustNavigateNext();
+                this.trustResetAuto();
             });
         }
         
-        if (this.pauseBtn) {
-            this.pauseBtn.addEventListener('click', () => this.togglePause());
+        if (this.trustPauseBtn) {
+            this.trustPauseBtn.addEventListener('click', () => this.trustTogglePause());
         }
         
         // Pause when tab is hidden
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
-                this.stopAuto();
-            } else if (!this.isPaused) {
-                this.startAuto();
+                this.trustStopAuto();
+            } else if (!this.trustIsPaused) {
+                this.trustStartAuto();
             }
         });
     }
@@ -621,51 +578,51 @@ class TrustCarousel {
 // STATS COUNTER ANIMATION
 // ============================================
 
-function animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target'));
-    const duration = 1500;
-    const increment = target / (duration / 16);
-    let current = 0;
+function statsAnimateCounter(element) {
+    const statsTarget = parseInt(element.getAttribute('data-target'));
+    const statsDuration = 1500;
+    const statsIncrement = statsTarget / (statsDuration / 16);
+    let statsCurrent = 0;
 
-    function updateCounter() {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target + '+';
+    function statsUpdateCounter() {
+        statsCurrent += statsIncrement;
+        if (statsCurrent >= statsTarget) {
+            element.textContent = statsTarget + '+';
             return;
         }
-        element.textContent = Math.floor(current);
-        requestAnimationFrame(updateCounter);
+        element.textContent = Math.floor(statsCurrent);
+        requestAnimationFrame(statsUpdateCounter);
     }
     
-    requestAnimationFrame(updateCounter);
+    requestAnimationFrame(statsUpdateCounter);
 }
 
 // ============================================
 // INTERSECTION OBSERVERS
 // ============================================
 
-const statsObserver = new IntersectionObserver((entries) => {
+const statsIntersectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
+            const statsCounters = entry.target.querySelectorAll('.stat-number');
+            statsCounters.forEach(counter => {
                 if (counter.textContent === '0') {
-                    animateCounter(counter);
+                    statsAnimateCounter(counter);
                 }
             });
-            statsObserver.unobserve(entry.target);
+            statsIntersectionObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.5 });
 
-const cardObserver = new IntersectionObserver((entries) => {
+const featureCardIntersectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
             }, index * 100);
-            cardObserver.unobserve(entry.target);
+            featureCardIntersectionObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.1 });
@@ -675,26 +632,72 @@ const cardObserver = new IntersectionObserver((entries) => {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize main carousel
-    window.carousel = new CarouselOne();
+    console.log('🚀 Initializing Home Page Components...');
     
-    // Initialize services slider
-    new ServicesSlider();
-    
-    // Initialize trust carousel
-    new TrustCarousel();
-    
-    // Setup stats observer
-    const statsSection = document.querySelector('.stats-section');
-    if (statsSection) {
-        statsObserver.observe(statsSection);
+    // Initialize main hero carousel
+    try {
+        window.heroCarouselInstance = new HeroCarouselController();
+        console.log('✅ Hero Carousel initialized');
+    } catch (error) {
+        console.error('❌ Hero Carousel initialization failed:', error);
     }
     
-    // Setup feature cards animation
-    document.querySelectorAll('.feature-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.6s ease';
-        cardObserver.observe(card);
-    });
+    // Initialize services horizontal slider (OPTIONAL - can be removed)
+    try {
+        const servicesSection = document.querySelector('.services-cards-container');
+        if (servicesSection) {
+            window.servicesSliderInstance = new ServicesHorizontalSlider();
+            console.log('✅ Services Slider initialized');
+        } else {
+            console.log('⚠️ Services section not found - skipping initialization');
+        }
+    } catch (error) {
+        console.error('❌ Services Slider initialization failed:', error);
+    }
+    
+    // Initialize trust section carousel (INDEPENDENT)
+    try {
+        const trustCarousel = document.getElementById('carousel');
+        if (trustCarousel) {
+            window.trustCarouselInstance = new TrustSectionCarousel();
+            console.log('✅ Trust Carousel initialized');
+        } else {
+            console.error('❌ Trust Carousel element #carousel not found in DOM');
+        }
+    } catch (error) {
+        console.error('❌ Trust Carousel initialization failed:', error);
+    }
+    
+    // Setup stats observer (INDEPENDENT)
+    try {
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsIntersectionObserver.observe(statsSection);
+            console.log('✅ Stats Observer initialized');
+        } else {
+            console.log('⚠️ Stats section not found - skipping initialization');
+        }
+    } catch (error) {
+        console.error('❌ Stats Observer initialization failed:', error);
+    }
+    
+    // Setup feature cards animation (INDEPENDENT)
+    try {
+        const featureCards = document.querySelectorAll('.feature-card');
+        if (featureCards.length > 0) {
+            featureCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                featureCardIntersectionObserver.observe(card);
+            });
+            console.log(`✅ Feature Cards animation initialized (${featureCards.length} cards)`);
+        } else {
+            console.log('⚠️ No feature cards found - skipping animation');
+        }
+    } catch (error) {
+        console.error('❌ Feature Cards initialization failed:', error);
+    }
+    
+    console.log('✨ All components initialization complete');
 });
