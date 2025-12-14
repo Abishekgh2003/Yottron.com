@@ -1,0 +1,339 @@
+.job-detail-page {
+            padding: 40px 0;
+            min-height: 100vh;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .job-header {
+            background: var(--bg-dark);
+            padding: 50px;
+            position: relative;
+        }
+
+        .job-detail-title {
+            font-size: var(--title-size);
+            font-weight: var(--title-weight);
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .job-meta-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+        }
+
+        .job-meta-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .job-meta-item strong {
+            color: var(--text-light);
+            margin-right: 5px;
+        }
+
+        .job-content-wrapper {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            padding: 50px;
+        }
+
+        .job-detail-left {
+            padding-right: 30px;
+        }
+
+        .job-detail-section {
+            margin-bottom: 40px;
+        }
+
+        .job-detail-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .job-detail-section h3 i {
+            font-size: 1.3rem;
+        }
+
+        .job-detail-section p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .job-detail-section ul {
+            list-style: none;
+            padding: 0 0 0 20px;
+        }
+
+        .job-detail-section ul li {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .job-detail-section ul li::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .job-detail-right {
+            position: sticky;
+            top: 150px;
+            height: fit-content;
+        }
+
+        .job-apply-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--primary-lite);
+        }
+
+        .job-apply-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: var(--text-light);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            /* border-bottom: 1px solid #e5e7eb; */
+        }
+
+        /* .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        } */
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-lite);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .contact-value a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--primary-color);
+        }
+
+        .apply-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .apply-btn {
+            width: 100%;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .apply-btn-primary {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .apply-btn-primary:hover {
+            background: var(--hover-color);
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+            color: var(--text-light);
+        }
+
+        .apply-btn-secondary {
+            background: var(--text-light);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .apply-btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            transform: translateY(-2px);
+        }
+
+
+        @media (max-width: 1024px) {
+            .job-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .job-detail-right {
+                position: static;
+            }
+
+            .job-detail-left {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .job-header {
+                padding: 35px 25px;
+            }
+
+            .job-content-wrapper {
+                padding: 30px 25px;
+                gap: 0;
+            }
+
+            .job-detail-title {
+                font-size: var(--title-size-md);
+            }
+
+            .job-apply-card {
+                padding: 25px;
+            }
+
+            .job-meta-container {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .job-detail-page {
+                padding:  25px 0;
+                a {
+                    margin-bottom: 20px;
+                }
+            }
+            .job-header {
+                padding: 25px 20px;
+            }
+
+            .job-content-wrapper {
+                padding: 25px 0;
+                gap: 10px;
+            }
+
+            .job-detail-title {
+                font-size: var(--title-size-sm);
+            }
+            .job-detail-section {
+                margin-bottom: 20px;
+                p {
+                    line-height: 1.5;
+                }
+            }
+            .job-detail-section ul {
+                padding-left: 10px;
+            }
+            .job-detail-section li {
+                line-height: 1.5 !important;
+                padding-left: 20px !important;
+            }
+            .job-detail-section h3 {
+                font-size: 1.2rem;
+            }
+            .job-apply-card h3 {
+                font-size: var(--title-size-sm);
+                margin-bottom: 0;
+            }
+            .contact-info {
+                margin: 0;
+            }
+            .apply-btn {
+                margin: 0 !important;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }

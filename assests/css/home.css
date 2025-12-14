@@ -187,7 +187,7 @@ body.is-scrolling .indicator {
 
         .Sculpting {
             position: relative;
-            min-height: 80vh;
+            min-height: 70vh;
             width: 100%;
             
             min-width: 100%;
@@ -508,15 +508,6 @@ body.is-scrolling .indicator {
 
         .CarouselOne-nav.next {
             right: 20px;
-        }
-
-        @media (max-width: 1650px) {
-            .CarouselOne-container {
-                min-height: 65vh;
-            }
-            .Sculpting {
-                min-height: 65vh;
-            }
         }
 
         @media (max-width: 1280px) {
